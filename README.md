@@ -48,7 +48,7 @@
 
 ## <img src="https://img.shields.io/badge/-1e1e2e?style=flat-square" height="1" width="0"/> Themes
 
-Three [Catppuccin](https://github.com/catppuccin/catppuccin) dark palettes, switchable from Settings: ☕ Mocha · 🌺 Macchiato · 🧋 Frappe
+Three [Catppuccin](https://github.com/catppuccin/catppuccin) dark palettes, switchable from Settings: 🌿 Mocha · 🌺 Macchiato · 🪴 Frappe
 
 ## <img src="https://img.shields.io/badge/-1e1e2e?style=flat-square" height="1" width="0"/> Getting Started
 

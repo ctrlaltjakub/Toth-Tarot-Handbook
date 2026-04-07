@@ -48,11 +48,23 @@
 
 Three **Catppuccin** dark palettes, switchable from Settings:
 
-<p>
-  <img src="https://img.shields.io/badge/Mocha_%231e1e2e-1e1e2e?style=for-the-badge&logoColor=cba6f7" alt="Mocha"/>
-  <img src="https://img.shields.io/badge/Macchiato_%2324273a-24273a?style=for-the-badge&logoColor=c6a0f6" alt="Macchiato"/>
-  <img src="https://img.shields.io/badge/Frappé_%23303446-303446?style=for-the-badge&logoColor=ca9ee6" alt="Frappé"/>
-</p>
+| Color | Mocha | Macchiato | Frappe |
+|:------|:-----:|:---------:|:------:|
+| **Base** | ![](https://img.shields.io/badge/_%20-1e1e2e?style=flat-square) `#1e1e2e` | ![](https://img.shields.io/badge/_%20-24273a?style=flat-square) `#24273a` | ![](https://img.shields.io/badge/_%20-303446?style=flat-square) `#303446` |
+| **Rosewater** | ![](https://img.shields.io/badge/_%20-f5e0dc?style=flat-square) `#f5e0dc` | ![](https://img.shields.io/badge/_%20-f4dbd6?style=flat-square) `#f4dbd6` | ![](https://img.shields.io/badge/_%20-f2d5cf?style=flat-square) `#f2d5cf` |
+| **Flamingo** | ![](https://img.shields.io/badge/_%20-f2cdcd?style=flat-square) `#f2cdcd` | ![](https://img.shields.io/badge/_%20-f0c6c6?style=flat-square) `#f0c6c6` | ![](https://img.shields.io/badge/_%20-eebebe?style=flat-square) `#eebebe` |
+| **Pink** | ![](https://img.shields.io/badge/_%20-f5c2e7?style=flat-square) `#f5c2e7` | ![](https://img.shields.io/badge/_%20-f5bde6?style=flat-square) `#f5bde6` | ![](https://img.shields.io/badge/_%20-f4b8e4?style=flat-square) `#f4b8e4` |
+| **Mauve** | ![](https://img.shields.io/badge/_%20-cba6f7?style=flat-square) `#cba6f7` | ![](https://img.shields.io/badge/_%20-c6a0f6?style=flat-square) `#c6a0f6` | ![](https://img.shields.io/badge/_%20-ca9ee6?style=flat-square) `#ca9ee6` |
+| **Red** | ![](https://img.shields.io/badge/_%20-f38ba8?style=flat-square) `#f38ba8` | ![](https://img.shields.io/badge/_%20-ed8796?style=flat-square) `#ed8796` | ![](https://img.shields.io/badge/_%20-e78284?style=flat-square) `#e78284` |
+| **Maroon** | ![](https://img.shields.io/badge/_%20-eba0ac?style=flat-square) `#eba0ac` | ![](https://img.shields.io/badge/_%20-ee99a0?style=flat-square) `#ee99a0` | ![](https://img.shields.io/badge/_%20-ea999c?style=flat-square) `#ea999c` |
+| **Peach** | ![](https://img.shields.io/badge/_%20-fab387?style=flat-square) `#fab387` | ![](https://img.shields.io/badge/_%20-f5a97f?style=flat-square) `#f5a97f` | ![](https://img.shields.io/badge/_%20-ef9f76?style=flat-square) `#ef9f76` |
+| **Yellow** | ![](https://img.shields.io/badge/_%20-f9e2af?style=flat-square) `#f9e2af` | ![](https://img.shields.io/badge/_%20-eed49f?style=flat-square) `#eed49f` | ![](https://img.shields.io/badge/_%20-e5c890?style=flat-square) `#e5c890` |
+| **Green** | ![](https://img.shields.io/badge/_%20-a6e3a1?style=flat-square) `#a6e3a1` | ![](https://img.shields.io/badge/_%20-a6da95?style=flat-square) `#a6da95` | ![](https://img.shields.io/badge/_%20-a6d189?style=flat-square) `#a6d189` |
+| **Teal** | ![](https://img.shields.io/badge/_%20-94e2d5?style=flat-square) `#94e2d5` | ![](https://img.shields.io/badge/_%20-8bd5ca?style=flat-square) `#8bd5ca` | ![](https://img.shields.io/badge/_%20-81c8be?style=flat-square) `#81c8be` |
+| **Sky** | ![](https://img.shields.io/badge/_%20-89dceb?style=flat-square) `#89dceb` | ![](https://img.shields.io/badge/_%20-91d7e3?style=flat-square) `#91d7e3` | ![](https://img.shields.io/badge/_%20-99d1db?style=flat-square) `#99d1db` |
+| **Sapphire** | ![](https://img.shields.io/badge/_%20-74c7ec?style=flat-square) `#74c7ec` | ![](https://img.shields.io/badge/_%20-7dc4e4?style=flat-square) `#7dc4e4` | ![](https://img.shields.io/badge/_%20-85c1dc?style=flat-square) `#85c1dc` |
+| **Blue** | ![](https://img.shields.io/badge/_%20-89b4fa?style=flat-square) `#89b4fa` | ![](https://img.shields.io/badge/_%20-8aadf4?style=flat-square) `#8aadf4` | ![](https://img.shields.io/badge/_%20-8caaee?style=flat-square) `#8caaee` |
+| **Lavender** | ![](https://img.shields.io/badge/_%20-b4befe?style=flat-square) `#b4befe` | ![](https://img.shields.io/badge/_%20-b7bdf8?style=flat-square) `#b7bdf8` | ![](https://img.shields.io/badge/_%20-babbf1?style=flat-square) `#babbf1` |
 
 ## <img src="https://img.shields.io/badge/-1e1e2e?style=flat-square" height="1" width="0"/> Getting Started
 

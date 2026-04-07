@@ -17,22 +17,7 @@ const suitNames = ['Wands', 'Cups', 'Swords', 'Disks'];
 const suitColors = ['var(--color-fire)', 'var(--color-water)', 'var(--color-air)', 'var(--color-earth)'];
 
 // ============================================
-// Contextual intro blurbs (shown at top of each panel type)
-// ============================================
-const contextIntros: Record<string, string> = {
-  sephirah: 'The Sephiroth are the 10 spheres of the Tree of Life — stations through which divine energy descends from the infinite into the material world. Each Sephirah corresponds to a number, a planet, and a set of four pip cards (one from each suit).',
-  path: 'The 22 Paths connect the Sephiroth on the Tree of Life. Each path carries one of the 22 Major Arcana cards, linked to a Hebrew letter and an astrological attribution. The paths describe the dynamic relationships between the stations.',
-  daath: 'Daath is the hidden, unnumbered Sephirah that exists in the Abyss — the great gulf between the Supernal Triad and the lower Tree. It is not a true station but a void where knowledge exists without understanding.',
-  abyss: 'The Abyss is the great gulf separating the three highest Sephiroth (the Supernal Triad) from the seven lower ones. It represents the fundamental discontinuity between the divine and the personal — the gap that can only be crossed by the dissolution of the Ego.',
-  world: 'The Four Worlds describe the four levels through which reality manifests, from pure spirit to dense matter. Each world corresponds to an element, a suit of the Tarot, and a letter of the divine name YHVH. Together they map the journey of energy from source to manifestation.',
-  pillar: 'The Three Pillars organize the Sephiroth into three vertical columns representing the fundamental principles of creation: the active/expansive (Mercy), the receptive/restrictive (Severity), and the equilibrating middle way (Mildness).',
-};
 
-const ContextIntro: React.FC<{ type: string }> = ({ type }) => (
-  <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', lineHeight: 1.6, margin: '0 0 0.75rem', padding: '0.6rem 0.75rem', background: 'var(--bg-surface)', borderRadius: '8px', borderLeft: '3px solid var(--border-subtle)' }}>
-    {contextIntros[type]}
-  </p>
-);
 
 // ============================================
 // Panel: Sephirah

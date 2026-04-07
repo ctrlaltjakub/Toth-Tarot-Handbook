@@ -16,8 +16,6 @@ export const Astrology: React.FC = () => {
   const [showQualities, setShowQualities] = useState(true);
   const [showInfo, setShowInfo] = useState(false);
   const [zoomed, setZoomed] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
   // Toggle class on app-container to hide navbar on wide screen
   useEffect(() => {
     const app = document.querySelector('.app-container');
@@ -25,13 +23,6 @@ export const Astrology: React.FC = () => {
     else app?.classList.remove('diagram-focused');
     return () => app?.classList.remove('diagram-focused');
   }, [zoomed]);
-
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768);
-    check();
-    window.addEventListener('resize', check);
-    return () => window.removeEventListener('resize', check);
-  }, []);
 
   const selectionType = (searchParams.get('view') as SelectionType) || null;
   const selectionName = searchParams.get('name') || null;

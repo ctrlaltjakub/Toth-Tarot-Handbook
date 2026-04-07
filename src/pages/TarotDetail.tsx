@@ -39,7 +39,6 @@ const TarotDetail: React.FC = () => {
     h4: ({node, ...props}: any) => <h2 style={{marginTop: '2rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.5rem', color: 'var(--accent-purple)'}} {...props} />,
     p: ({node, children, ...props}: any) => <p style={{lineHeight: '1.8', marginBottom: '1.25rem', fontSize: '1rem'}} {...props}>{autoLinkChildren(children)}</p>,
     strong: ({node, ...props}: any) => {
-      const content = String(props.children);
       const symbolRegex = /(☿|♀|♂|♃|♄|♅|♆|♇)/g;
 
       const processText = (text: string) => {

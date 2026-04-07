@@ -17,7 +17,6 @@ const CX = 350; const CY = 350;
 const OUTER_R = 250; const DECAN_OUTER = 250; const DECAN_INNER = 222;
 const SIGN_OUTER = 222; const SIGN_INNER = 180;
 const PLANET_ORBIT = 310;
-const TRIANGLE_R = 140; // element triangle vertices
 
 const ORBIT_DURATION = 600;
 const planetStartOffset: Record<string, number> = {
@@ -217,7 +216,7 @@ const ZodiacWheelSVG: React.FC<ZodiacWheelSVGProps> = ({
       })}
 
       {/* === Quality Squares outside the wheel (rendered before planets) === */}
-      {showQualities && qualitySquares.map((qs, qIdx) => {
+      {showQualities && qualitySquares.map((qs, _qIdx) => {
         const color = qs.colorVar;
         // Corners at QUALITY_R, pointing at the sign midpoints
         const corners = qs.signs.map(si => {
@@ -235,14 +234,6 @@ const ZodiacWheelSVG: React.FC<ZodiacWheelSVGProps> = ({
           const midDeg = si * 30 + 15;
           return polarToXY(CX, CY, OUTER_R + 4, midDeg);
         });
-
-        // Label near the first corner
-        const labelCorner = corners[0];
-        const labelAngle = Math.atan2(labelCorner.y - CY, labelCorner.x - CX);
-        const labelR = QUALITY_R + 18;
-        const lx = CX + labelR * Math.cos(labelAngle);
-        const ly = CY + labelR * Math.sin(labelAngle);
-        const rotDeg = (labelAngle * 180 / Math.PI) + 90;
 
         return (
           <g key={`qual-${qs.name}`} onClick={(e) => { e.stopPropagation(); onQualityClick(qs.name); }} style={{ cursor: 'pointer' }}>
@@ -262,8 +253,6 @@ const ZodiacWheelSVG: React.FC<ZodiacWheelSVGProps> = ({
             {/* Label at bottom, connected to square */}
             {(() => {
               // Connection points first, then place labels directly below them
-              const sorted2 = [...corners];
-
               // Connection points: Cardinal → midpoint of left side, Fixed → midpoint of bottom side, Mutable → midpoint of right side
               let connectPt: { x: number; y: number };
               const sorted = [...corners];

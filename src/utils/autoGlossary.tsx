@@ -58,13 +58,13 @@ export function autoLinkChildren(children: React.ReactNode): React.ReactNode {
   if (Array.isArray(children)) {
     return children.map((child, i) => <React.Fragment key={i}>{autoLinkChildren(child)}</React.Fragment>);
   }
-  if (React.isValidElement(children) && children.props?.children) {
+  if (React.isValidElement(children) && (children.props as any)?.children) {
     // Don't recurse into GlossaryTerm components (prevent infinite loop)
     if ((children.type as any)?.displayName === 'GlossaryTerm' || (children.type as any) === GlossaryTerm) {
       return children;
     }
     return React.cloneElement(children as React.ReactElement<any>, {
-      children: autoLinkChildren(children.props.children),
+      children: autoLinkChildren((children.props as any).children),
     });
   }
   return children;

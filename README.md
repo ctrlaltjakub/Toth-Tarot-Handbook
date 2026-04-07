@@ -48,10 +48,11 @@
 
 Three **Catppuccin** dark palettes, switchable from Settings:
 
-| Mocha | Macchiato | Frappe |
-|:-----:|:---------:|:------:|
-| `#1e1e2e` | `#24273a` | `#303446` |
-| <img src="https://img.shields.io/badge/____-1e1e2e?style=for-the-badge" height="20"/> | <img src="https://img.shields.io/badge/____-24273a?style=for-the-badge" height="20"/> | <img src="https://img.shields.io/badge/____-303446?style=for-the-badge" height="20"/> |
+<p>
+  <img src="https://img.shields.io/badge/Mocha_%231e1e2e-1e1e2e?style=for-the-badge&logoColor=cba6f7" alt="Mocha"/>
+  <img src="https://img.shields.io/badge/Macchiato_%2324273a-24273a?style=for-the-badge&logoColor=c6a0f6" alt="Macchiato"/>
+  <img src="https://img.shields.io/badge/Frappé_%23303446-303446?style=for-the-badge&logoColor=ca9ee6" alt="Frappé"/>
+</p>
 
 ## <img src="https://img.shields.io/badge/-1e1e2e?style=flat-square" height="1" width="0"/> Getting Started
 

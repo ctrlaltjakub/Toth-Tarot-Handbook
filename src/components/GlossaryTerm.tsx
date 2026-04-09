@@ -60,6 +60,17 @@ export const GlossaryManagerProvider: React.FC<{ children: React.ReactNode }> = 
     }
   }, [location.pathname, location.search]);
 
+  // Close glossary on browser back instead of letting the route change
+  useEffect(() => {
+    const handlePopState = () => {
+      if (stack.length > 0) {
+        setStack([]);
+      }
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [stack]);
+
   const openStack = useCallback((s: string[]) => setStack(s), []);
   const push = useCallback((term: string) => setStack(prev => [...prev, term]), []);
   const pop = useCallback(() => setStack(prev => prev.length > 1 ? prev.slice(0, -1) : []), []);

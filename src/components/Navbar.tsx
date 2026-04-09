@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
   return (
     <>
       <nav className="navbar">
-        <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+        <NavLink to="/" end className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
           <HomeIcon size={22} />
           <span className="nav-label">Home</span>
         </NavLink>

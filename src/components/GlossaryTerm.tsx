@@ -40,8 +40,9 @@ interface GlossaryManagerContextType {
 
 const GlossaryManagerContext = createContext<GlossaryManagerContextType | null>(null);
 
-// Flag to suppress restore on forward navigation
+// Flags to control navigation behavior
 let navigatingForward = false;
+let preserveStorage = false;
 
 export const GlossaryManagerProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [stack, setStack] = useState<string[]>(() => {
@@ -53,6 +54,10 @@ export const GlossaryManagerProvider: React.FC<{ children: React.ReactNode }> = 
 
   // Persist stack to sessionStorage on every change so refresh can restore it
   useEffect(() => {
+    if (preserveStorage) {
+      preserveStorage = false;
+      return;
+    }
     if (stack.length > 0) {
       sessionStorage.setItem(STORAGE_KEY, JSON.stringify(stack));
     } else {
@@ -159,6 +164,7 @@ const GlossaryModalStack: React.FC<{ stack: string[] }> = ({ stack }) => {
     // Save stack so it can be restored on browser Back
     saveStack(stack);
     navigatingForward = true;
+    preserveStorage = true;
     manager.closeAll();
     if (link) setTimeout(() => navigate(link), 50);
   };

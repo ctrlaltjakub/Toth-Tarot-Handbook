@@ -60,16 +60,27 @@ export const GlossaryManagerProvider: React.FC<{ children: React.ReactNode }> = 
     }
   }, [location.pathname, location.search]);
 
-  // Close glossary on browser back instead of letting the route change
+  // Browser back: step back through glossary stack, then close
+  // We push a history entry each time a term is added, so back pops one at a time
   useEffect(() => {
-    const handlePopState = () => {
-      if (stack.length > 0) {
+    if (stack.length > 0) {
+      window.history.pushState({ glossaryDepth: stack.length }, '');
+    }
+  }, [stack.length]);
+
+  useEffect(() => {
+    const handlePopState = (e: PopStateEvent) => {
+      if (stack.length > 1) {
+        e.preventDefault();
+        setStack(prev => prev.slice(0, -1));
+      } else if (stack.length === 1) {
+        e.preventDefault();
         setStack([]);
       }
     };
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
-  }, [stack]);
+  }, [stack.length]);
 
   const openStack = useCallback((s: string[]) => setStack(s), []);
   const push = useCallback((term: string) => setStack(prev => [...prev, term]), []);

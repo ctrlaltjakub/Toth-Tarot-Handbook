@@ -257,18 +257,22 @@ export const glossary: Record<string, GlossaryEntry> = {
   'Cardinal': {
     term: 'Cardinal',
     shortDef: 'One of the three qualities. Cardinal signs ({Aries}, {Cancer}, {Libra}, {Capricorn}) initiate action and mark the beginning of each season. They are the movers, the starters, the forces that set things in motion.',
+    link: '/astrology?view=element&name=Cardinal',
   },
   'Fixed': {
     term: 'Fixed',
     shortDef: 'One of the three qualities. Fixed signs ({Taurus}, {Leo}, {Scorpio}, {Aquarius}) sustain and concentrate energy. They are the stabilizers, the endurers, the forces that maintain what has been initiated.',
+    link: '/astrology?view=element&name=Fixed',
   },
   'Mutable': {
     term: 'Mutable',
     shortDef: 'One of the three qualities. Mutable signs ({Gemini}, {Virgo}, {Sagittarius}, {Pisces}) adapt and transform energy. They are the changers, the refiners, the forces that dissolve old forms to prepare for new ones.',
+    link: '/astrology?view=element&name=Mutable',
   },
   'Quality': {
     term: 'Quality',
     shortDef: 'The three modes of expression in astrology: {Cardinal} (initiating), {Fixed} (sustaining), and {Mutable} (adapting). Each element appears once in each quality, creating the 12 zodiac signs (e.g. {Fire}: {Aries}/Cardinal, {Leo}/Fixed, {Sagittarius}/Mutable).',
+    link: '/astrology',
   },
 
   // === Thelemic Terms ===

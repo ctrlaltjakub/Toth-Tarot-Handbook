@@ -44,8 +44,21 @@ const GlossaryManagerContext = createContext<GlossaryManagerContextType | null>(
 let navigatingForward = false;
 
 export const GlossaryManagerProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [stack, setStack] = useState<string[]>([]);
+  const [stack, setStack] = useState<string[]>(() => {
+    // Restore glossary stack on initial load (e.g. page refresh)
+    const saved = loadAndClearStack();
+    return saved && saved.length > 0 ? saved : [];
+  });
   const location = useLocation();
+
+  // Persist stack to sessionStorage on every change so refresh can restore it
+  useEffect(() => {
+    if (stack.length > 0) {
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(stack));
+    } else {
+      sessionStorage.removeItem(STORAGE_KEY);
+    }
+  }, [stack]);
 
   // On route change, restore stack only on Back navigation (not forward "See more")
   useEffect(() => {

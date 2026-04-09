@@ -43,6 +43,7 @@ const GlossaryManagerContext = createContext<GlossaryManagerContextType | null>(
 // Flags to control navigation behavior
 let navigatingForward = false;
 let preserveStorage = false;
+let poppingBack = false;
 
 export const GlossaryManagerProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [stack, setStack] = useState<string[]>(() => {
@@ -78,21 +79,25 @@ export const GlossaryManagerProvider: React.FC<{ children: React.ReactNode }> = 
     }
   }, [location.pathname, location.search]);
 
-  // Browser back: step back through glossary stack, then close
-  // We push a history entry each time a term is added, so back pops one at a time
+  // Push a history entry only when the stack grows (user clicking deeper)
+  const prevLengthRef = React.useRef(stack.length);
   useEffect(() => {
-    if (stack.length > 0) {
+    const prev = prevLengthRef.current;
+    prevLengthRef.current = stack.length;
+    // Only push history when stack grew (not on pop or close)
+    if (stack.length > prev && !poppingBack) {
       window.history.pushState({ glossaryDepth: stack.length }, '');
     }
+    poppingBack = false;
   }, [stack.length]);
 
   useEffect(() => {
-    const handlePopState = (e: PopStateEvent) => {
+    const handlePopState = () => {
       if (stack.length > 1) {
-        e.preventDefault();
+        poppingBack = true;
         setStack(prev => prev.slice(0, -1));
       } else if (stack.length === 1) {
-        e.preventDefault();
+        poppingBack = true;
         setStack([]);
       }
     };

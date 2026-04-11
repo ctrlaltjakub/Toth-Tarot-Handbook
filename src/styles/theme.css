@@ -982,11 +982,11 @@ svg text {
     height: 100dvh;
   }
   .search-overlay-panel.is-empty {
-    transform: translateY(-20dvh);
+    transform: translateY(-5dvh);
   }
   .search-overlay-panel {
     transform: translateY(0);
-    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
     max-height: 70dvh;
     display: flex;
     flex-direction: column;

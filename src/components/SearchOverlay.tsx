@@ -10,6 +10,7 @@ import { zodiacSigns, planets } from '../data/astrologyData';
 interface SearchOverlayProps {
   onClose: () => void;
   initialQuery?: string;
+  onQueryChange?: (q: string) => void;
 }
 
 export interface SearchResult {
@@ -143,8 +144,12 @@ export const colorForType = (type: string) => {
   }
 };
 
-const SearchOverlay: React.FC<SearchOverlayProps> = ({ onClose, initialQuery = '' }) => {
-  const [query, setQuery] = useState(initialQuery);
+const SearchOverlay: React.FC<SearchOverlayProps> = ({ onClose, initialQuery = '', onQueryChange }) => {
+  const [query, setQueryState] = useState(initialQuery);
+  const setQuery = (q: string) => {
+    setQueryState(q);
+    onQueryChange?.(q);
+  };
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 

@@ -195,7 +195,7 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ onClose, initialQuery = '
           <Search size={18} style={{ color: 'var(--text-muted)', flexShrink: 0 }} />
           <input
             ref={inputRef}
-            type="search"
+            type="text"
             inputMode="search"
             placeholder="Search cards, articles, sephiroth..."
             value={query}
@@ -210,34 +210,40 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ onClose, initialQuery = '
             data-form-type="other"
             data-1p-ignore="true"
           />
-          <button onClick={onClose} className="search-overlay-close">
+          <button
+            onClick={() => { setQuery(''); onClose(); }}
+            className="search-overlay-close"
+            aria-label="Close and clear"
+          >
             <X size={18} />
           </button>
         </div>
 
-        {query.trim().length > 0 && (
+        <div className="search-overlay-results-wrap">
           <div className="search-overlay-results">
-            {results.length === 0 ? (
-              <div className="search-overlay-empty">No results for "{query}"</div>
-            ) : (
-              results.slice(0, 20).map((r, i) => (
-                <button
-                  key={`${r.type}-${r.path}-${i}`}
-                  className="search-overlay-result"
-                  onClick={() => handleSelect(r.path)}
-                >
-                  <span style={{ color: colorForType(r.type), flexShrink: 0 }}>
-                    {iconForType(r.type)}
-                  </span>
-                  <span className="search-overlay-result-text">
-                    <span className="search-overlay-result-title">{r.title}</span>
-                    <span className="search-overlay-result-subtitle">{r.subtitle}</span>
-                  </span>
-                </button>
-              ))
+            {query.trim().length > 0 && (
+              results.length === 0 ? (
+                <div className="search-overlay-empty">No results for "{query}"</div>
+              ) : (
+                results.slice(0, 20).map((r, i) => (
+                  <button
+                    key={`${r.type}-${r.path}-${i}`}
+                    className="search-overlay-result"
+                    onClick={() => handleSelect(r.path)}
+                  >
+                    <span style={{ color: colorForType(r.type), flexShrink: 0 }}>
+                      {iconForType(r.type)}
+                    </span>
+                    <span className="search-overlay-result-text">
+                      <span className="search-overlay-result-title">{r.title}</span>
+                      <span className="search-overlay-result-subtitle">{r.subtitle}</span>
+                    </span>
+                  </button>
+                ))
+              )
             )}
           </div>
-        )}
+        </div>
         </div>
       </motion.div>
     </>

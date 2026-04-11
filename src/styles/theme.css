@@ -971,30 +971,40 @@ svg text {
 }
 
 @media (max-width: 767px) {
-  /* Mobile: anchor panel near the bottom of dynamic viewport (above keyboard).
-     Empty state: lift up by ~20dvh so it sits comfortably above the keyboard.
-     With results: slide down to fill the gap with results between input and keyboard. */
+  /* Mobile: anchor panel near the bottom of the dynamic viewport (above the keyboard).
+     The results wrapper uses the modern grid-rows 0fr→1fr trick so the panel
+     grows smoothly upward instead of jumping when results appear. */
   .search-overlay {
     align-items: flex-end;
-    padding-bottom: 1rem;
-    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    padding-bottom: 5dvh;
     height: 100vh;
     height: 100dvh;
   }
-  .search-overlay-panel.is-empty {
-    transform: translateY(-5dvh);
-  }
   .search-overlay-panel {
-    transform: translateY(0);
-    transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-    max-height: 70dvh;
+    max-height: 75dvh;
     display: flex;
     flex-direction: column;
   }
-  .search-overlay-results {
-    max-height: none;
-    flex: 1;
+  .search-overlay-results-wrap {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s cubic-bezier(0.22, 1, 0.36, 1);
     min-height: 0;
+  }
+  .search-overlay-panel:not(.is-empty) .search-overlay-results-wrap {
+    grid-template-rows: 1fr;
+  }
+  .search-overlay-results {
+    overflow-y: auto;
+    min-height: 0;
+    max-height: none;
+  }
+}
+
+/* Desktop: results wrap is just a passthrough */
+@media (min-width: 768px) {
+  .search-overlay-results-wrap {
+    display: contents;
   }
 }
 

@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { Link, useNavigate } from 'react-router-dom';
 import { Search, ChevronDown, ChevronUp, Github } from 'lucide-react';
-import SearchOverlay from '../components/SearchOverlay';
+import { runSearch, iconForType, colorForType } from '../components/SearchOverlay';
 
 const Home: React.FC = () => {
   const [expanded, setExpanded] = useState(false);
@@ -16,21 +16,13 @@ const Home: React.FC = () => {
   const kofiRef = useRef<HTMLDivElement>(null);
   const impressumRef = useRef<HTMLDivElement>(null);
 
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
-  const [searchOpen, setSearchOpen] = useState(false);
+  const searchResults = searchQuery.trim().length > 0 ? runSearch(searchQuery) : [];
 
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(e.target.value);
-    if (!searchOpen) setSearchOpen(true);
-  };
-
-  const handleSearchFocus = () => {
-    if (!searchOpen) setSearchOpen(true);
-  };
-
-  const closeSearch = () => {
-    setSearchOpen(false);
+  const handleSelectResult = (path: string) => {
     setSearchQuery('');
+    navigate(path);
   };
 
   const [kofiOpen, setKofiOpen] = useState(false);
@@ -130,14 +122,51 @@ const Home: React.FC = () => {
           type="text"
           placeholder="Search cards, signs, planets, sephiroth..."
           value={searchQuery}
-          onChange={handleSearchChange}
-          onFocus={handleSearchFocus}
+          onChange={(e) => setSearchQuery(e.target.value)}
           className="search-input"
           style={{ paddingLeft: '3rem', paddingRight: '4rem', width: '100%' }}
         />
         <span style={{ position: 'absolute', right: '1rem', top: '50%', transform: 'translateY(-50%)', fontSize: '0.75rem', color: 'var(--text-subtle)', opacity: 0.6, border: '1px solid var(--border-subtle)', borderRadius: '4px', padding: '0.1rem 0.4rem', pointerEvents: 'none' }}>
           Ctrl+K
         </span>
+
+        {searchQuery.trim().length > 0 && (
+          <div style={{
+            position: 'absolute',
+            top: 'calc(100% + 0.5rem)',
+            left: 0,
+            right: 0,
+            maxHeight: '60vh',
+            overflowY: 'auto',
+            background: 'var(--bg-card)',
+            border: '1px solid var(--border-subtle)',
+            borderRadius: '12px',
+            boxShadow: '0 8px 24px rgba(0,0,0,0.3)',
+            zIndex: 50,
+          }}>
+            {searchResults.length === 0 ? (
+              <div style={{ padding: '1rem', textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
+                No results for "{searchQuery}"
+              </div>
+            ) : (
+              searchResults.slice(0, 20).map((r, i) => (
+                <button
+                  key={`${r.type}-${r.path}-${i}`}
+                  className="search-overlay-result"
+                  onClick={() => handleSelectResult(r.path)}
+                >
+                  <span style={{ color: colorForType(r.type), flexShrink: 0 }}>
+                    {iconForType(r.type)}
+                  </span>
+                  <span className="search-overlay-result-text">
+                    <span className="search-overlay-result-title">{r.title}</span>
+                    <span className="search-overlay-result-subtitle">{r.subtitle}</span>
+                  </span>
+                </button>
+              ))
+            )}
+          </div>
+        )}
       </div>
 
       {/* Intro text — dynamically clamps to fill viewport */}
@@ -272,11 +301,6 @@ const Home: React.FC = () => {
           Impressum
         </Link>
       </div>
-
-      {/* Search overlay (Home-controlled, seeded with current input value) */}
-      <AnimatePresence>
-        {searchOpen && <SearchOverlay onClose={closeSearch} initialQuery={searchQuery} />}
-      </AnimatePresence>
 
       {/* Ko-fi donation overlay */}
       {kofiOpen && (

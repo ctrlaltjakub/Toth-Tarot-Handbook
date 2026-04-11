@@ -1,19 +1,44 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { glossary } from '../data/glossaryData';
+import { tarotData } from '../data/tarotData';
 import GlossaryTerm from '../components/GlossaryTerm';
 
 // Sorted by length (longest first) to match longer terms before shorter substrings
 const sortedTerms = Object.keys(glossary).sort((a, b) => b.length - a.length);
 
-// Build a regex that matches any glossary term as a whole word
+// Build a map of card-name variants → card id, for inline linking
+// e.g. "The Hierophant", "Hierophant", "The Hierophant (V)" → '5-the-hierophant'
+const cardNameToId = new Map<string, string>();
+for (const card of tarotData) {
+  const fullName = card.name; // e.g. "The Hierophant"
+  cardNameToId.set(fullName, card.id);
+  // Also accept the bare name without leading "The"
+  if (fullName.startsWith('The ')) {
+    cardNameToId.set(fullName.slice(4), card.id);
+  }
+}
+
+// Sort card names by length (longest first) so "The Hierophant" matches before "Hierophant"
+const sortedCardNames = Array.from(cardNameToId.keys()).sort((a, b) => b.length - a.length);
+
+// Combined pattern: card names OR glossary terms
+const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const termPattern = new RegExp(
-  `\\b(${sortedTerms.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})\\b`,
+  `\\b(${[...sortedCardNames, ...sortedTerms].map(escape).join('|')})\\b`,
   'g'
 );
 
+const tarotLinkStyle: React.CSSProperties = {
+  color: 'var(--accent-warm)',
+  textDecoration: 'underline',
+  textDecorationStyle: 'dotted',
+  textUnderlineOffset: '2px',
+};
+
 /**
- * Takes a string and returns React nodes with glossary terms wrapped in <GlossaryTerm>.
- * Only processes plain string children — leaves React elements untouched.
+ * Takes a string and returns React nodes with glossary terms wrapped in <GlossaryTerm>
+ * and card names wrapped in <Link> to the card detail page.
  */
 export function autoLinkGlossary(text: string): React.ReactNode[] {
   const nodes: React.ReactNode[] = [];
@@ -33,8 +58,17 @@ export function autoLinkGlossary(text: string): React.ReactNode[] {
       nodes.push(text.slice(lastIndex, matchIndex));
     }
 
-    // Add the glossary term component
-    nodes.push(<GlossaryTerm key={`gl-${key++}`} term={term} />);
+    // Card name takes priority over glossary term
+    const cardId = cardNameToId.get(term);
+    if (cardId) {
+      nodes.push(
+        <Link key={`tc-${key++}`} to={`/tarot/${cardId}`} style={tarotLinkStyle}>
+          {term}
+        </Link>
+      );
+    } else {
+      nodes.push(<GlossaryTerm key={`gl-${key++}`} term={term} />);
+    }
 
     lastIndex = matchIndex + match[0].length;
   }

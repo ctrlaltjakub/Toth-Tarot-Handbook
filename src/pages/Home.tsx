@@ -51,8 +51,10 @@ const Home: React.FC = () => {
     const isMobile = window.innerWidth < 768;
     // CSS padding-bottom already reserves space for the fixed navbar,
     // so we only account for that padding here — not navbarH separately
-    const bottomPad = isMobile ? 78 : 0;  // calc(0.5rem + 70px) ≈ 78 on mobile
-    const topPad = isMobile ? 0 : 56;     // padding-top on desktop
+    // Mobile: calc(1.5rem + 70px + safe-area) ≈ 94+ depending on device
+    const safeArea = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--safe-bottom') || '0') || 0;
+    const bottomPad = isMobile ? (94 + safeArea) : 0;
+    const topPad = isMobile ? 0 : 56;
 
     const headerH = header.getBoundingClientRect().height;
     const searchH = search.getBoundingClientRect().height;

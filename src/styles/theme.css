@@ -223,7 +223,7 @@ a {
   .main-content {
     padding: 1rem;
     padding-top: 0;
-    padding-bottom: calc(0.5rem + 70px);
+    padding-bottom: calc(1.5rem + 70px + env(safe-area-inset-bottom, 0px));
   }
 }
 

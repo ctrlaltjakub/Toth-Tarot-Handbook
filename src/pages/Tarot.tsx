@@ -159,12 +159,12 @@ export const Tarot: React.FC = () => {
                   {card.name}
                 </h3>
 
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginTop: '0.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-                  <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem', display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'baseline' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginTop: '0.5rem', gap: '1rem' }}>
+                  <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem', display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'baseline', flex: 1, minWidth: 0 }}>
                     {card.hebrewLetter && <span><strong>Hebrew:</strong> {card.hebrewLetter.split(' - ')[0]}</span>}
                     {card.astrology && <span className="astro-symbols"><strong>Astrology:</strong> <AstroText text={card.astrology.split('(')[0].trim()} /></span>}
                   </div>
-                  <div style={{ color: 'var(--accent-gold)', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em', flexShrink: 0 }}>
+                  <div style={{ color: 'var(--accent-gold)', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em', flexShrink: 0, marginTop: '0.1rem' }}>
                     View <ChevronRight size={16} />
                   </div>
                 </div>

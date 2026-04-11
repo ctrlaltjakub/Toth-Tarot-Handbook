@@ -25,6 +25,22 @@ const Home: React.FC = () => {
     navigate(path);
   };
 
+  // Close search dropdown when clicking outside
+  useEffect(() => {
+    if (searchQuery.trim().length === 0) return;
+    const handleClickOutside = (e: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
+        setSearchQuery('');
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [searchQuery]);
+
   const [kofiOpen, setKofiOpen] = useState(false);
 
   const calcLines = useCallback(() => {

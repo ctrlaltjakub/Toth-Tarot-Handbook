@@ -28,7 +28,7 @@ const Home: React.FC = () => {
   // Close search dropdown when clicking outside
   useEffect(() => {
     if (searchQuery.trim().length === 0) return;
-    const handleClickOutside = (e: MouseEvent) => {
+    const handleClickOutside = (e: Event) => {
       if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
         setSearchQuery('');
       }

@@ -9,6 +9,7 @@ import { zodiacSigns, planets } from '../data/astrologyData';
 
 interface SearchOverlayProps {
   onClose: () => void;
+  initialQuery?: string;
 }
 
 interface SearchResult {
@@ -18,13 +19,16 @@ interface SearchResult {
   path: string;
 }
 
-const SearchOverlay: React.FC<SearchOverlayProps> = ({ onClose }) => {
-  const [query, setQuery] = useState('');
+const SearchOverlay: React.FC<SearchOverlayProps> = ({ onClose, initialQuery = '' }) => {
+  const [query, setQuery] = useState(initialQuery);
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     inputRef.current?.focus();
+    // Move caret to end after focusing
+    const len = inputRef.current?.value.length ?? 0;
+    inputRef.current?.setSelectionRange(len, len);
   }, []);
 
   useEffect(() => {

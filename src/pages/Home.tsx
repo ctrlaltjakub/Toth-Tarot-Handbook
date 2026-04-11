@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Search, ChevronDown, ChevronUp, Github } from 'lucide-react';
+import SearchOverlay from '../components/SearchOverlay';
 
 const Home: React.FC = () => {
   const [expanded, setExpanded] = useState(false);
@@ -15,8 +16,21 @@ const Home: React.FC = () => {
   const kofiRef = useRef<HTMLDivElement>(null);
   const impressumRef = useRef<HTMLDivElement>(null);
 
-  const openSearch = () => {
-    document.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }));
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchOpen, setSearchOpen] = useState(false);
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+    if (!searchOpen) setSearchOpen(true);
+  };
+
+  const handleSearchFocus = () => {
+    if (!searchOpen) setSearchOpen(true);
+  };
+
+  const closeSearch = () => {
+    setSearchOpen(false);
+    setSearchQuery('');
   };
 
   const [kofiOpen, setKofiOpen] = useState(false);
@@ -107,17 +121,23 @@ const Home: React.FC = () => {
         <h1>Thoth Tarot Handbook</h1>
       </header>
 
-      {/* Search shortcut */}
-      <div ref={searchRef} className="search-container" onClick={openSearch} style={{ cursor: 'pointer' }}>
-        <div style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }}>
+      {/* Search input */}
+      <div ref={searchRef} className="search-container" style={{ position: 'relative' }}>
+        <div style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)', pointerEvents: 'none' }}>
           <Search size={20} />
         </div>
-        <div className="search-input" style={{ display: 'flex', alignItems: 'center', color: 'var(--text-subtle)', userSelect: 'none' }}>
-          Search cards, signs, planets, sephiroth...
-          <span style={{ marginLeft: 'auto', fontSize: '0.75rem', color: 'var(--text-subtle)', opacity: 0.6, border: '1px solid var(--border-subtle)', borderRadius: '4px', padding: '0.1rem 0.4rem' }}>
-            Ctrl+K
-          </span>
-        </div>
+        <input
+          type="text"
+          placeholder="Search cards, signs, planets, sephiroth..."
+          value={searchQuery}
+          onChange={handleSearchChange}
+          onFocus={handleSearchFocus}
+          className="search-input"
+          style={{ paddingLeft: '3rem', paddingRight: '4rem', width: '100%' }}
+        />
+        <span style={{ position: 'absolute', right: '1rem', top: '50%', transform: 'translateY(-50%)', fontSize: '0.75rem', color: 'var(--text-subtle)', opacity: 0.6, border: '1px solid var(--border-subtle)', borderRadius: '4px', padding: '0.1rem 0.4rem', pointerEvents: 'none' }}>
+          Ctrl+K
+        </span>
       </div>
 
       {/* Intro text — dynamically clamps to fill viewport */}
@@ -252,6 +272,11 @@ const Home: React.FC = () => {
           Impressum
         </Link>
       </div>
+
+      {/* Search overlay (Home-controlled, seeded with current input value) */}
+      <AnimatePresence>
+        {searchOpen && <SearchOverlay onClose={closeSearch} initialQuery={searchQuery} />}
+      </AnimatePresence>
 
       {/* Ko-fi donation overlay */}
       {kofiOpen && (

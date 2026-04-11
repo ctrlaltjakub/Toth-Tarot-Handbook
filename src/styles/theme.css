@@ -971,9 +971,30 @@ svg text {
 }
 
 @media (max-width: 767px) {
+  /* Mobile: anchor panel near the bottom of dynamic viewport (above keyboard).
+     Empty state: lift up by ~20dvh so it sits comfortably above the keyboard.
+     With results: slide down to fill the gap with results between input and keyboard. */
   .search-overlay {
-    align-items: flex-start;
-    padding-top: 4rem;
+    align-items: flex-end;
+    padding-bottom: 1rem;
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    height: 100vh;
+    height: 100dvh;
+  }
+  .search-overlay-panel.is-empty {
+    transform: translateY(-20dvh);
+  }
+  .search-overlay-panel {
+    transform: translateY(0);
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    max-height: 70dvh;
+    display: flex;
+    flex-direction: column;
+  }
+  .search-overlay-results {
+    max-height: none;
+    flex: 1;
+    min-height: 0;
   }
 }
 

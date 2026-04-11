@@ -185,16 +185,25 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ onClose, initialQuery = '
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
       >
-        <div className="search-overlay-panel">
+        <div className={`search-overlay-panel ${query.trim().length === 0 ? 'is-empty' : ''}`}>
         <div className="search-overlay-input-row">
           <Search size={18} style={{ color: 'var(--text-muted)', flexShrink: 0 }} />
           <input
             ref={inputRef}
-            type="text"
+            type="search"
+            inputMode="search"
             placeholder="Search cards, articles, sephiroth..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="search-overlay-input"
+            autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize="off"
+            spellCheck={false}
+            name="thoth-search"
+            data-lpignore="true"
+            data-form-type="other"
+            data-1p-ignore="true"
           />
           <button onClick={onClose} className="search-overlay-close">
             <X size={18} />

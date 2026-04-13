@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { zodiacSigns, planets } from '../data/astrologyData';
+import PlanetGlyph from './PlanetGlyph';
 
 interface ZodiacWheelSVGProps {
   onSignClick: (signName: string) => void;
@@ -109,8 +110,8 @@ const ZodiacWheelSVG: React.FC<ZodiacWheelSVGProps> = ({
     signGlyphFont: 22,
     elementSymbolFont: 30,
     elementNameFont: 12,
-    planetR: 32,
-    planetOuterR: 36,
+    planetR: 36,
+    planetOuterR: 40,
     planetGlyphFont: 35,
     planetNameFont: 10,
     terraR: 32,
@@ -346,7 +347,7 @@ const ZodiacWheelSVG: React.FC<ZodiacWheelSVGProps> = ({
       })}
 
       {/* === Orbiting Planets (outside the wheel) === */}
-      {planets.map(planet => {
+      {planets.filter(p => p.name !== 'Neptune' && p.name !== 'Pluto').map(planet => {
         const pos = getPlanetPos(planet.name);
 
         return (
@@ -382,7 +383,15 @@ const ZodiacWheelSVG: React.FC<ZodiacWheelSVGProps> = ({
             <g onClick={(e) => { e.stopPropagation(); onPlanetClick(planet.name); }} style={{ cursor: 'pointer' }}>
               <circle cx={pos.x} cy={pos.y} r={M.planetR} fill="var(--bg-card)" stroke="var(--ctp-surface2)" strokeWidth="0.8" opacity="0.85" />
               <circle cx={pos.x} cy={pos.y} r={M.planetOuterR} fill="none" stroke="var(--ctp-surface1)" strokeWidth="0.4" opacity="0.25" />
-              <text x={pos.x} y={pos.y - (mobileMode ? 6 : 4)} textAnchor="middle" dominantBaseline="central" fill="var(--text-main)" fontSize={(planet.glyph === '♀' || planet.glyph === '♂') ? M.planetGlyphFont * 1.4 : M.planetGlyphFont} fontWeight={M.fw} className="astro-symbols" stroke={mobileMode ? 'var(--text-main)' : 'none'} strokeWidth={mobileMode ? ((planet.glyph === '♀' || planet.glyph === '♂') ? 0.8 : 0.4) : 0} paintOrder="stroke">{planet.glyph + '\uFE0E'}</text>
+              {(() => {
+                const glyphSize = M.planetGlyphFont * 0.85;
+                const glyphY = pos.y - (mobileMode ? 6 : 4);
+                return (
+                  <svg x={pos.x - glyphSize / 2} y={glyphY - glyphSize / 2} width={glyphSize} height={glyphSize} overflow="visible">
+                    <PlanetGlyph name={planet.name} size={glyphSize} color="var(--text-main)" strokeWidth={mobileMode ? 0.8 : 0.6} />
+                  </svg>
+                );
+              })()}
               <text x={pos.x} y={pos.y + (mobileMode ? 16 : 16)} textAnchor="middle" dominantBaseline="central" fill="var(--text-muted)" fontSize={M.planetNameFont} fontFamily="var(--font-serif)" fontWeight={M.fw} letterSpacing="0.04em">{planet.name.toUpperCase()}</text>
             </g>
           </React.Fragment>
@@ -402,6 +411,30 @@ const ZodiacWheelSVG: React.FC<ZodiacWheelSVGProps> = ({
         <path d="M -30,-30 L -10,-30 M -30,-30 L -30,-10" /><path d="M 730,-30 L 710,-30 M 730,-30 L 730,-10" />
         <path d="M -30,730 L -10,730 M -30,730 L -30,710" /><path d="M 730,730 L 710,730 M 730,730 L 730,710" />
       </g>
+
+      {/* Modern planets — static, aligned with Fixed square upper corners */}
+      {(() => {
+        const modernPlanets = [
+          { name: 'Neptune', x: 38, y: 38 },
+          { name: 'Pluto', x: 662, y: 38 },
+        ];
+        const glyphSize = mobileMode ? 32 : 26;
+        const circleR = M.planetR;
+        const outerR = M.planetOuterR;
+        const nameFont = mobileMode ? 9 : 7;
+        const sw = mobileMode ? 0.8 : 0.6;
+        return modernPlanets.map(mp => (
+          <g key={mp.name} onClick={(e) => { e.stopPropagation(); onPlanetClick(mp.name); }} style={{ cursor: 'pointer' }}>
+            <circle cx={mp.x} cy={mp.y} r={outerR + 8} fill="none" stroke="var(--ctp-surface1)" strokeWidth="0.5" strokeDasharray="3,3" opacity="0.3" />
+            <circle cx={mp.x} cy={mp.y} r={circleR} fill="var(--bg-card)" stroke="var(--ctp-surface2)" strokeWidth="0.8" opacity="0.85" />
+            <circle cx={mp.x} cy={mp.y} r={outerR} fill="none" stroke="var(--ctp-surface1)" strokeWidth="0.4" opacity="0.25" />
+            <svg x={mp.x - glyphSize / 2} y={mp.y - glyphSize / 2 - 4} width={glyphSize} height={glyphSize} overflow="visible">
+              <PlanetGlyph name={mp.name} size={glyphSize} color="var(--text-main)" strokeWidth={sw} />
+            </svg>
+            <text x={mp.x} y={mp.y + (mobileMode ? 18 : 16)} textAnchor="middle" dominantBaseline="central" fill="var(--text-muted)" fontSize={nameFont} fontFamily="var(--font-serif)" fontWeight={M.fw} letterSpacing="0.04em">{mp.name.toUpperCase()}</text>
+          </g>
+        ));
+      })()}
     </svg>
   );
 };

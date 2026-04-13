@@ -285,6 +285,8 @@ const TreeOfLifeSVG: React.FC<TreeOfLifeSVGProps> = ({
 
       {showAbyssDaath &&
         <g onClick={(e) => { e.stopPropagation(); onDaathClick(); }} style={{ cursor: 'pointer' }}>
+          {/* Invisible hit area so clicks don't fall through to paths */}
+          <circle cx={daath.x} cy={daath.y} r={22} fill="var(--bg-deep)" opacity="0.85" />
           <circle
             cx={daath.x} cy={daath.y} r={20}
             fill="none"

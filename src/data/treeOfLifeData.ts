@@ -54,7 +54,7 @@ export const sephiroth: Sephirah[] = [
     name: 'Kether',
     hebrew: 'כתר',
     meaning: 'Crown',
-    planet: 'Primum Mobile (First Swirlings)',
+    planet: 'Primum Mobile (First Swirlings) / ♆ Neptune',
     pillar: 'Mildness',
     world: 'Atziluth',
     colorVar: '--seph-kether',
@@ -62,9 +62,9 @@ export const sephiroth: Sephirah[] = [
     pipCards: ['ace-of-wands', 'ace-of-cups', 'ace-of-swords', 'ace-of-disks'],
     description: `Kether is the Crown, the first and highest Sephirah — the dimensionless point from which all existence emanates. It is pure Being, undifferentiated consciousness, the root of all roots. It cannot be comprehended by the mind because it precedes the mind; it can only be approached through the annihilation of thought itself.
 
-In Jungian terms, Kether corresponds to the Self in its most abstract and unknowable form — the origin point of the psyche that can never be directly observed, only inferred from its effects. The four Aces reside here as the seeds of the four elements, containing within them the entire Tree in potential but not yet in manifestation.
+Kether is attributed to the Primum Mobile — the First Swirlings — the initial movement that precedes even the first distinction between subject and object. Some post-Crowley Kabbalists also place Neptune here, as the planet of boundless, pre-differentiated unity — the oceanic consciousness that precedes all form, mirroring Kether's nature as the state before boundaries exist.
 
-Kether is attributed to the Primum Mobile — the First Swirlings — the initial movement that precedes even the first distinction between subject and object. It is the ultimate source and the ultimate mystery.`
+In Jungian terms, Kether corresponds to the Self in its most abstract and unknowable form — the origin point of the psyche that can never be directly observed, only inferred from its effects. The four Aces reside here as the seeds of the four elements, containing within them the entire Tree in potential but not yet in manifestation. It is the ultimate source and the ultimate mystery.`
   },
   {
     number: 2,
@@ -231,7 +231,7 @@ export const daath = {
   x: 250, y: 178,
   description: `Daath is Knowledge — the hidden, unnumbered Sephirah that sits in the Abyss between the Supernal Triad and the lower seven. It is not truly a Sephirah but a *hole* in the Tree — the place where the Abyss yawns, where the ordered structure of emanation breaks down.
 
-Daath represents the experience of crossing the Abyss — the terrifying dissolution of the Ego that is required for genuine spiritual attainment. It is the "false crown" that tempts the Adept with the illusion of Knowledge (as opposed to the genuine Understanding of Binah). Those who fail at the crossing become "Black Brothers" — trapped in Daath, possessing knowledge without understanding, power without wisdom.
+Daath represents the experience of crossing the Abyss — the terrifying dissolution of the Ego that is required for genuine spiritual attainment. It is the "false crown" that tempts the Adept with the illusion of Knowledge (as opposed to the genuine Understanding of Binah). Those who fail at the crossing become "Black Brothers" — trapped in Daath, possessing knowledge without understanding, power without wisdom. Some modern Kabbalists place Pluto here — the planet of total, irreversible transformation that annihilates everything inauthentic. Pluto's demand for absolute honesty mirrors Daath's function as the void that swallows all pretension.
 
 In Jungian terms, Daath corresponds to the experience of psychic dissolution — the breakdown of all categories, all certainties, all structures of meaning — that precedes genuine transformation. It is the dark night of the soul at its most extreme.`
 };

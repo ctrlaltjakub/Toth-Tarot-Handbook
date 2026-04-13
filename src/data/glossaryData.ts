@@ -887,9 +887,14 @@ export const glossary: Record<string, GlossaryEntry> = {
     term: 'Dark Night of the Soul',
     shortDef: 'A phrase from 16th-century Spanish mystic St. John of the Cross describing a period of profound spiritual desolation — the feeling that God/meaning has completely withdrawn. In Jungian terms, the crisis when the {Ego} has lost all connection to the {Self}. Embodied by The Moon (XVIII).',
   },
+  'Neptune': {
+    term: 'Neptune',
+    shortDef: 'The planet of mysticism, illusion, and the dissolution of boundaries — modern ruler of {Pisces}. Neptune governs dreams, imagination, compassion, addiction, and the oceanic unconscious. In myth, Neptune/Poseidon rules the sea, the realm without fixed forms.',
+    link: '/astrology?view=planet&name=Neptune',
+  },
   'Pluto': {
     term: 'Pluto',
-    shortDef: 'The planet of total, irreversible transformation — attributed to The Aeon (XX). In myth, Pluto/Hades is the Roman god of the underworld who demands that everything hidden be brought to the surface. Astrologically represents death, rebirth, depth psychology, and the destruction of what is false.',
+    shortDef: 'The planet of total, irreversible transformation — modern ruler of {Scorpio}. In myth, Pluto/Hades is the Roman god of the underworld who demands that everything hidden be brought to the surface. Astrologically represents death, rebirth, depth psychology, and the destruction of what is false.',
     link: '/astrology?view=planet&name=Pluto',
   },
 

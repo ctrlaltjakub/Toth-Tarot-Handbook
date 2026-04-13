@@ -5,6 +5,7 @@ import { X } from 'lucide-react';
 import { sephiroth, paths, daath, worlds, abyss, pillars, type Sephirah, type TreePath } from '../data/treeOfLifeData';
 import { AstroText } from '../utils/formatSymbols';
 import { autoLinkGlossary } from '../utils/autoGlossary';
+import PlanetGlyph from './PlanetGlyph';
 
 interface TreeDetailPanelProps {
   type: 'sephirah' | 'path' | 'daath' | 'abyss' | 'world' | 'pillar' | null;
@@ -46,7 +47,19 @@ const SephirahDetail: React.FC<{ seph: Sephirah; onClose: () => void }> = ({ sep
       <div className="tree-panel-meta">
         <div className="tree-panel-meta-item">
           <span className="tree-panel-meta-label">Planet</span>
-          <span className="astro-symbols"><AstroText text={seph.planet} /></span>
+          <span className="astro-symbols">
+            {seph.planet.includes('Neptune') ? (
+              <>
+                <AstroText text={seph.planet.split('/')[0].trim()} />
+                {' / '}
+                <Link to="/astrology?view=planet&name=Neptune" style={{ color: 'var(--accent-lavender)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
+                  <PlanetGlyph name="Neptune" size={16} color="var(--accent-lavender)" strokeWidth={0.7} /> Neptune
+                </Link>
+              </>
+            ) : (
+              <AstroText text={seph.planet} />
+            )}
+          </span>
         </div>
       </div>
 
@@ -146,6 +159,16 @@ const DaathDetail: React.FC<{ onClose: () => void }> = ({ onClose }) => (
       </div>
       <button onClick={onClose} className="tree-panel-close"><X size={20} /></button>
     </div>
+
+    <div className="tree-panel-meta">
+      <div className="tree-panel-meta-item">
+        <span className="tree-panel-meta-label">Planet</span>
+        <Link to="/astrology?view=planet&name=Pluto" style={{ color: 'var(--accent-lavender)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
+          <PlanetGlyph name="Pluto" size={16} color="var(--accent-lavender)" strokeWidth={0.7} /> Pluto (modern)
+        </Link>
+      </div>
+    </div>
+
     <div className="tree-panel-body">
       {daath.description.split('\n\n').map((p, i) => <p key={i}>{autoLinkGlossary(p)}</p>)}
     </div>

@@ -598,6 +598,34 @@ export const planets: Planet[] = [
 
 **Jungian Meaning:** Uranus corresponds to the eruption of unconscious contents that cannot be predicted, controlled, or understood in advance — the psychic earthquake that shatters the old to make way for what has never existed before. As the planet associated with Chokmah, it represents the first lightning flash of awareness before it has been tamed by form or structure.`
   },
+  {
+    name: 'Neptune', glyph: '♆', sephirah: 'Kether', sephirahNumber: 1,
+    rules: [],
+    majorArcana: { cardId: '12-the-hanged-man', cardName: 'The Hanged Man', romanNumeral: 'XII' },
+    description: `Neptune is the Dissolver — the planet of mysticism, illusion, imagination, and the dissolution of boundaries between self and other, real and imagined, waking and dreaming. Discovered in 1846, Neptune has no formal place in the classical Golden Dawn system that Crowley inherited, but its influence permeates the Thoth deck's treatment of Pisces and the oceanic unconscious.
+
+**Modern Rulership:** Modern astrology assigns Neptune as ruler of Pisces, where it deepens the sign's already boundless receptivity into full mystical dissolution. Neptune in Pisces is the ocean recognizing itself as ocean — the dissolution of the individual drop back into the infinite. Neptune is also considered co-ruler alongside Jupiter, which provides the theological framework while Neptune provides the direct experience.
+
+**Tree of Life:** Some post-Crowley Kabbalists place Neptune at Kether, the Crown — the dimensionless point of pure being that precedes all differentiation. This attribution reflects Neptune's nature as the state before boundaries exist: not unconsciousness but pre-consciousness, the primordial unity from which all separation emerges.
+
+**Thoth Tarot:** Though not formally attributed to a Major Arcana card, Neptune's influence is strongest in The Hanged Man (XII), attributed to the Hebrew letter Mem (Water). The Hanged Man suspends himself voluntarily, surrendering the ego's orientation to receive vision from the depths — the Neptunian act par excellence. The card depicts the drowned god, the sacrifice that is simultaneously illumination.
+
+**Jungian Meaning:** Neptune corresponds to the collective unconscious itself — not its contents (those belong to individual planets and archetypes) but the medium in which they float. It is the psychic ocean, the field of participation mystique where individual boundaries dissolve and direct, unmediated experience of the numinous becomes possible. The shadow is the inability to return from dissolution: addiction, delusion, spiritual bypassing, and the confusion of ego-dissolution with enlightenment. Neptune demands the mystic's discipline — the capacity to dissolve and reconstitute, to drown and surface, repeatedly.`
+  },
+  {
+    name: 'Pluto', glyph: '♇', sephirah: 'Daath', sephirahNumber: 0,
+    rules: [],
+    majorArcana: { cardId: '20-the-aeon', cardName: 'The Aeon', romanNumeral: 'XX' },
+    description: `Pluto is the Transformer — the planet of irreversible change, death-and-rebirth, the underworld, and the power that dismantles entire structures so they can be rebuilt from the foundations. Discovered in 1930 (the year Crowley was completing the Thoth deck), Pluto arrived too late for formal integration but its energy is unmistakably present in the deck's treatment of Scorpio and the Death card.
+
+**Modern Rulership:** Modern astrology assigns Pluto as ruler (or co-ruler with Mars) of Scorpio. Where Mars in Scorpio is the surgeon's blade — precise, intentional, cutting — Pluto is the tectonic plate shift: slow, inexorable, total. Pluto does not reform; it annihilates and regenerates. Its processes operate on timescales that dwarf individual lifetimes, which is why Plutonian transits feel like fate rather than choice.
+
+**Tree of Life:** The most common post-Crowley attribution places Pluto at Daath — the hidden, unnumbered Sephirah in the Abyss between the Supernal Triad and the lower Tree. Daath is "Knowledge" — but knowledge gained through the total dissolution of the ego's pretensions. This is precisely Pluto's domain: the abyss that swallows everything that is not authentic, the crucible that reduces complex structures to their essential elements.
+
+**Thoth Tarot:** Pluto's energy is most visible in Death (XIII), the card of Scorpio, and in The Aeon (XX), which depicts the new aeon dawning through the destruction of the old. Crowley associated the Aeon of Horus with precisely the kind of wholesale civilizational transformation that Pluto represents — not reform but the death of one world-age and the birth of another.
+
+**Jungian Meaning:** Pluto corresponds to the deepest layer of the Shadow — not the personal shadow of repressed feelings and rejected traits, but the archetypal shadow: the collective, transpersonal darkness that contains humanity's capacity for destruction, domination, and annihilation alongside its capacity for total regeneration. Jung encountered this level in his own confrontation with the unconscious (the Red Book period) and recognized that the psyche contains forces that can destroy the ego entirely — and that this destruction, when met consciously, is the precondition for the most profound transformation. Pluto's psychological demand is absolute honesty: the willingness to see what is actually there, however terrible, and to let what must die, die.`
+  },
 ];
 
 // ============================================

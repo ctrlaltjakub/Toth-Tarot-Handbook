@@ -4,8 +4,23 @@ import { motion } from 'framer-motion';
 import { X } from 'lucide-react';
 import { zodiacSigns, planets, elements } from '../data/astrologyData';
 import QualityIcon from './QualityIcon';
+import PlanetGlyph from './PlanetGlyph';
 import { AstroText } from '../utils/formatSymbols';
 import { autoLinkGlossary } from '../utils/autoGlossary';
+
+// Map planet glyph characters to planet names for PlanetGlyph lookup
+const glyphToName: Record<string, string> = {
+  '☉': 'Sun', '☽': 'Moon', '☿': 'Mercury', '♀': 'Venus',
+  '♂': 'Mars', '♃': 'Jupiter', '♄': 'Saturn', '♅': 'Uranus',
+  '♆': 'Neptune', '♇': 'Pluto',
+};
+
+// Inline SVG planet glyph, falling back to AstroText for unknown glyphs
+const PlanetInline: React.FC<{ glyph: string; size?: number; color?: string }> = ({ glyph, size = 18, color = 'currentColor' }) => {
+  const name = glyphToName[glyph];
+  if (name) return <PlanetGlyph name={name} size={size} color={color} strokeWidth={0.7} />;
+  return <AstroText text={glyph} />;
+};
 
 // Map of card name fragments → card IDs, built from sign decans
 type CardLinkMap = Map<string, string>;
@@ -175,12 +190,16 @@ const SignDetail: React.FC<{ signName: string; onClose: () => void }> = ({ signN
       <div className="tree-panel-meta" style={{ flexWrap: 'wrap' }}>
         <div className="tree-panel-meta-item">
           <span className="tree-panel-meta-label">Ruler</span>
-          <span className="astro-symbols"><AstroText text={`${sign.rulerGlyph} ${sign.ruler}`} /></span>
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}>
+            <PlanetInline glyph={sign.rulerGlyph} size={16} /> {sign.ruler}
+          </span>
         </div>
         {sign.exaltation && (
           <div className="tree-panel-meta-item">
             <span className="tree-panel-meta-label">Exalted</span>
-            <span className="astro-symbols"><AstroText text={`${sign.exaltationGlyph} ${sign.exaltation}`} /></span>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}>
+              <PlanetInline glyph={sign.exaltationGlyph!} size={16} /> {sign.exaltation}
+            </span>
           </div>
         )}
       </div>
@@ -209,7 +228,7 @@ const SignDetail: React.FC<{ signName: string; onClose: () => void }> = ({ signN
           {sign.decans.map((decan, i) => (
             <Link key={i} to={`/tarot/${decan.cardId}`} className="tree-panel-link">
               <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem', width: '55px', flexShrink: 0 }}>{decan.degrees}</span>
-              <span className="astro-symbols" style={{ width: '80px', flexShrink: 0, whiteSpace: 'nowrap' }}><AstroText text={decan.subRulerGlyph} /> <span style={{ fontSize: '0.75rem' }}>{decan.subRuler}</span></span>
+              <span style={{ width: '80px', flexShrink: 0, whiteSpace: 'nowrap', display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}><PlanetInline glyph={decan.subRulerGlyph} size={14} /> <span style={{ fontSize: '0.75rem' }}>{decan.subRuler}</span></span>
               <span>{decan.cardName}</span>
             </Link>
           ))}
@@ -248,8 +267,8 @@ const PlanetDetail: React.FC<{ planetName: string; onClose: () => void }> = ({ p
           <span className="tree-panel-badge" style={{ color: 'var(--accent)' }}>
             Planet — {planet.sephirah}
           </span>
-          <h2 style={{ color: 'var(--accent)', margin: '0.25rem 0' }}>
-            <span className="astro-symbols" style={{ fontSize: '1.4rem', marginRight: '0.5rem' }}><AstroText text={planet.glyph} /></span>
+          <h2 style={{ color: 'var(--accent)', margin: '0.25rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <PlanetInline glyph={planet.glyph} size={22} color="var(--accent)" />
             {planet.name}
           </h2>
         </div>

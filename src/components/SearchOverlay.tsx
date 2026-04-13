@@ -151,13 +151,54 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ onClose, initialQuery = '
     onQueryChange?.(q);
   };
   const inputRef = useRef<HTMLInputElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     inputRef.current?.focus();
-    // Move caret to end after focusing
     const len = inputRef.current?.value.length ?? 0;
     inputRef.current?.setSelectionRange(len, len);
+  }, []);
+
+  // Prevent background page from scrolling while overlay is open
+  useEffect(() => {
+    const scrollY = window.scrollY;
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = '100%';
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      window.scrollTo(0, scrollY);
+    };
+  }, []);
+
+  // On mobile, use visualViewport to position the panel above the keyboard
+  useEffect(() => {
+    const vv = window.visualViewport;
+    if (!vv || !panelRef.current) return;
+    const update = () => {
+      if (!panelRef.current) return;
+      const keyboardOffset = window.innerHeight - vv.height;
+      if (keyboardOffset > 100) {
+        // Keyboard is open — position panel above it
+        panelRef.current.style.bottom = `${keyboardOffset + 12}px`;
+        panelRef.current.style.maxHeight = `${vv.height - 24}px`;
+      } else {
+        panelRef.current.style.bottom = '';
+        panelRef.current.style.maxHeight = '';
+      }
+    };
+    vv.addEventListener('resize', update);
+    vv.addEventListener('scroll', update);
+    update();
+    return () => {
+      vv.removeEventListener('resize', update);
+      vv.removeEventListener('scroll', update);
+    };
   }, []);
 
   useEffect(() => {
@@ -190,13 +231,13 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ onClose, initialQuery = '
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
       >
-        <div className={`search-overlay-panel ${query.trim().length === 0 ? 'is-empty' : ''}`}>
-        <div className="search-overlay-input-row">
+        <div ref={panelRef} className={`search-overlay-panel ${query.trim().length === 0 ? 'is-empty' : ''}`}>
+        <form role="search" autoComplete="off" onSubmit={(e) => e.preventDefault()} className="search-overlay-input-row">
           <Search size={18} style={{ color: 'var(--text-muted)', flexShrink: 0 }} />
           <input
             ref={inputRef}
-            type="text"
-            inputMode="search"
+            type="search"
+            enterKeyHint="search"
             placeholder="Search cards, articles, sephiroth..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
@@ -205,7 +246,6 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ onClose, initialQuery = '
             autoCorrect="off"
             autoCapitalize="off"
             spellCheck={false}
-            name="thoth-search"
             data-lpignore="true"
             data-form-type="other"
             data-1p-ignore="true"
@@ -217,7 +257,7 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ onClose, initialQuery = '
           >
             <X size={18} />
           </button>
-        </div>
+        </form>
 
         <div className="search-overlay-results-wrap">
           <div className="search-overlay-results">

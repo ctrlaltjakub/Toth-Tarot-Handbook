@@ -86,12 +86,13 @@ const Home: React.FC = () => {
     const impressum = impressumRef.current;
     const impressumH = impressum ? impressum.getBoundingClientRect().height : 0;
 
+    const introHeadingH = 30; // "What makes the Thoth Tarot different?" heading
     const textMarginBottom = 20;
     const gridGap = 16;
     const moreButtonH = 24;
     const kofiMarginTop = kofi ? 32 : 0;
 
-    const usedSpace = topPad + bottomPad + headerH + searchH + gridH + kofiH + kofiMarginTop + impressumH + textMarginBottom + gridGap + moreButtonH;
+    const usedSpace = topPad + bottomPad + headerH + searchH + introHeadingH + gridH + kofiH + kofiMarginTop + impressumH + textMarginBottom + gridGap + moreButtonH;
     const availableForText = vh - usedSpace;
     const lines = Math.max(1, Math.floor(availableForText / lineHeight));
 
@@ -187,6 +188,9 @@ const Home: React.FC = () => {
 
       {/* Intro text — dynamically clamps to fill viewport */}
       <div style={{ maxWidth: '750px', margin: '0 auto 1.25rem', textAlign: 'center' }}>
+        <h2 style={{ color: 'var(--text-main)', fontSize: '1.05rem', fontFamily: 'var(--font-serif)', fontWeight: 400, margin: '0 0 0.5rem', letterSpacing: '0.02em' }}>
+          Why an interactive handbook?
+        </h2>
         <p
           ref={textRef}
           style={{

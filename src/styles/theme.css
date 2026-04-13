@@ -987,28 +987,25 @@ svg text {
 }
 
 @media (max-width: 767px) {
-  /* Mobile: anchor panel near the bottom of the dynamic viewport (above the keyboard).
-     The results wrapper uses the modern grid-rows 0fr→1fr trick so the panel
-     grows smoothly upward instead of jumping when results appear. */
+  /* Mobile: JS positions the panel above the keyboard via visualViewport API. */
   .search-overlay {
     align-items: flex-end;
-    padding-bottom: 5dvh;
-    height: 100vh;
-    height: 100dvh;
+    justify-content: center;
   }
   .search-overlay-panel {
-    max-height: 75dvh;
+    position: fixed;
+    left: 1rem;
+    right: 1rem;
+    bottom: 2rem;
+    width: auto;
+    max-height: 70vh;
     display: flex;
     flex-direction: column;
   }
   .search-overlay-results-wrap {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    flex: 1;
     min-height: 0;
-  }
-  .search-overlay-panel:not(.is-empty) .search-overlay-results-wrap {
-    grid-template-rows: 1fr;
+    overflow: hidden;
   }
   .search-overlay-results {
     overflow-y: auto;
@@ -1055,6 +1052,12 @@ svg text {
 
 .search-overlay-input::placeholder {
   color: var(--text-subtle);
+}
+
+.search-overlay-input::-webkit-search-cancel-button,
+.search-overlay-input::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .search-overlay-close {

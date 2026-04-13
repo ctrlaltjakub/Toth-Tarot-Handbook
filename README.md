@@ -11,8 +11,9 @@
 
 <p><em>An interactive, open-source encyclopedia of the Thoth Tarot system.</em></p>
 
+<h3><a href="https://toth.jakub.computer">toth.jakub.computer</a></h3>
+
 <p>
-  <a href="https://toth.jakub.computer"><img src="https://img.shields.io/badge/Live_App-toth.jakub.computer-cba6f7?style=flat-square&labelColor=1e1e2e" alt="Live App"/></a>
   <img src="https://img.shields.io/badge/license-MIT-cba6f7?style=flat-square&labelColor=1e1e2e" alt="License"/>
   <img src="https://img.shields.io/badge/PRs-welcome-a6e3a1?style=flat-square&labelColor=1e1e2e" alt="PRs Welcome"/>
 </p>

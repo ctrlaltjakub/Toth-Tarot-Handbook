@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Home as HomeIcon, Layout, Book, Search } from 'lucide-react';
+import { Home as HomeIcon, Book, Search } from 'lucide-react';
 import { AnimatePresence } from 'framer-motion';
 import ThemePicker from './ThemePicker';
 import SearchOverlay from './SearchOverlay';
@@ -15,9 +15,17 @@ const TarotIcon: React.FC<{ size?: number }> = ({ size = 22 }) => (
   </svg>
 );
 
+// Tree of Life icon — single Kether sephirah with number and Hebrew letter
+const TreeIcon: React.FC<{ size?: number }> = ({ size = 22 }) => (
+  <svg width={size} height={size} viewBox="-1 -1 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="12" r="11.5" stroke="currentColor" strokeWidth="2" fill="none"/>
+    <text x="12" y="16" textAnchor="middle" fill="currentColor" fontSize="12" fontWeight="700" fontFamily="serif">כתר</text>
+  </svg>
+);
+
 // Libra glyph for astrology tab
-const AstroIcon: React.FC<{ size?: number }> = ({ size = 22 }) => (
-  <span style={{ fontSize: `${size}px`, lineHeight: 1, fontFamily: 'serif' }}>♎︎</span>
+const AstroIcon: React.FC = () => (
+  <span className="astro-nav-icon">♎︎</span>
 );
 
 const Navbar: React.FC = () => {
@@ -63,7 +71,7 @@ const Navbar: React.FC = () => {
           <span className="nav-label">Tarot</span>
         </NavLink>
         <NavLink to="/tree-of-life" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-          <Layout size={22} />
+          <TreeIcon />
           <span className="nav-label">Tree</span>
         </NavLink>
         {/* Search in the center — stands out */}

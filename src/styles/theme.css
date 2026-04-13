@@ -258,11 +258,11 @@ a {
     border-top: 1px solid var(--border-subtle);
     padding: 0.6rem 0;
     padding-bottom: calc(0.6rem + env(safe-area-inset-bottom, 0px));
-    align-items: end;
+    align-items: center;
   }
   .navbar .nav-link svg {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
   }
 }
 
@@ -301,8 +301,8 @@ a {
   position: relative;
   background: var(--surface0) !important;
   border-radius: 50% !important;
-  width: 42px;
-  height: 42px;
+  width: 52px;
+  height: 52px;
   padding: 0 !important;
   display: flex !important;
   align-items: center !important;
@@ -311,11 +311,11 @@ a {
   gap: 0 !important;
   border: 1px solid var(--accent) !important;
   box-shadow: 0 0 12px rgba(203, 166, 247, 0.15);
-  flex: 0 0 42px !important;
+  flex: 0 0 52px !important;
 }
 .nav-search-btn svg {
-  width: 22px !important;
-  height: 22px !important;
+  width: 26px !important;
+  height: 26px !important;
   color: var(--accent);
   display: block !important;
   flex-shrink: 0;
@@ -325,25 +325,41 @@ a {
 }
 @media (max-width: 767px) {
   .nav-search-btn {
-    width: 48px;
-    height: 48px;
-    flex: 0 0 48px !important;
-    margin-top: -14px;
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px !important;
+    margin-top: -6px;
   }
   .nav-search-btn svg {
-    width: 26px !important;
-    height: 26px !important;
+    width: 28px !important;
+    height: 28px !important;
   }
 }
 
-/* Hide text labels on very small screens */
+/* Hide text labels on mobile */
 .nav-label {
   display: block;
 }
 
-@media (max-width: 374px) {
+@media (max-width: 767px) {
   .nav-label {
     display: none;
+  }
+}
+
+/* Astrology nav icon — Libra glyph */
+.astro-nav-icon {
+  font-size: 30px;
+  line-height: 0.7;
+  font-family: serif;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+@media (max-width: 767px) {
+  .astro-nav-icon {
+    font-size: 35px;
+    margin-top: 0;
   }
 }
 

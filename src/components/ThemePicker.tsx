@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Settings } from 'lucide-react';
 import { useTheme, flavorInfo, type CatppuccinFlavor } from '../contexts/ThemeContext';
 
@@ -137,6 +138,15 @@ const ThemePicker: React.FC = () => {
             letterSpacing: '0.05em',
           }}>
             Palette by <a href="https://catppuccin.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)', textDecoration: 'none' }}>Catppuccin</a>
+          </div>
+
+          <div style={{
+            borderTop: '1px solid var(--border-subtle)',
+            marginTop: '0.25rem',
+            paddingTop: '0.5rem',
+            textAlign: 'center',
+          }}>
+            <Link to="/impressum" onClick={() => setOpen(false)} style={{ color: 'var(--text-subtle)', textDecoration: 'none', fontSize: '0.65rem', letterSpacing: '0.05em' }}>Impressum</Link>
           </div>
         </div>
       )}

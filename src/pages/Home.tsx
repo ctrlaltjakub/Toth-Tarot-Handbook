@@ -14,7 +14,6 @@ const Home: React.FC = () => {
   const headerRef = useRef<HTMLElement>(null);
   const searchRef = useRef<HTMLDivElement>(null);
   const kofiRef = useRef<HTMLDivElement>(null);
-  const impressumRef = useRef<HTMLDivElement>(null);
 
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
@@ -83,16 +82,14 @@ const Home: React.FC = () => {
     const gridH = grid.getBoundingClientRect().height;
     const kofiH = kofi ? kofi.getBoundingClientRect().height : 0;
 
-    const impressum = impressumRef.current;
-    const impressumH = impressum ? impressum.getBoundingClientRect().height : 0;
-
-    const introHeadingH = 30; // "What makes the Thoth Tarot different?" heading
+    const introHeadingH = 30;
     const textMarginBottom = 20;
     const gridGap = 16;
     const moreButtonH = 24;
     const kofiMarginTop = kofi ? 32 : 0;
+    const kofiMarginBottom = kofi ? 32 : 0;
 
-    const usedSpace = topPad + bottomPad + headerH + searchH + introHeadingH + gridH + kofiH + kofiMarginTop + impressumH + textMarginBottom + gridGap + moreButtonH;
+    const usedSpace = topPad + bottomPad + headerH + searchH + introHeadingH + gridH + kofiH + kofiMarginTop + kofiMarginBottom + textMarginBottom + gridGap + moreButtonH;
     const availableForText = vh - usedSpace;
     const lines = Math.max(1, Math.floor(availableForText / lineHeight));
 
@@ -250,7 +247,7 @@ const Home: React.FC = () => {
       {/* Support & links banner */}
       <div ref={kofiRef} style={{
         maxWidth: '750px',
-        margin: '2rem auto 0',
+        margin: '2rem auto 2rem',
         textAlign: 'center',
         padding: '1rem 1.25rem',
         borderRadius: '12px',
@@ -305,21 +302,6 @@ const Home: React.FC = () => {
             <Github size={16} /> View on GitHub
           </a>
         </div>
-      </div>
-
-      {/* Impressum link */}
-      <div ref={impressumRef} style={{
-        maxWidth: '750px',
-        margin: '0.15rem auto -0.5rem',
-        textAlign: 'center',
-        padding: 0,
-      }}>
-        <Link
-          to="/impressum"
-          style={{ color: 'var(--text-subtle)', fontSize: '0.7rem', textDecoration: 'none' }}
-        >
-          Impressum
-        </Link>
       </div>
 
       {/* Ko-fi donation overlay */}

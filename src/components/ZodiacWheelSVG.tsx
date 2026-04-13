@@ -382,7 +382,7 @@ const ZodiacWheelSVG: React.FC<ZodiacWheelSVGProps> = ({
             <g onClick={(e) => { e.stopPropagation(); onPlanetClick(planet.name); }} style={{ cursor: 'pointer' }}>
               <circle cx={pos.x} cy={pos.y} r={M.planetR} fill="var(--bg-card)" stroke="var(--ctp-surface2)" strokeWidth="0.8" opacity="0.85" />
               <circle cx={pos.x} cy={pos.y} r={M.planetOuterR} fill="none" stroke="var(--ctp-surface1)" strokeWidth="0.4" opacity="0.25" />
-              <text x={pos.x} y={pos.y - (mobileMode ? 6 : 4)} textAnchor="middle" dominantBaseline="central" fill="var(--text-main)" fontSize={M.planetGlyphFont} fontWeight={M.fw} className="astro-symbols">{planet.glyph}</text>
+              <text x={pos.x} y={pos.y - (mobileMode ? 6 : 4)} textAnchor="middle" dominantBaseline="central" fill="var(--text-main)" fontSize={(planet.glyph === '♀' || planet.glyph === '♂') ? M.planetGlyphFont * 1.4 : M.planetGlyphFont} fontWeight={M.fw} className="astro-symbols" stroke={mobileMode ? 'var(--text-main)' : 'none'} strokeWidth={mobileMode ? ((planet.glyph === '♀' || planet.glyph === '♂') ? 0.8 : 0.4) : 0} paintOrder="stroke">{planet.glyph + '\uFE0E'}</text>
               <text x={pos.x} y={pos.y + (mobileMode ? 16 : 16)} textAnchor="middle" dominantBaseline="central" fill="var(--text-muted)" fontSize={M.planetNameFont} fontFamily="var(--font-serif)" fontWeight={M.fw} letterSpacing="0.04em">{planet.name.toUpperCase()}</text>
             </g>
           </React.Fragment>

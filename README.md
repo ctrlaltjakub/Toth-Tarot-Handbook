@@ -12,6 +12,7 @@
 <p><em>An interactive, open-source encyclopedia of the Thoth Tarot system.</em></p>
 
 <p>
+  <a href="https://toth.jakub.computer"><img src="https://img.shields.io/badge/Live_App-toth.jakub.computer-cba6f7?style=flat-square&labelColor=1e1e2e" alt="Live App"/></a>
   <img src="https://img.shields.io/badge/license-MIT-cba6f7?style=flat-square&labelColor=1e1e2e" alt="License"/>
   <img src="https://img.shields.io/badge/PRs-welcome-a6e3a1?style=flat-square&labelColor=1e1e2e" alt="PRs Welcome"/>
 </p>
@@ -41,10 +42,11 @@
 
 - **Tarot** — All 78 cards (Major Arcana, Court Cards, pip cards) with visual, esoteric, and Jungian descriptions
 - **Tree of Life** — Interactive SVG diagram of the 10 Sephiroth and 22 paths with click-to-explore panels
-- **Astrology** — Zodiac wheel with decans, elements, qualities, and planetary rulerships
+- **Astrology** — Zodiac wheel with decans, elements, qualities, planetary rulerships, and SVG-rendered planet glyphs
 - **Library** — Reference articles on history, methods, and foundational knowledge
-- **Glossary** — 285+ terms with stack-based navigation and auto-linking across all descriptions
-- **Search** — `Ctrl+K` to search cards, signs, planets, sephiroth, and glossary terms
+- **Glossary** — 285+ cross-linked terms with stack-based navigation and auto-linking across all descriptions
+- **Search** — `Ctrl+K` instant search across cards, signs, planets, sephiroth, and glossary terms
+- **Mobile-first** — Responsive design with auto-detected diagram modes, bottom navbar, and keyboard-aware search
 
 ## <img src="https://img.shields.io/badge/-1e1e2e?style=flat-square" height="1" width="0"/> Themes
 
@@ -75,20 +77,22 @@ The app will be available at `http://localhost:5173/`
 | Build | Vite 7 |
 | Styling | CSS custom properties + Catppuccin |
 | Diagrams | Inline SVG (Tree of Life, Zodiac Wheel) |
+| Planet Glyphs | Custom SVG paths (cross-platform consistent) |
 | Animations | Framer Motion |
 | Routing | React Router |
-| Icons | Lucide React |
+| Icons | Lucide React + custom SVGs |
+| Hosting | Vercel |
 
 ## <img src="https://img.shields.io/badge/-1e1e2e?style=flat-square" height="1" width="0"/> Project Structure
 
 ```
 src/
-├── components/     # Reusable UI — diagrams, glossary, navbar, search
+├── components/     # Reusable UI — diagrams, glossary, navbar, search, planet glyphs
 ├── contexts/       # Theme provider (palette + diagram mode)
 ├── data/           # All content — tarot cards, astrology, tree, glossary, library
 ├── pages/          # Route pages — Home, Tarot, Astrology, TreeOfLife, Library
 ├── styles/         # Global CSS with Catppuccin tokens
-└── utils/          # Auto-glossary linker, symbol formatting
+└── utils/          # Auto-glossary linker, card auto-linker, symbol formatting
 ```
 
 ## <img src="https://img.shields.io/badge/-1e1e2e?style=flat-square" height="1" width="0"/> License

@@ -44,71 +44,68 @@ const Home: React.FC = () => {
 
   const calcLines = useCallback(() => {
     const text = textRef.current;
-    const grid = gridRef.current;
-    const header = headerRef.current;
-    const search = searchRef.current;
-    const kofi = kofiRef.current;
-    if (!text || !grid || !header || !search) return;
+    const container = containerRef.current;
+    if (!text || !container) return;
 
-    // Temporarily unconstrain text to measure its full height
+    // 1. Measure line height and full unconstrained text
+    const style = getComputedStyle(text);
+    const lineHeight = parseFloat(style.lineHeight) || parseFloat(style.fontSize) * 1.8;
+
     const prevClamp = text.style.webkitLineClamp;
     const prevDisplay = text.style.display;
     const prevOverflow = text.style.overflow;
     text.style.webkitLineClamp = 'unset';
     text.style.display = 'block';
     text.style.overflow = 'visible';
-
-    const style = getComputedStyle(text);
-    const lineHeight = parseFloat(style.lineHeight) || parseFloat(style.fontSize) * 1.8;
     const fullHeight = text.scrollHeight;
     const fullLines = Math.ceil(fullHeight / lineHeight);
-
-    // Restore
     text.style.webkitLineClamp = prevClamp;
     text.style.display = prevDisplay;
     text.style.overflow = prevOverflow;
 
+    // 2. Hide text + button, measure everything else via actual layout
+    const textWrapper = text.parentElement!;
+    const prevWrapperDisplay = textWrapper.style.display;
+    textWrapper.style.display = 'none';
+    const othersHeight = container.scrollHeight;
+    textWrapper.style.display = prevWrapperDisplay;
+
+    // 3. Measure the heading inside the text wrapper (it stays even when text is clamped)
+    const headingEl = textWrapper.querySelector('h2');
+    const headingH = headingEl ? headingEl.getBoundingClientRect().height + 8 : 0; // 8px margin
+
+    // 4. Calculate — first check if ALL text fits without a more button
     const vh = window.innerHeight;
     const isMobile = window.innerWidth < 768;
-    // CSS padding-bottom already reserves space for the fixed navbar,
-    // so we only account for that padding here — not navbarH separately
-    // Mobile: calc(1.5rem + 70px + safe-area) ≈ 94+ depending on device
-    const safeArea = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--safe-bottom') || '0') || 0;
-    const bottomPad = isMobile ? (94 + safeArea) : 0;
-    const topPad = isMobile ? 0 : 56;
+    const navbarH = isMobile ? 70 : 40;
+    const baseUsed = othersHeight + headingH + navbarH;
+    const availableNoButton = vh - baseUsed;
+    const fullTextHeight = fullLines * lineHeight;
 
-    const headerH = header.getBoundingClientRect().height;
-    const searchH = search.getBoundingClientRect().height;
-    const gridH = grid.getBoundingClientRect().height;
-    const kofiH = kofi ? kofi.getBoundingClientRect().height : 0;
-
-    const introHeadingH = 30;
-    const textMarginBottom = 20;
-    const gridGap = 16;
-    const moreButtonH = 24;
-    const kofiMarginTop = kofi ? 32 : 0;
-    const kofiMarginBottom = kofi ? 32 : 0;
-
-    const usedSpace = topPad + bottomPad + headerH + searchH + introHeadingH + gridH + kofiH + kofiMarginTop + kofiMarginBottom + textMarginBottom + gridGap + moreButtonH;
-    const availableForText = vh - usedSpace;
-    const lines = Math.max(1, Math.floor(availableForText / lineHeight));
-
-    if (fullLines <= lines) {
+    if (fullTextHeight <= availableNoButton) {
+      // Everything fits — no clamping, no button
       setMaxLines(undefined);
       setIsTruncated(false);
     } else {
+      // Need clamping — reserve space for the more button
+      const moreButtonH = 28;
+      const availableForText = availableNoButton - moreButtonH;
+      const lines = Math.max(1, Math.floor(availableForText / lineHeight));
       setMaxLines(lines);
       setIsTruncated(true);
     }
   }, []);
 
-  // Recalculate on mount, resize, and when expanded changes (clicking "less")
+  // Recalculate on mount, resize, and when expanded changes
   useEffect(() => {
-    if (!expanded) {
-      const timer = setTimeout(calcLines, 50);
-      return () => clearTimeout(timer);
-    }
-  }, [expanded, calcLines]);
+    // Always recalculate — even when expanded, to detect if text now fits
+    const timer = setTimeout(() => {
+      calcLines();
+      // If everything fits after recalc, auto-collapse
+      if (expanded && !isTruncated) setExpanded(false);
+    }, 50);
+    return () => clearTimeout(timer);
+  }, [expanded, calcLines, isTruncated]);
 
   useEffect(() => {
     window.addEventListener('resize', calcLines);

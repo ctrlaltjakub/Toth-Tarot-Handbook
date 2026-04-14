@@ -49,6 +49,10 @@
 - **Search** — `Ctrl+K` instant search across cards, signs, planets, sephiroth, and glossary terms
 - **Mobile-first** — Responsive design with auto-detected diagram modes, bottom navbar, and keyboard-aware search
 
+## <img src="https://img.shields.io/badge/-1e1e2e?style=flat-square" height="1" width="0"/> A Note on Card Imagery
+
+The original Thoth Tarot deck paintings by Lady Frieda Harris remain under copyright (held by Ordo Templi Orientis), so this handbook does **not** reproduce the card images. Instead, each card is described through its visual symbolism, esoteric attributions, and Jungian interpretation — encouraging you to study the deck itself alongside the text.
+
 ## <img src="https://img.shields.io/badge/-1e1e2e?style=flat-square" height="1" width="0"/> Themes
 
 Three [Catppuccin](https://github.com/catppuccin/catppuccin) dark palettes, switchable from Settings: 🌿 Mocha · 🌺 Macchiato · 🪴 Frappe

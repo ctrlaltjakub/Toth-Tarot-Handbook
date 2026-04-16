@@ -64,7 +64,7 @@ export const sephiroth: Sephirah[] = [
 
 Kether is attributed to the Primum Mobile — the First Swirlings — the initial movement that precedes even the first distinction between subject and object. Some post-Crowley Kabbalists also place Neptune here, as the planet of boundless, pre-differentiated unity — the oceanic consciousness that precedes all form, mirroring Kether's nature as the state before boundaries exist.
 
-In Jungian terms, Kether corresponds to the Self in its most abstract and unknowable form — the origin point of the psyche that can never be directly observed, only inferred from its effects. The four Aces reside here as the seeds of the four elements, containing within them the entire Tree in potential but not yet in manifestation. It is the ultimate source and the ultimate mystery.`
+**Jungian Meaning:** Kether corresponds to the Self in its most abstract and unknowable form — the origin point of the psyche that can never be directly observed, only inferred from its effects. It is unknowable for the same reason the eye cannot see itself: Kether is the subject behind every act of consciousness, the "observer" that precedes observation. The four Aces reside here as the seeds of the four elements — not yet fire, water, air, or earth, but the sheer capacity to become them, the way an infant carries the whole trajectory of a life before a single choice has been made. Developmentally, Kether is the psychic ground zero before the first "I" has formed — prior even to the distinction between self and world. The danger is mistaking any experience of Kether for Kether itself: every image the mind produces to represent the Absolute is, by definition, not the Absolute. It is the ultimate source and the ultimate mystery.`
   },
   {
     number: 2,
@@ -81,7 +81,7 @@ In Jungian terms, Kether corresponds to the Self in its most abstract and unknow
 
 Chokmah is attributed to the Zodiac as a whole (the sphere of the fixed stars) and to the planet Uranus. As the first Sephirah on the Pillar of Mercy, it represents the active, masculine, projecting principle in its highest form. The four Twos reside here — the first real manifestation of each element in its original, uncontaminated purity.
 
-In Jungian terms, Chokmah is the first stirring of conscious awareness — the initial "I AM" that precedes all differentiation into specific thoughts, feelings, or perceptions.`
+**Jungian Meaning:** Chokmah is the first stirring of conscious awareness — the initial "I AM" that precedes all differentiation into specific thoughts, feelings, or perceptions. Where Kether is the psyche before it knows it exists, Chokmah is the moment of knowing — pure will surging outward with no object yet to land on. It corresponds to the Zodiac because the zodiacal wheel contains every possible archetype in potentia, the way Chokmah contains every possible thought before any single thought has crystallised. It is attributed to Uranus because Uranus shatters existing structures to release raw creative force — the same lightning-flash energy that breaks Kether's silence into the first cosmic impulse. The shadow of Chokmah is force that never consents to limitation: endless creative drive that refuses the discipline of form, the visionary who generates but never completes.`
   },
   {
     number: 3,
@@ -94,11 +94,11 @@ In Jungian terms, Chokmah is the first stirring of conscious awareness — the i
     colorVar: '--seph-binah',
     x: 120, y: 140,
     pipCards: ['three-of-wands', 'three-of-cups', 'three-of-swords', 'three-of-disks'],
-    description: `Binah is Understanding — the 3rd Sephirah, the great dark Sea, the supernal Mother who receives the force of Chokmah and gives it form. She is Maat, Isis, the Virgin Mary — the feminine principle in its most exalted and terrible aspect. She is Saturn: limitation, time, structure, the womb and the tomb.
+    description: `Binah is Understanding — the 3rd Sephirah, the great dark Sea, the supernal Mother who receives the force of Chokmah and gives it form. She is Maat, Isis, the Virgin Mary — the feminine principle in its most exalted and terrible aspect. She is Saturn because form requires limitation: to become something specific, energy must accept the boundary of what it is not. Saturn's rings, time, structure, the womb and the tomb — all expressions of the same principle that creation and constraint are inseparable.
 
-As the first Sephirah on the Pillar of Severity, Binah represents the receptive, feminine, form-giving principle. The four Threes reside here — the first stable structures of each element, the triangle formulated, the idea fertilized and pregnant with manifestation.
+As the first Sephirah on the Pillar of Severity, Binah represents the receptive, feminine, form-giving principle. The four Threes reside here — the first stable structures of each element, the triangle formulated, the idea fertilised and pregnant with manifestation.
 
-Binah completes the Supernal Triad — the three Sephiroth above the Abyss. Together with Kether and Chokmah, she represents the realm of pure archetypes that transcend human understanding. In Jungian terms, Binah is the Collective Unconscious in its most primordial aspect — the dark matrix from which all specific forms emerge.`
+**Jungian Meaning:** Binah completes the Supernal Triad — the three Sephiroth above the Abyss. She is the Collective Unconscious in its most primordial aspect — the dark matrix from which all specific forms emerge. She is "dark" not because she is evil but because form-giving operates beneath awareness: we never witness the moment an archetype crystallises into an image, only the image itself. This is why Binah is called Understanding rather than Knowledge — understanding grasps the pattern behind appearances, the structural law that shapes experience before the ego encounters it. Developmentally, Binah is the psyche's first capacity to organise: the infant's dawning ability to sort the chaos of sensation into "mother," "hunger," "warmth" — raw Chokmah-energy constrained into categories that make experience survivable. The shadow of Binah is structure that has forgotten it serves life — rigidity, dogma, the letter of the law that kills the spirit it was meant to protect.`
   },
   {
     number: 4,
@@ -111,11 +111,11 @@ Binah completes the Supernal Triad — the three Sephiroth above the Abyss. Toge
     colorVar: '--ctp-blue',
     x: 380, y: 300,
     pipCards: ['four-of-wands', 'four-of-cups', 'four-of-swords', 'four-of-disks'],
-    description: `Chesed is Mercy — the first Sephirah below the Abyss, the benevolent Father-King who organizes the raw archetypal energy of the Supernals into the first comprehensible structure. It is Jupiter: expansion, generosity, authority, law, and the establishment of order.
+    description: `Chesed is Mercy — the first Sephirah below the Abyss, the benevolent Father-King who organizes the raw archetypal energy of the Supernals into the first comprehensible structure. It is Jupiter: expansion, generosity, authority, law, and the establishment of order. Because it sits just below the Abyss, it is the highest point where abstract truth becomes something a human mind can actually hold — the place where the unknowable first becomes knowable.
 
-As the highest idea that can be grasped by the human intellect, Chesed represents the Demiurge — the organizing intelligence that builds a functioning universe out of the formless potential above. The four Fours reside here — completion, stability, the solid foundation of manifested reality.
+As this threshold between the incomprehensible and the structured, Chesed represents the Demiurge — the organizing intelligence that builds a functioning universe out of formless potential. It does not create from nothing; it receives the lightning-flash from above and gives it shape, boundary, and law. The four Fours reside here — completion, stability, the solid foundation of manifested reality — because four is the first number that encloses space, the minimum needed for a stable structure.
 
-In Jungian terms, Chesed corresponds to the organized systems of meaning (religion, philosophy, law) that give structure to the personality. It is the benevolent aspect of the Father archetype — the part of the psyche that establishes order not through force but through wisdom and generosity.`
+**Jungian Meaning:** Chesed corresponds to the great organizing systems of the psyche — the internal frameworks of meaning (religion, philosophy, moral law) through which a person makes sense of existence. It is the benevolent aspect of the Father archetype: not the father who commands obedience, but the one who builds a house the family can live in. Developmentally, this is the moment when the individual moves beyond raw experience and begins constructing a worldview — a coherent story about what the world is and how one fits within it. The shadow of Chesed is the system that has become an end in itself: dogma, the benevolent authority that smothers by refusing to let anything exist outside its order.`
   },
   {
     number: 5,
@@ -128,11 +128,11 @@ In Jungian terms, Chesed corresponds to the organized systems of meaning (religi
     colorVar: '--ctp-red',
     x: 120, y: 300,
     pipCards: ['five-of-wands', 'five-of-cups', 'five-of-swords', 'five-of-disks'],
-    description: `Geburah is Severity — the 5th Sephirah, the great destructive force that purges, corrects, and breaks down all that has become stagnant or corrupt. It is Mars: war, aggression, discipline, the surgeon's knife that cuts away diseased tissue so that the organism can survive.
+    description: `Geburah is Severity — the 5th Sephirah, the great destructive force that purges, corrects, and breaks down all that has become stagnant or corrupt. It is Mars: war, aggression, discipline, the surgeon's knife that cuts away diseased tissue so that the organism can survive. Its position directly opposite Chesed on the Tree is not accidental — every structure that Mercy builds eventually calcifies, and Severity exists to prevent that death-by-rigidity.
 
-Geburah is not evil — it is the necessary counterbalance to Chesed's boundless mercy. Without Geburah, Chesed's generosity would dissolve all structure into shapeless indulgence. The four Fives reside here — disruption, conflict, the revolutionary energy that shatters the stability of the Fours.
+Geburah is not evil — it is the necessary counterbalance to Chesed's boundless mercy. Without Geburah, Chesed's generosity would dissolve all structure into shapeless indulgence; without Chesed, Geburah would destroy everything, including what deserves to live. The four Fives reside here — disruption, conflict, the revolutionary energy that shatters the stability of the Fours — because five breaks the closed symmetry of four, introducing the instability that forces movement and change.
 
-In Jungian terms, Geburah is the critical function — the inner judge, the ruthless honesty that examines every construction of the Ego and asks whether it is still true, still alive, still worthy. It is the destructive aspect of the Self that serves growth by destroying stagnation.`
+**Jungian Meaning:** Geburah is the critical function of the psyche — the inner judge, the ruthless honesty that examines every construction of the Ego and asks whether it is still true, still alive, still worthy. It corresponds to the psychological necessity of disillusionment: the process by which outgrown beliefs, relationships, and self-images are stripped away so that something more authentic can replace them. Developmentally, this is every crisis that forces growth — the collapse of a worldview that seemed permanent, the loss that reveals what was real beneath what was merely comfortable. The shadow of Geburah is cruelty mistaken for honesty — destruction that has forgotten it serves life, the inner critic that tears down without any intention to rebuild.`
   },
   {
     number: 6,
@@ -145,11 +145,11 @@ In Jungian terms, Geburah is the critical function — the inner judge, the ruth
     colorVar: '--ctp-yellow',
     x: 250, y: 385,
     pipCards: ['six-of-wands', 'six-of-cups', 'six-of-swords', 'six-of-disks'],
-    description: `Tiphareth is Beauty — the Sun at the centre of the Tree, the harmonizing point where all forces meet and are reconciled. It is the Son, the Christ-centre, the heart of the system. More paths converge here than at any other Sephirah, making it the great mediator between the higher and lower worlds.
+    description: `Tiphareth is Beauty — the Sun at the centre of the Tree, the harmonizing point where all forces meet and are reconciled. It is the Son, the Christ-centre, the heart of the system. More paths converge here than at any other Sephirah because it functions as the great mediator: everything above must pass through it to reach below, and everything below must pass through it to reach above. It is not merely central by convention — it is structurally the place where the whole Tree communicates with itself.
 
-Tiphareth is the sphere of the Holy Guardian Angel — the personal experience of the divine that stands at the centre of the individuation process. The four Sixes reside here — victory, pleasure, science, success — the fullest balanced expression of each element.
+Tiphareth is the sphere of the Holy Guardian Angel — the personal experience of the divine that stands at the centre of the individuation process. Where Kether is the source of unity and Malkuth its final expression, Tiphareth is the living experience of that unity within a human life. The four Sixes reside here — victory, pleasure, science, success — the fullest balanced expression of each element, because six is the midpoint of the decimal Sephiroth and represents each force in its most harmonious, least distorted state.
 
-In Jungian terms, Tiphareth is the Self as experienced by the Ego: not the abstract, unknowable Self of Kether, but the lived centre of the personality — the sense of being whole, balanced, and in harmony with one's own nature. It is the goal of individuation as a practical, liveable achievement.`
+**Jungian Meaning:** Tiphareth is the Self as experienced by the Ego — not the abstract, unknowable totality of Kether, but the lived centre of the personality, the sense of being whole and in genuine harmony with one's own nature. It is what Jung meant by individuation as a practical achievement: not perfection, but the conscious integration of opposing forces into something that holds together and feels real. Developmentally, this is the moment when a person stops living from a single fragment of themselves — persona, ambition, wound — and begins to live from the centre, where all of those fragments are acknowledged and balanced. The shadow of Tiphareth is spiritual inflation: mistaking the experience of the Self for identity with it, the mystic who believes they have become the Sun rather than recognizing they are illuminated by it.`
   },
   {
     number: 7,
@@ -162,11 +162,11 @@ In Jungian terms, Tiphareth is the Self as experienced by the Ego: not the abstr
     colorVar: '--ctp-green',
     x: 380, y: 465,
     pipCards: ['seven-of-wands', 'seven-of-cups', 'seven-of-swords', 'seven-of-disks'],
-    description: `Netzach is Victory — the 7th Sephirah, the sphere of Venus, desire, emotion, passion, and the instinctual drive toward beauty and connection. It is the creative, artistic, sensual aspect of the psyche — the realm where abstract energies begin to take on the warmth and colour of lived experience.
+    description: `Netzach is Victory — the 7th Sephirah, the sphere of Venus, desire, emotion, passion, and the instinctual drive toward beauty and connection. It is the creative, sensual aspect of the psyche — the realm where abstract energies take on the warmth and colour of lived experience, because force at this level is no longer structural but personal: it wants something.
 
-As the lowest Sephirah on the Pillar of Mercy, Netzach represents the expansive, desiring nature at its most personal and subjective level. The four Sevens reside here — valour, debauch, futility, failure — showing the weakening of the original force as it descends further from its source.
+As the lowest Sephirah on the Pillar of Mercy, Netzach represents the expansive, desiring nature at its most subjective level. The four Sevens reside here — valour, debauch, futility, failure — and their troubled character reflects a real problem: desire without sufficient form to sustain it. The force has descended far enough to feel intensely but not far enough to think clearly about what it feels.
 
-In Jungian terms, Netzach corresponds to the feeling function and the Anima — the inner feminine that evaluates experience not through logic but through attraction and repulsion, beauty and ugliness, love and hate.`
+**Jungian Meaning:** Netzach corresponds to the feeling function and the Anima — the inner feminine that evaluates experience not through logic but through attraction and repulsion, beauty and ugliness, love and hate. This is why it governs art, devotion, and romantic longing: all are acts of valuation, the psyche declaring "this matters to me" before it can explain why. Developmentally, it is the child's discovery that the world is not neutral — that some things are beautiful and some things hurt — and the lifelong task of refining raw preference into genuine aesthetic and moral judgment.`
   },
   {
     number: 8,
@@ -179,11 +179,11 @@ In Jungian terms, Netzach corresponds to the feeling function and the Anima — 
     colorVar: '--ctp-peach',
     x: 120, y: 465,
     pipCards: ['eight-of-wands', 'eight-of-cups', 'eight-of-swords', 'eight-of-disks'],
-    description: `Hod is Splendour — the 8th Sephirah, the sphere of Mercury, intellect, language, communication, and the analytical mind. It is the realm of thought in its most practical and articulate form — the capacity to name, categorize, and transmit information.
+    description: `Hod is Splendour — the 8th Sephirah, the sphere of Mercury, intellect, language, communication, and the analytical mind. It is thought in its most practical and articulate form — the capacity to name, categorize, and transmit information. Where Netzach feels, Hod explains — and explanation is itself a kind of power, because to name a thing is to gain leverage over it.
 
-As the lowest Sephirah on the Pillar of Severity, Hod represents the discriminating, analytical function at its most concrete level. The four Eights reside here — swiftness, indolence, interference, prudence — the energy refined into intellectual form but showing signs of exhaustion.
+As the lowest Sephirah on the Pillar of Severity, Hod represents the discriminating, analytical function at its most concrete level. The four Eights reside here — swiftness, indolence, interference, prudence — the energy refined into intellectual form but showing signs of exhaustion, because analysis by its nature divides and reduces: the more precisely you dissect experience, the further you move from the living whole.
 
-In Jungian terms, Hod corresponds to the thinking function — the rational mind that organizes, analyzes, and communicates. Together with Netzach (feeling), it forms the pair of psychological functions through which the personality engages with the everyday world.`
+**Jungian Meaning:** Hod corresponds to the thinking function — the rational mind that organizes, analyzes, and communicates. Together with Netzach (feeling), it forms the pair of functions through which the personality engages with the everyday world — one evaluates, the other explains, and healthy functioning requires both. The shadow of Hod is intellect severed from feeling: the mind that can categorize everything and value nothing, clever speech deployed not to illuminate but to evade. Mercury is traditionally both the messenger and the trickster for exactly this reason.`
   },
   {
     number: 9,
@@ -196,11 +196,11 @@ In Jungian terms, Hod corresponds to the thinking function — the rational mind
     colorVar: '--ctp-mauve',
     x: 250, y: 545,
     pipCards: ['nine-of-wands', 'nine-of-cups', 'nine-of-swords', 'nine-of-disks'],
-    description: `Yesod is the Foundation — the sphere of the Moon, the unconscious, dreams, imagination, and the psychic infrastructure upon which the material world is built. It is the last Sephirah before Malkuth — the final filter through which all energy passes before manifesting in physical reality.
+    description: `Yesod is the Foundation — the 9th Sephirah, the sphere of the Moon, the unconscious, dreams, imagination, and the psychic infrastructure upon which the material world is built. It is the last Sephirah before Malkuth — the final filter through which all energy passes before manifesting in physical reality, which is why it governs both dreams and habits: each is a rehearsal for action that has not yet become flesh.
 
-Yesod is the realm of the "astral light" — the plastic, ever-changing medium that shapes and is shaped by the forces above it. The four Nines reside here — strength, happiness, cruelty, gain — representing the fullest practical development of each element before final materialization.
+Yesod is the realm of the "astral light" — the plastic, ever-changing medium that shapes and is shaped by the forces above it. The four Nines reside here — strength, happiness, cruelty, gain — representing the fullest practical development of each element before final materialization. The Nines carry a sense of completion-almost-achieved because the energy has done everything except arrive.
 
-In Jungian terms, Yesod is the personal unconscious — the repository of habits, instincts, dreams, and automatic responses that forms the foundation of all conscious activity. The Moon's cyclical, reflective nature shows that this foundation is not static but constantly shifting, like the tides.`
+**Jungian Meaning:** Yesod is the personal unconscious — the repository of habits, instincts, dreams, and automatic responses that forms the foundation of all conscious activity. The Moon's cyclical, reflective nature shows that this foundation is not static but constantly shifting, like the tides — because the unconscious does not store experience passively but actively reworks it, replaying and recombining material every night in dreams. Developmentally, it is everything the personality has learned to do without thinking: the body's rhythms, the emotional reflexes, the assumptions so deep they feel like reality rather than interpretation. Individuation requires making this invisible foundation partially visible — not to control it, but to stop being controlled by it.`
   },
   {
     number: 10,
@@ -213,13 +213,13 @@ In Jungian terms, Yesod is the personal unconscious — the repository of habits
     colorVar: '--ctp-flamingo',
     x: 250, y: 660,
     pipCards: ['ten-of-wands', 'ten-of-cups', 'ten-of-swords', 'ten-of-disks'],
-    description: `Malkuth is the Kingdom — the physical, material world, the final Sephirah where all the energies of the Tree come to rest in tangible manifestation. It is the Earth, the body, the here-and-now of incarnated existence. It depends from the other nine Sephiroth but is not directly in communication with them.
+    description: `Malkuth is the Kingdom — the 10th and final Sephirah, the physical, material world where all the energies of the Tree come to rest in tangible manifestation. It is the Earth, the body, the here-and-now of incarnated existence. It depends from the other nine Sephiroth but is not directly in communication with them — which is why ordinary consciousness experiences matter as separate from spirit: not because it is, but because Malkuth receives its influences indirectly, through Yesod, and has forgotten the source.
 
-Malkuth is traditionally divided into four quarters corresponding to the four elements, coloured citrine, olive, russet, and black. In the New Aeon, its primary colour is restored to Emerald Green — the recognition that matter is not dead but alive, not a prison but a garden.
+Malkuth is traditionally divided into four quarters corresponding to the four elements, coloured citrine, olive, russet, and black. In the New Aeon, its primary colour is restored to Emerald Green — the recognition that matter is not dead but alive, not a prison but a garden. This is a doctrinal correction, not merely an aesthetic one: the old Aeon treated incarnation as punishment, the new one treats it as opportunity.
 
-The four Tens reside here — oppression, satiety, ruin, wealth — the force completely expended, showing both the achievement and the exhaustion of full materialization. But the doctrine of the revolving formula (the Daughter set upon the Throne of the Mother) means that Malkuth is always on the brink of returning to Kether.
+The four Tens reside here — oppression, satiety, ruin, wealth — the force completely expended, showing both the achievement and the exhaustion of full materialization. Their heavy character reflects a genuine paradox: to fully manifest is also to fully solidify, and what is solid cannot easily change. But the doctrine of the revolving formula (the Daughter set upon the Throne of the Mother) means that Malkuth is always on the brink of returning to Kether — completion contains the seed of renewal.
 
-In Jungian terms, Malkuth is the Ego's everyday experience of physical reality — the body, the world, the material conditions of life. It is the ground on which the entire individuation process must ultimately stand.`
+**Jungian Meaning:** Malkuth is the Ego's everyday experience of physical reality — the body, the senses, the material conditions of life. It is the ground on which the entire individuation process must ultimately stand, because insight that does not eventually change how a person lives, works, and relates to the physical world remains abstract — impressive perhaps, but incomplete. The Kingdom is called the Kingdom because it is where sovereignty is actually exercised: not in vision but in conduct, not in the upper Sephiroth but here.`
   }
 ];
 
@@ -231,9 +231,9 @@ export const daath = {
   x: 250, y: 178,
   description: `Daath is Knowledge — the hidden, unnumbered Sephirah that sits in the Abyss between the Supernal Triad and the lower seven. It is not truly a Sephirah but a *hole* in the Tree — the place where the Abyss yawns, where the ordered structure of emanation breaks down.
 
-Daath represents the experience of crossing the Abyss — the terrifying dissolution of the Ego that is required for genuine spiritual attainment. It is the "false crown" that tempts the Adept with the illusion of Knowledge (as opposed to the genuine Understanding of Binah). Those who fail at the crossing become "Black Brothers" — trapped in Daath, possessing knowledge without understanding, power without wisdom. Some modern Kabbalists place Pluto here — the planet of total, irreversible transformation that annihilates everything inauthentic. Pluto's demand for absolute honesty mirrors Daath's function as the void that swallows all pretension.
+Daath represents the experience of crossing the Abyss — the terrifying dissolution of the Ego that is required for genuine spiritual attainment. It is the "false crown" that tempts the Adept with the illusion of Knowledge (as opposed to the genuine Understanding of Binah) — false because knowledge without understanding is mere accumulation, a collection of facts that never cohere into wisdom. Those who fail at the crossing become "Black Brothers" — trapped in Daath, possessing knowledge without understanding, power without wisdom. Some modern Kabbalists place Pluto here — the planet of total, irreversible transformation that annihilates everything inauthentic. Pluto's demand for absolute honesty mirrors Daath's function as the void that swallows all pretension.
 
-In Jungian terms, Daath corresponds to the experience of psychic dissolution — the breakdown of all categories, all certainties, all structures of meaning — that precedes genuine transformation. It is the dark night of the soul at its most extreme.`
+**Jungian Meaning:** Daath corresponds to the experience of psychic dissolution — the breakdown of all categories, all certainties, all structures of meaning — that precedes genuine transformation. This dissolution is necessary because the ego's existing framework was built to navigate ordinary life; it cannot cross into transpersonal awareness while still intact, any more than a caterpillar can fly without first becoming liquid. It is the dark night of the soul at its most extreme — the point where every identity, every story the self tells about itself, is stripped away, and what remains is either nothing or everything. The "Black Brother" is the Jungian parallel of an individuation that fails at the critical threshold: the ego, terrified of annihilation, reassembles itself around its own knowledge and declares itself God — inflation masquerading as enlightenment, the shadow of the Self mistaken for the Self.`
 };
 
 // ============================================
@@ -278,11 +278,11 @@ export const worlds: QabalisticWorld[] = [
     elementSymbol: '🜂',
     colorVar: '--color-fire',
     sephiroth: [1],
-    description: `Atziluth is the World of Emanation — the highest, most abstract, most divine of the four worlds. It corresponds to the element of Fire and to the suit of Wands. Only Kether truly belongs to Atziluth, for it is the world of pure archetypes that exist before and beyond all manifestation.
+    description: `Atziluth is the World of Emanation — the highest, most abstract, most divine of the four worlds. It corresponds to the element of Fire and to the suit of Wands. Only Kether truly belongs to Atziluth, because emanation by definition precedes differentiation: this is the world of pure archetypes that exist before and beyond all manifestation.
 
-In Atziluth, the divine names are expressed in their purest form. The energy here is so exalted that it cannot be perceived by any human faculty — it can only be inferred from its effects on the worlds below. Atziluth is the realm of the Yod of Tetragrammaton — the initial creative spark, the Father's seed.
+In Atziluth, the divine names are expressed in their purest form. The energy here is so exalted that it cannot be perceived by any human faculty — it can only be inferred from its effects on the worlds below, the way a cause is known only through its consequences. Atziluth is the realm of the Yod of Tetragrammaton — the initial creative spark, the Father's seed — because Yod is the smallest letter, the dimensionless point from which all extension proceeds.
 
-In Jungian terms, Atziluth corresponds to the deepest layer of the Collective Unconscious — the realm of the archetypes in themselves, prior to any specific manifestation in dream, myth, or psychological experience.`
+**Jungian Meaning:** Atziluth corresponds to the deepest layer of the Collective Unconscious — the realm of the archetypes in themselves, prior to any specific manifestation in dream, myth, or psychological experience. Jung insisted these archetypes can never be observed directly, only through their distorted reflections in image and emotion. This is why Atziluth is assigned to Fire: it is pure energy without form, the psychic equivalent of a drive that has not yet found its object.`
   },
   {
     name: 'Briah',
@@ -292,11 +292,11 @@ In Jungian terms, Atziluth corresponds to the deepest layer of the Collective Un
     elementSymbol: '🜄',
     colorVar: '--color-water',
     sephiroth: [2, 3],
-    description: `Briah is the World of Creation — the realm where the pure archetypes of Atziluth first take on distinct form. It corresponds to the element of Water and to the suit of Cups. Chokmah and Binah belong to Briah — the supernal Father and Mother whose union generates all subsequent manifestation.
+    description: `Briah is the World of Creation — the realm where the pure archetypes of Atziluth first take on distinct form. It corresponds to the element of Water and to the suit of Cups. Chokmah and Binah belong to Briah — the supernal Father and Mother — because creation requires polarity: a force and something to receive it.
 
-In Briah, the Archangels operate — the great creative intelligences that give shape to the divine will. The energy here is still supernal, still above the Abyss, but it has differentiated into the two fundamental principles: the active/projecting (Chokmah) and the receptive/form-giving (Binah).
+In Briah, the Archangels operate — the great creative intelligences that give shape to the divine will. The energy here is still supernal, still above the Abyss, but it has differentiated into two fundamental principles: the active and projecting (Chokmah) and the receptive and form-giving (Binah). Water is assigned here because water is the first element capable of holding a reflection — and Briah is where the formless first sees its own image.
 
-In Jungian terms, Briah corresponds to the level of the Collective Unconscious where archetypes first begin to take on recognizable form — the realm of the Great Mother, the Wise Old Man, the Divine Child, and the other primordial images that shape all human experience.`
+**Jungian Meaning:** Briah corresponds to the level of the Collective Unconscious where archetypes first begin to take on recognizable form — the Great Mother, the Wise Old Man, the Divine Child. These are not yet personal memories or individual complexes; they are the universal moulds into which all human experience is poured. Briah is why a child who has never heard a myth can still dream of dragons — the forms exist before the individual encounters them.`
   },
   {
     name: 'Yetzirah',
@@ -306,11 +306,11 @@ In Jungian terms, Briah corresponds to the level of the Collective Unconscious w
     elementSymbol: '🜁',
     colorVar: '--color-air',
     sephiroth: [4, 5, 6, 7, 8, 9],
-    description: `Yetzirah is the World of Formation — the realm where the archetypal forms of Briah are elaborated into the complex, detailed structures that will eventually manifest in the physical world. It corresponds to the element of Air and to the suit of Swords. The six Sephiroth from Chesed to Yesod belong to Yetzirah.
+    description: `Yetzirah is the World of Formation — the realm where the archetypal forms of Briah are elaborated into the complex, detailed structures that will eventually manifest in the physical world. It corresponds to the element of Air and to the suit of Swords. The six Sephiroth from Chesed to Yesod belong to Yetzirah, because formation is not a single act but an extended process of refinement, negotiation, and balance.
 
-This is the world of the Angels — the specific intelligences that carry out the detailed work of creation. It is also the world of the Ruach — the intellect, the rational mind, the personality in its psychological sense. Most of the Tree's complexity resides in Yetzirah: the interplay of mercy and severity, expansion and contraction, desire and analysis.
+This is the world of the Angels — the specific intelligences that carry out the detailed work of creation. It is also the world of the Ruach — the intellect, the personality in its psychological sense. Most of the Tree's complexity resides here: the interplay of mercy and severity, expansion and contraction, desire and analysis. Air is assigned because thought mediates between impulse and act, shaping raw energy into workable plans.
 
-In Jungian terms, Yetzirah corresponds to the personal unconscious and the Ego — the level of the psyche where archetypes are translated into specific complexes, beliefs, relationships, and patterns of behaviour. It is the world where individuation actually takes place.`
+**Jungian Meaning:** Yetzirah corresponds to the personal unconscious and the Ego — the level of the psyche where universal archetypes are translated into specific complexes, habits, relationships, and beliefs. A person does not encounter "the Mother" in the abstract; they encounter their mother, and from that encounter a complex forms. This is where individuation actually takes place, because individuation is precisely the work of making the unconscious pattern conscious — pulling the Angel, so to speak, into the light of Air.`
   },
   {
     name: 'Assiah',
@@ -320,11 +320,11 @@ In Jungian terms, Yetzirah corresponds to the personal unconscious and the Ego �
     elementSymbol: '🜃',
     colorVar: '--color-earth',
     sephiroth: [10],
-    description: `Assiah is the World of Action — the physical, material world of incarnated existence. It corresponds to the element of Earth and to the suit of Disks. Only Malkuth belongs to Assiah — the Kingdom, the body, the here-and-now of sensory experience.
+    description: `Assiah is the World of Action — the physical, material world of incarnated existence. It corresponds to the element of Earth and to the suit of Disks. Only Malkuth belongs to Assiah — the Kingdom, the body, the here-and-now of sensory experience — because matter is where the entire chain of emanation finally comes to rest and becomes real.
 
-In Assiah, the shells (*Qliphoth*) are most active — the broken, unbalanced forces that represent the shadow-side of creation. But Assiah is also the world where the Great Work is ultimately accomplished, for it is only in the material world that spirit can be fully realized. The New Aeon doctrine insists that Assiah is not a prison but a garden — that matter is sacred, that the body is a temple, and that the physical world is the proper arena for spiritual achievement.
+In Assiah, the shells (Qliphoth) are most active — the broken, unbalanced forces that represent the shadow-side of creation — because materiality, being furthest from the source, is most vulnerable to distortion. But Assiah is also the world where the Great Work is ultimately accomplished. The New Aeon doctrine insists that Assiah is not a prison but a garden — that matter is sacred, the body a temple, and the physical world the proper arena for spiritual achievement, precisely because only here can an abstraction be tested against reality.
 
-In Jungian terms, Assiah corresponds to the Ego's everyday experience of physical reality — but also to the profound recognition that this everyday reality, fully embraced, is itself the ground of transformation.`
+**Jungian Meaning:** Assiah corresponds to the Ego's everyday experience of physical reality — but also to the profound recognition that this everyday reality, fully embraced, is itself the ground of transformation. Jung made the same point when he argued that individuation does not happen in retreat from the world but through engaged, embodied life. The mystic who flees the body is still split; wholeness requires that the highest insight be carried into the simplest act.`
   }
 ];
 
@@ -338,9 +338,9 @@ export const pillars = [
 // The Abyss
 export const abyss = {
   y: 235,
-  description: `The Abyss is the great gulf that separates the Supernal Triad (Kether, Chokmah, Binah) from the lower seven Sephiroth. It cannot be crossed by the intellect or the personality — only by the complete annihilation of the Ego.
+  description: `The Abyss is the great gulf that separates the Supernal Triad (Kether, Chokmah, Binah) from the lower seven Sephiroth. It cannot be crossed by the intellect or the personality — only by the complete annihilation of the Ego — because the structures that make ordinary experience coherent are precisely what prevent access to what lies beyond them.
 
-In the Abyss dwells Choronzon — the Demon of Dispersion, the lord of chaos and dissolution. The Adept who attempts to cross the Abyss must surrender everything — every attachment, every identity, every certainty — or be trapped in the false Sephirah of Daath, possessing knowledge without understanding.
+In the Abyss dwells Choronzon — the Demon of Dispersion, the lord of chaos and dissolution. Choronzon does not attack from outside; he is the Ego's own fragmentation turned against itself, every partial identity demanding to be the whole. The Adept who attempts the crossing must surrender everything — every attachment, every identity, every certainty — or be trapped in the false Sephirah of Daath, possessing knowledge without understanding, which is to say: holding the map while refusing to enter the territory.
 
-In Jungian terms, the Abyss represents the boundary between the personal and the transpersonal — the point where the Ego's structures of meaning collapse entirely, and the individual either achieves genuine transformation or fragments into psychosis.`
+**Jungian Meaning:** The Abyss represents the boundary between the personal and the transpersonal — the point where the Ego's structures of meaning collapse entirely. Jung encountered this boundary during his own confrontation with the unconscious in 1913–14 and recognized that the outcome is not guaranteed: the individual either achieves genuine transformation or fragments into psychosis. The difference is not courage but surrender — the Ego that tries to cross the Abyss while remaining intact becomes Choronzon, endlessly dispersing. The one that consents to die is reconstituted on the other side as something larger than a self.`
 };

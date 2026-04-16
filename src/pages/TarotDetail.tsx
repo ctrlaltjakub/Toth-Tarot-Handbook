@@ -3,11 +3,38 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { tarotData, type TarotCard } from '../data/tarotData';
-import { paths } from '../data/treeOfLifeData';
+import { paths, sephiroth } from '../data/treeOfLifeData';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { AstroText } from '../utils/formatSymbols';
 import { autoLinkChildren } from '../utils/autoGlossary';
+import AstroFieldLink from '../components/AstroFieldLink';
+
+// Map sephirah names → id for clickable tree links
+const sephNameToNum = new Map(sephiroth.map(s => [s.name, s.number]));
+const sephNames = [...sephNameToNum.keys()].sort((a, b) => b.length - a.length);
+const sephRe = new RegExp(`\\b(${sephNames.join('|')})\\b`, 'g');
+
+const TreePathLink: React.FC<{ text: string }> = ({ text }) => {
+  const nodes: React.ReactNode[] = [];
+  let last = 0;
+  let m: RegExpExecArray | null;
+  let k = 0;
+  sephRe.lastIndex = 0;
+  while ((m = sephRe.exec(text)) !== null) {
+    if (m.index > last) nodes.push(text.slice(last, m.index));
+    const name = m[1];
+    const num = sephNameToNum.get(name)!;
+    nodes.push(
+      <Link key={k++} to={`/tree-of-life?view=sephirah&id=${num}`}
+        style={{ color: 'var(--accent-lavender)', textDecoration: 'underline', textDecorationStyle: 'dotted', textUnderlineOffset: '2px' }}>
+        {name}
+      </Link>
+    );
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) nodes.push(text.slice(last));
+  return <>{nodes}</>;
+};
 
 const suitColor = (suit?: string, arcana?: string): string => {
   if (arcana === 'Major') return 'var(--accent-warm)';
@@ -102,13 +129,13 @@ const TarotDetail: React.FC = () => {
             {card.astrology && (
               <div className="meta-box">
                 <div className="meta-label">Astrology</div>
-                <div className="meta-value astro-symbols"><AstroText text={card.astrology} /></div>
+                <div className="meta-value astro-symbols"><AstroFieldLink text={card.astrology} /></div>
               </div>
             )}
             {card.path && (
               <div className="meta-box">
                 <div className="meta-label">Tree of Life</div>
-                <div className="meta-value">{card.path}</div>
+                <div className="meta-value"><TreePathLink text={card.path} /></div>
               </div>
             )}
           </div>

@@ -7,6 +7,26 @@ import { AstroText } from '../utils/formatSymbols';
 import { autoLinkGlossary } from '../utils/autoGlossary';
 import PlanetGlyph from './PlanetGlyph';
 
+/** Render description paragraphs, turning **Bold:** lines into styled section headers */
+const renderDescription = (text: string) =>
+  text.split('\n\n').map((p, i) => {
+    const boldMatch = p.match(/^\*\*(.+?)\*\*\s*(.*)/s);
+    if (boldMatch) {
+      const heading = boldMatch[1].replace(/:$/, '');
+      const body = boldMatch[2];
+      const headingColor = heading.includes('Jungian') ? 'var(--color-teal)' : 'var(--accent-lavender)';
+      return (
+        <div key={i} style={{ marginBottom: '1rem' }}>
+          <h4 style={{ color: headingColor, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', margin: '0 0 0.3rem', fontFamily: 'var(--font-serif)' }}>
+            {heading}
+          </h4>
+          <p style={{ margin: 0 }}>{autoLinkGlossary(body)}</p>
+        </div>
+      );
+    }
+    return <p key={i}>{autoLinkGlossary(p)}</p>;
+  });
+
 interface TreeDetailPanelProps {
   type: 'sephirah' | 'path' | 'daath' | 'abyss' | 'world' | 'pillar' | null;
   id: number | null;
@@ -64,9 +84,7 @@ const SephirahDetail: React.FC<{ seph: Sephirah; onClose: () => void }> = ({ sep
       </div>
 
       <div className="tree-panel-body">
-        {seph.description.split('\n\n').map((p, i) => (
-          <p key={i}>{autoLinkGlossary(p)}</p>
-        ))}
+        {renderDescription(seph.description)}
       </div>
 
       <div className="tree-panel-section">
@@ -170,7 +188,7 @@ const DaathDetail: React.FC<{ onClose: () => void }> = ({ onClose }) => (
     </div>
 
     <div className="tree-panel-body">
-      {daath.description.split('\n\n').map((p, i) => <p key={i}>{autoLinkGlossary(p)}</p>)}
+      {renderDescription(daath.description)}
     </div>
   </div>
 );
@@ -188,7 +206,7 @@ const AbyssDetail: React.FC<{ onClose: () => void }> = ({ onClose }) => (
       <button onClick={onClose} className="tree-panel-close"><X size={20} /></button>
     </div>
     <div className="tree-panel-body">
-      {abyss.description.split('\n\n').map((p, i) => <p key={i}>{autoLinkGlossary(p)}</p>)}
+      {renderDescription(abyss.description)}
     </div>
   </div>
 );
@@ -220,7 +238,7 @@ const WorldDetail: React.FC<{ worldName: string; onClose: () => void }> = ({ wor
 
 
       <div className="tree-panel-body">
-        {world.description.split('\n\n').map((p, i) => <p key={i}>{autoLinkGlossary(p)}</p>)}
+        {renderDescription(world.description)}
       </div>
 
       <div className="tree-panel-section">

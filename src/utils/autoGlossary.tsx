@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { glossary } from '../data/glossaryData';
 import { tarotData } from '../data/tarotData';
 import GlossaryTerm from '../components/GlossaryTerm';
+import DisambigTerm, { AMBIGUOUS_TERMS } from '../components/DisambigTerm';
 
 // Sorted by length (longest first) to match longer terms before shorter substrings
 const sortedTerms = Object.keys(glossary).sort((a, b) => b.length - a.length);
@@ -58,9 +59,12 @@ export function autoLinkGlossary(text: string): React.ReactNode[] {
       nodes.push(text.slice(lastIndex, matchIndex));
     }
 
-    // Card name takes priority over glossary term
+    // Check if this is an ambiguous term (Sun, Moon — both planet and card)
     const cardId = cardNameToId.get(term);
-    if (cardId) {
+    const bareTerm = term.startsWith('The ') ? term.slice(4) : term;
+    if (cardId && bareTerm in AMBIGUOUS_TERMS) {
+      nodes.push(<DisambigTerm key={`da-${key++}`} term={bareTerm}>{term}</DisambigTerm>);
+    } else if (cardId) {
       nodes.push(
         <Link key={`tc-${key++}`} to={`/tarot/${cardId}`} style={tarotLinkStyle}>
           {term}

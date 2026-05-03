@@ -36,6 +36,19 @@
 </table>
 </div>
 
+## <img src="https://img.shields.io/badge/-1e1e2e?style=flat-square" height="1" width="0"/> Screenshots
+
+<div align="center">
+<table>
+<tr>
+<td align="center"><img src="screenshots/zodiac-wheel.png" alt="Interactive zodiac wheel with planets, signs, and decans" width="100%"/><br/><sub><em>Interactive zodiac wheel — every sign, planet, and decan links to its tarot attribution</em></sub></td>
+</tr>
+<tr>
+<td align="center"><img src="screenshots/card-detail.png" alt="Card detail page for The Fool" width="100%"/><br/><sub><em>Card detail page with cross-linked Hebrew letter, astrology, and Tree of Life path</em></sub></td>
+</tr>
+</table>
+</div>
+
 ## <img src="https://img.shields.io/badge/-1e1e2e?style=flat-square" height="1" width="0"/> Features
 
 > [!NOTE]

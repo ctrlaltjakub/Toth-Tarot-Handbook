@@ -179,12 +179,13 @@ const TreeOfLifeSVG: React.FC<TreeOfLifeSVGProps> = ({
           const right = p.cx + pillarW;
           const stadiumD = `M ${left} ${p.topY} A ${pillarW} ${pillarW} 0 0 1 ${right} ${p.topY} L ${right} ${p.botY} A ${pillarW} ${pillarW} 0 0 1 ${left} ${p.botY} Z`;
           const maskId = `pillarMask-${p.name}`;
-          const isMildness = p.name === 'MILDNESS';
+          // Only punch the Daath hole when Daath/Abyss are visible
+          const useDaathHole = p.name === 'MILDNESS' && showAbyssDaath;
 
           return (
             <g key={`pillar-${p.name}`} onClick={(e) => { e.stopPropagation(); onPillarClick(p.name === 'SEVERITY' ? 'Severity' : p.name === 'MILDNESS' ? 'Mildness' : 'Mercy'); }} style={{ cursor: 'pointer' }}>
-              {/* Mask with Daath hole for Mildness pillar */}
-              {isMildness && (
+              {/* Mask with Daath hole for Mildness pillar (only when Daath is shown) */}
+              {useDaathHole && (
                 <defs>
                   <mask id={maskId}>
                     <rect x="0" y="-20" width="500" height="750" fill="white" />
@@ -194,7 +195,7 @@ const TreeOfLifeSVG: React.FC<TreeOfLifeSVGProps> = ({
               )}
               {/* Stadium fill */}
               <path d={stadiumD} fill={p.color} opacity={p.opacity}
-                mask={isMildness ? `url(#${maskId})` : undefined} />
+                mask={useDaathHole ? `url(#${maskId})` : undefined} />
               {/* Flat label at top */}
               <text x={p.cx} y={LABEL_Y} textAnchor="middle" dominantBaseline="central"
                 fill={p.color} fontFamily="var(--font-serif)" letterSpacing="0.15em"

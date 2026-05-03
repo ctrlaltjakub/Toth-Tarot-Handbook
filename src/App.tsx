@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
 import SearchOverlay from './components/SearchOverlay';
 import KofiOverlay from './components/KofiOverlay';
 import Home from './pages/Home';
@@ -16,6 +17,7 @@ import { GlossaryManagerProvider } from './components/GlossaryTerm';
 import { NavigationStackProvider } from './contexts/NavigationStackContext';
 import { useGlobalShortcuts } from './hooks/useGlobalShortcuts';
 import './styles/theme.css';
+import './styles/sidebar.css';
 
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
@@ -43,6 +45,7 @@ const AppShell: React.FC = () => {
 
   return (
     <div className="app-container">
+      <Sidebar onOpenSearch={() => setSearchOpen(true)} onOpenKofi={() => setKofiOpen(true)} />
       <Navbar onOpenSearch={() => setSearchOpen(true)} onOpenKofi={() => setKofiOpen(true)} />
       <main>
         <Routes>

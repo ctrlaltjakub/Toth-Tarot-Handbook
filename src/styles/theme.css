@@ -205,7 +205,7 @@ a {
 .main-content {
   flex: 1;
   padding: 1.1rem;
-  padding-top: 48px; /* space for fixed top navbar */
+  padding-top: 0;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
@@ -213,8 +213,16 @@ a {
 
 @media (min-width: 768px) {
   .main-content {
-    padding: 1.1rem;
-    padding-top: 48px;
+    padding: 1.1rem 1.5rem;
+    padding-top: 1rem;
+    margin-left: var(--sidebar-w);
+    margin-right: 0;
+    max-width: calc(1200px + var(--sidebar-w));
+    transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  body:has(.sidebar.collapsed) .main-content {
+    margin-left: var(--sidebar-w-collapsed);
+    max-width: calc(1200px + var(--sidebar-w-collapsed));
   }
 }
 
@@ -263,6 +271,13 @@ a {
   .navbar .nav-link svg {
     width: 28px;
     height: 28px;
+  }
+}
+
+/* Hide top navbar on desktop — sidebar takes over */
+@media (min-width: 768px) {
+  .navbar {
+    display: none !important;
   }
 }
 
@@ -842,6 +857,8 @@ a {
   }
   .diagram-focused .main-content {
     padding-top: 0 !important;
+    margin-left: 0 !important;
+    max-width: 100% !important;
   }
   .tree-focus, .astro-focus {
     height: 100vh !important;

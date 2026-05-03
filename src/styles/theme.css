@@ -308,8 +308,8 @@ a {
   position: relative;
   background: var(--surface0) !important;
   border-radius: 50% !important;
-  width: 52px;
-  height: 52px;
+  width: 32px;
+  height: 32px;
   padding: 0 !important;
   display: flex !important;
   align-items: center !important;
@@ -317,12 +317,12 @@ a {
   flex-direction: row !important;
   gap: 0 !important;
   border: 1px solid var(--accent) !important;
-  box-shadow: 0 0 12px rgba(203, 166, 247, 0.15);
-  flex: 0 0 52px !important;
+  box-shadow: 0 0 8px rgba(203, 166, 247, 0.15);
+  flex: 0 0 32px !important;
 }
 .nav-search-btn svg {
-  width: 26px !important;
-  height: 26px !important;
+  width: 16px !important;
+  height: 16px !important;
   color: var(--accent);
   display: block !important;
   flex-shrink: 0;

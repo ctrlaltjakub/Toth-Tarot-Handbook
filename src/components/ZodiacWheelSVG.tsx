@@ -116,7 +116,7 @@ const ZodiacWheelSVG: React.FC<ZodiacWheelSVGProps> = ({
     planetNameFont: 10,
     terraR: 34,
     terraOuterR: 38,
-    terraGlyphFont: 35,
+    terraGlyphFont: 24,
     terraNameFont: 10,
     fw: 600 as number | undefined,
   } : {
@@ -131,7 +131,7 @@ const ZodiacWheelSVG: React.FC<ZodiacWheelSVGProps> = ({
     planetNameFont: 7,
     terraR: 32,
     terraOuterR: 36,
-    terraGlyphFont: 35,
+    terraGlyphFont: 22,
     terraNameFont: 8,
     fw: undefined as number | undefined,
   };
@@ -402,11 +402,17 @@ const ZodiacWheelSVG: React.FC<ZodiacWheelSVGProps> = ({
       <g onClick={(e) => { e.stopPropagation(); onElementClick('Earth-Planet'); }} style={{ cursor: 'pointer' }}>
         <circle cx={CX} cy={CY} r={M.terraR} fill="var(--bg-card)" stroke="var(--ctp-surface2)" strokeWidth="0.8" opacity="0.85" />
         <circle cx={CX} cy={CY} r={M.terraOuterR} fill="none" stroke="var(--ctp-surface1)" strokeWidth="0.4" opacity="0.25" />
-        {/* Earth glyph (circle with cross) — inlined SVG to avoid nested viewport quirks */}
-        <g transform={`translate(${CX}, ${CY - 4}) scale(${M.terraGlyphFont / 12})`} stroke="var(--text-main)" strokeWidth={0.7} fill="none" strokeLinecap="round">
-          <circle cx="0" cy="0" r="4.5" />
-          <path d="M0 -4.5 V4.5 M-4.5 0 H4.5" />
-        </g>
+        {/* Earth glyph (circle with cross) — drawn directly in wheel coordinates */}
+        {(() => {
+          const r = M.terraGlyphFont / 2;
+          const sw = mobileMode ? 0.9 : 0.7;
+          return (
+            <g stroke="var(--text-main)" strokeWidth={sw} fill="none" strokeLinecap="round">
+              <circle cx={CX} cy={CY - 4} r={r} />
+              <path d={`M${CX} ${CY - 4 - r} V${CY - 4 + r} M${CX - r} ${CY - 4} H${CX + r}`} />
+            </g>
+          );
+        })()}
         <text x={CX} y={CY + (mobileMode ? 22 : 20)} textAnchor="middle" dominantBaseline="central" fill="var(--text-muted)" fontSize={M.terraNameFont} fontFamily="var(--font-serif)" fontWeight={M.fw} letterSpacing="0.06em">TERRA</text>
       </g>
 

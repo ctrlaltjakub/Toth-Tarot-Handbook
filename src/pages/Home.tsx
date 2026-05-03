@@ -3,9 +3,12 @@ import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import { Search, ChevronDown, ChevronUp, Github } from 'lucide-react';
 import { runSearch, iconForType, colorForType } from '../components/SearchOverlay';
-import KofiOverlay from '../components/KofiOverlay';
 
-const Home: React.FC = () => {
+interface HomeProps {
+  onOpenKofi?: () => void;
+}
+
+const Home: React.FC<HomeProps> = ({ onOpenKofi }) => {
   const [expanded, setExpanded] = useState(false);
   const [maxLines, setMaxLines] = useState<number | undefined>(undefined);
   const [isTruncated, setIsTruncated] = useState(false);
@@ -40,8 +43,6 @@ const Home: React.FC = () => {
       document.removeEventListener('touchstart', handleClickOutside);
     };
   }, [searchQuery]);
-
-  const [kofiOpen, setKofiOpen] = useState(false);
 
   const calcLines = useCallback(() => {
     const text = textRef.current;
@@ -258,7 +259,7 @@ const Home: React.FC = () => {
         </p>
         <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', marginTop: '0.75rem', flexWrap: 'wrap' }}>
           <button
-            onClick={() => setKofiOpen(true)}
+            onClick={() => onOpenKofi?.()}
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -302,7 +303,6 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <KofiOverlay open={kofiOpen} onClose={() => setKofiOpen(false)} />
     </motion.div>
   );
 };

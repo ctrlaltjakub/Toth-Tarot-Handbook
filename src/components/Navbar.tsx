@@ -1,11 +1,8 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Home as HomeIcon, Book, Search } from 'lucide-react';
-import { AnimatePresence } from 'framer-motion';
 import ThemePicker from './ThemePicker';
-import SearchOverlay from './SearchOverlay';
 
-// Custom card-clubs icon (from boss)
 const TarotIcon: React.FC<{ size?: number }> = ({ size = 22 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M12 11C13.1046 11 14 10.1046 14 9C14 7.89543 13.1046 7 12 7C10.8954 7 10 7.89543 10 9C10 10.1046 10.8954 11 12 11Z" fill="currentColor"/>
@@ -15,7 +12,6 @@ const TarotIcon: React.FC<{ size?: number }> = ({ size = 22 }) => (
   </svg>
 );
 
-// Tree of Life icon — single Kether sephirah with number and Hebrew letter
 const TreeIcon: React.FC<{ size?: number }> = ({ size = 22 }) => (
   <svg width={size} height={size} viewBox="-1 -1 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="12" cy="12" r="11.5" stroke="currentColor" strokeWidth="2" fill="none"/>
@@ -23,87 +19,45 @@ const TreeIcon: React.FC<{ size?: number }> = ({ size = 22 }) => (
   </svg>
 );
 
-// Libra glyph for astrology tab
-const AstroIcon: React.FC = () => (
+const AstroIcon: React.FC<{ size?: number }> = () => (
   <span className="astro-nav-icon">♎︎</span>
 );
 
-const Navbar: React.FC = () => {
-  const [searchOpen, setSearchOpen] = useState(false);
-  // Persist query across opens — back-button closes overlay but keeps text
-  const [searchQuery, setSearchQuery] = useState('');
+interface NavbarProps {
+  onOpenSearch: () => void;
+  onOpenKofi?: () => void;
+}
 
-  const handleKeyDown = useCallback((e: KeyboardEvent) => {
-    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-      e.preventDefault();
-      setSearchOpen(true);
-    }
-    if (e.key === '/' && !searchOpen && !(e.target instanceof HTMLInputElement) && !(e.target instanceof HTMLTextAreaElement)) {
-      e.preventDefault();
-      setSearchOpen(true);
-    }
-  }, [searchOpen]);
-
-  useEffect(() => {
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [handleKeyDown]);
-
-  // When search opens, push a history entry so browser back closes the overlay
-  // instead of navigating the underlying page
-  useEffect(() => {
-    if (!searchOpen) return;
-    window.history.pushState({ searchOpen: true }, '');
-    const handlePopState = () => setSearchOpen(false);
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
-  }, [searchOpen]);
-
+const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
   return (
-    <>
-      <nav className="navbar">
-        <NavLink to="/" end className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-          <HomeIcon size={22} />
-          <span className="nav-label">Home</span>
-        </NavLink>
-        <NavLink to="/tarot" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-          <TarotIcon />
-          <span className="nav-label">Tarot</span>
-        </NavLink>
-        <NavLink to="/tree-of-life" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-          <TreeIcon />
-          <span className="nav-label">Tree</span>
-        </NavLink>
-        {/* Search in the center — stands out */}
-        <button
-          onClick={() => setSearchOpen(true)}
-          className="nav-link nav-search-btn"
-          aria-label="Search"
-        >
-          <Search size={22} />
-        </button>
-        <NavLink to="/astrology" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-          <AstroIcon />
-          <span className="nav-label">Astrology</span>
-        </NavLink>
-        <NavLink to="/library" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-          <Book size={22} />
-          <span className="nav-label">Library</span>
-        </NavLink>
-        <ThemePicker />
-      </nav>
-
-      <AnimatePresence>
-        {searchOpen && (
-          <SearchOverlay
-            onClose={() => setSearchOpen(false)}
-            initialQuery={searchQuery}
-            onQueryChange={setSearchQuery}
-          />
-        )}
-      </AnimatePresence>
-    </>
+    <nav className="navbar">
+      <NavLink to="/" end className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+        <HomeIcon size={22} />
+        <span className="nav-label">Home</span>
+      </NavLink>
+      <NavLink to="/tarot" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+        <TarotIcon />
+        <span className="nav-label">Tarot</span>
+      </NavLink>
+      <NavLink to="/tree-of-life" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+        <TreeIcon />
+        <span className="nav-label">Tree</span>
+      </NavLink>
+      <button onClick={onOpenSearch} className="nav-link nav-search-btn" aria-label="Search">
+        <Search size={22} />
+      </button>
+      <NavLink to="/astrology" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+        <AstroIcon />
+        <span className="nav-label">Astrology</span>
+      </NavLink>
+      <NavLink to="/library" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+        <Book size={22} />
+        <span className="nav-label">Library</span>
+      </NavLink>
+      <ThemePicker />
+    </nav>
   );
 };
 
+export { TarotIcon, TreeIcon, AstroIcon };
 export default Navbar;

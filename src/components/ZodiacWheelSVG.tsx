@@ -405,7 +405,7 @@ const ZodiacWheelSVG: React.FC<ZodiacWheelSVGProps> = ({
         {/* Earth glyph (circle with cross) — drawn directly in wheel coordinates */}
         {(() => {
           const r = M.terraGlyphFont / 2;
-          const sw = mobileMode ? 2.6 : 1.8;
+          const sw = mobileMode ? 2.2 : 1.5;
           return (
             <g stroke="var(--text-main)" strokeWidth={sw} fill="none" strokeLinecap="round">
               <circle cx={CX} cy={CY - 4} r={r} />

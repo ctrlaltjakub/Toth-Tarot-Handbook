@@ -13,6 +13,7 @@ import { Library } from './pages/Library';
 import LibraryDetail from './pages/LibraryDetail';
 import Impressum from './pages/Impressum';
 import { GlossaryManagerProvider } from './components/GlossaryTerm';
+import { NavigationStackProvider } from './contexts/NavigationStackContext';
 import { useGlobalShortcuts } from './hooks/useGlobalShortcuts';
 import './styles/theme.css';
 
@@ -76,7 +77,9 @@ const App: React.FC = () => {
     <Router>
       <ScrollToTop />
       <GlossaryManagerProvider>
-        <AppShell />
+        <NavigationStackProvider>
+          <AppShell />
+        </NavigationStackProvider>
       </GlossaryManagerProvider>
     </Router>
   );

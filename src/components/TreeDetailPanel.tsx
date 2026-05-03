@@ -283,7 +283,7 @@ const PillarDetail: React.FC<{ pillarName: string; onClose: () => void }> = ({ p
 
 
       <div className="tree-panel-body">
-        <p>{autoLinkGlossary(pillar.description)}</p>
+        {renderDescription(pillar.description)}
       </div>
 
       <div className="tree-panel-section">

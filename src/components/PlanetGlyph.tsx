@@ -55,6 +55,12 @@ const glyphs: Record<string, React.FC<{ size: number; color: string; strokeW: nu
       <path d="M7.25 2.25a1.25 1.25 0 1 0-2.498-.002 1.25 1.25 0 0 0 2.498.002ZM6 11V4.75m-2.5 2.5h5M2.25 1a3.751 3.751 0 0 0 7.5 0" fill="none" stroke={color} strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   ),
+  Earth: ({ size, color, strokeW }) => (
+    <svg width={size} height={size} viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="6" cy="6" r="4.5" fill="none" stroke={color} strokeWidth={strokeW}/>
+      <path d="M6 1.5v9M1.5 6h9" stroke={color} strokeWidth={strokeW} strokeLinecap="round"/>
+    </svg>
+  ),
 };
 
 interface PlanetGlyphProps {

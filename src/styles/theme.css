@@ -232,11 +232,12 @@ a {
    ============================================ */
 .navbar {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, auto);
+  justify-content: center;
   justify-items: center;
   align-items: center;
   padding: 0.25rem 0.5rem;
-  gap: 0;
+  gap: 1.5rem;
   background-color: var(--bg-card);
   border-top: none;
   border-bottom: 1px solid var(--border-subtle);
@@ -259,6 +260,10 @@ a {
     padding: 0.6rem 0;
     padding-bottom: calc(0.6rem + env(safe-area-inset-bottom, 0px));
     align-items: center;
+    /* On mobile, spread items across the full width */
+    grid-template-columns: repeat(7, 1fr);
+    justify-content: stretch;
+    gap: 0;
   }
   .navbar .nav-link svg {
     width: 28px;

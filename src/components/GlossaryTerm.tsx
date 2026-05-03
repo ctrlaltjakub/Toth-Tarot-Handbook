@@ -44,6 +44,7 @@ const GlossaryManagerContext = createContext<GlossaryManagerContextType | null>(
 let navigatingForward = false;
 let preserveStorage = false;
 let poppingBack = false;
+let restoringFromBack = false;
 
 export const GlossaryManagerProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [stack, setStack] = useState<string[]>(() => {
@@ -74,8 +75,13 @@ export const GlossaryManagerProvider: React.FC<{ children: React.ReactNode }> = 
     }
     const saved = loadAndClearStack();
     if (saved && saved.length > 0) {
-      // Small delay to let the new page render first
-      setTimeout(() => setStack(saved), 100);
+      // Small delay to let the new page render first.
+      // restoringFromBack prevents the pushState effect from adding a ghost
+      // history entry when the stack grows during this restore.
+      setTimeout(() => {
+        restoringFromBack = true;
+        setStack(saved);
+      }, 100);
     }
   }, [location.pathname, location.search]);
 
@@ -84,11 +90,12 @@ export const GlossaryManagerProvider: React.FC<{ children: React.ReactNode }> = 
   useEffect(() => {
     const prev = prevLengthRef.current;
     prevLengthRef.current = stack.length;
-    // Only push history when stack grew (not on pop or close)
-    if (stack.length > prev && !poppingBack) {
+    // Only push history when stack grew (not on pop, close, or restore-after-back)
+    if (stack.length > prev && !poppingBack && !restoringFromBack) {
       window.history.pushState({ glossaryDepth: stack.length }, '');
     }
     poppingBack = false;
+    restoringFromBack = false;
   }, [stack.length]);
 
   useEffect(() => {

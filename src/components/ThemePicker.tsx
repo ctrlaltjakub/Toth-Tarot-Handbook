@@ -5,7 +5,11 @@ import { useTheme, flavorInfo, type CatppuccinFlavor } from '../contexts/ThemeCo
 
 const flavors: CatppuccinFlavor[] = ['mocha', 'macchiato', 'frappe'];
 
-const ThemePicker: React.FC = () => {
+interface ThemePickerProps {
+  direction?: 'down' | 'up';
+}
+
+const ThemePicker: React.FC<ThemePickerProps> = ({ direction }) => {
   const { flavor, setFlavor, diagramMode, setDiagramMode } = useTheme();
   const [open, setOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -26,7 +30,8 @@ const ThemePicker: React.FC = () => {
     return () => document.removeEventListener('mousedown', handler);
   }, []);
 
-  const dropdownPosition: React.CSSProperties = isMobile
+  const effectiveDir = direction ?? (isMobile ? 'up' : 'down');
+  const dropdownPosition: React.CSSProperties = effectiveDir === 'up'
     ? { bottom: '100%', marginBottom: '0.75rem' }
     : { top: '100%', marginTop: '0.75rem' };
 

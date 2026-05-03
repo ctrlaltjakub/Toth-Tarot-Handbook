@@ -1,8 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { Link, useNavigate } from 'react-router-dom';
-import { Search, ChevronDown, ChevronUp, Github } from 'lucide-react';
-import { runSearch, iconForType, colorForType } from '../components/SearchOverlay';
+import { Link } from 'react-router-dom';
+import { ChevronDown, ChevronUp, Github } from 'lucide-react';
 
 interface HomeProps {
   onOpenKofi?: () => void;
@@ -16,33 +15,7 @@ const Home: React.FC<HomeProps> = ({ onOpenKofi }) => {
   const textRef = useRef<HTMLParagraphElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLElement>(null);
-  const searchRef = useRef<HTMLDivElement>(null);
   const kofiRef = useRef<HTMLDivElement>(null);
-
-  const navigate = useNavigate();
-  const [searchQuery, setSearchQuery] = useState('');
-  const searchResults = searchQuery.trim().length > 0 ? runSearch(searchQuery) : [];
-
-  const handleSelectResult = (path: string) => {
-    setSearchQuery('');
-    navigate(path);
-  };
-
-  // Close search dropdown when clicking outside
-  useEffect(() => {
-    if (searchQuery.trim().length === 0) return;
-    const handleClickOutside = (e: Event) => {
-      if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
-        setSearchQuery('');
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('touchstart', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('touchstart', handleClickOutside);
-    };
-  }, [searchQuery]);
 
   const calcLines = useCallback(() => {
     const text = textRef.current;
@@ -125,62 +98,6 @@ const Home: React.FC<HomeProps> = ({ onOpenKofi }) => {
       <header ref={headerRef} className="section-header">
         <h1>Thoth Tarot Handbook</h1>
       </header>
-
-      {/* Search input */}
-      <div ref={searchRef} className="search-container" style={{ position: 'relative' }}>
-        <div style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)', pointerEvents: 'none' }}>
-          <Search size={20} />
-        </div>
-        <input
-          type="text"
-          placeholder="Search cards, signs, planets, sephiroth..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="search-input"
-          style={{ paddingLeft: '3rem', paddingRight: '4rem', width: '100%' }}
-        />
-        <span style={{ position: 'absolute', right: '1rem', top: '50%', transform: 'translateY(-50%)', fontSize: '0.75rem', color: 'var(--text-subtle)', opacity: 0.6, border: '1px solid var(--border-subtle)', borderRadius: '4px', padding: '0.1rem 0.4rem', pointerEvents: 'none' }}>
-          Ctrl+K
-        </span>
-
-        {searchQuery.trim().length > 0 && (
-          <div style={{
-            position: 'absolute',
-            top: 'calc(100% + 0.5rem)',
-            left: 0,
-            right: 0,
-            maxHeight: '60vh',
-            overflowY: 'auto',
-            background: 'var(--bg-card)',
-            border: '1px solid var(--border-subtle)',
-            borderRadius: '12px',
-            boxShadow: '0 8px 24px rgba(0,0,0,0.3)',
-            zIndex: 50,
-          }}>
-            {searchResults.length === 0 ? (
-              <div style={{ padding: '1rem', textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
-                No results for "{searchQuery}"
-              </div>
-            ) : (
-              searchResults.slice(0, 20).map((r, i) => (
-                <button
-                  key={`${r.type}-${r.path}-${i}`}
-                  className="search-overlay-result"
-                  onClick={() => handleSelectResult(r.path)}
-                >
-                  <span style={{ color: colorForType(r.type), flexShrink: 0 }}>
-                    {iconForType(r.type)}
-                  </span>
-                  <span className="search-overlay-result-text">
-                    <span className="search-overlay-result-title">{r.title}</span>
-                    <span className="search-overlay-result-subtitle">{r.subtitle}</span>
-                  </span>
-                </button>
-              ))
-            )}
-          </div>
-        )}
-      </div>
 
       {/* Intro text — dynamically clamps to fill viewport */}
       <div style={{ maxWidth: '750px', margin: '0 auto 1.25rem', textAlign: 'center' }}>

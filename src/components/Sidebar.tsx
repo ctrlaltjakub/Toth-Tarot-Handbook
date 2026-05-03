@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Home as HomeIcon, Book, Search, Github } from 'lucide-react';
 import ThemePicker from './ThemePicker';
-import { TarotIcon, TreeIcon, AstroIcon } from './Navbar';
+import { TarotIcon, TreeIcon, AstroIcon } from './navIcons';
 import { useNavigationStack } from '../contexts/NavigationStackContext';
 
 interface SidebarProps {

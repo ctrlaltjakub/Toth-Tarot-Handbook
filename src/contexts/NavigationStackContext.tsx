@@ -25,6 +25,7 @@ const Ctx = createContext<NavigationStackValue>({
   goBackTo: () => {},
 });
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useNavigationStack = () => useContext(Ctx);
 
 const MAX_STACK = 30;
@@ -88,6 +89,7 @@ export const NavigationStackProvider: React.FC<{ children: React.ReactNode }> = 
 
     const newEntry = entryFor(location);
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setStack(prevStack => {
       if (navType === 'POP') {
         const second = prevStack[prevStack.length - 2];

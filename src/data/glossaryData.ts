@@ -1222,4 +1222,28 @@ export const glossary: Record<string, GlossaryEntry> = {
     term: 'Numinosum',
     shortDef: 'The Latin form of "{Numinous}" used by Rudolf Otto and Jung. The numinosum is the thing itself that carries numinous power — the sacred object, image, or experience that overwhelms the {Ego} with awe. Distinguished from the adjective "numinous" (the quality) — the numinosum IS the encounter.',
   },
+  'Polarity': {
+    term: 'Polarity',
+    shortDef: 'The principle that creation requires opposed pairs — force and form, expansion and limitation, masculine and feminine. The {Tree of Life} embodies polarity in its two outer pillars ({Pillar of Mercy} and {Pillar of Severity}), reconciled by the central {Pillar of Mildness}. Without polarity nothing can manifest, because nothing stands in relation to anything else.',
+  },
+  'Libidinal': {
+    term: 'Libidinal',
+    shortDef: 'Pertaining to {Libido} in the Jungian sense — the broad psychic life-force, not the narrow Freudian sexual drive. A libidinal function or movement is one that flows outward toward objects of desire, attraction, or relatedness.',
+  },
+  'Octave': {
+    term: 'Octave',
+    shortDef: 'A Hermetic concept: the same principle expressed at progressively more concrete levels, like the same musical note an octave apart. The three {Sephiroth} on each pillar of the {Tree of Life} form octaves of one principle — e.g. {Binah}, {Geburah}, and {Hod} are the form-giving principle at cosmic, personal-active, and intellectual scales.',
+  },
+  'Octaves': {
+    term: 'Octaves',
+    shortDef: 'See {Octave}. The plural is used to emphasise the descending chain of expressions — three Sephiroth on a pillar form three octaves of one principle.',
+  },
+  'Equilibrium': {
+    term: 'Equilibrium',
+    shortDef: 'The state of balance between opposed forces, where neither dominates. The {Pillar of Mildness} is sometimes called the Pillar of Equilibrium because it holds the tension between {Pillar of Mercy} and {Pillar of Severity} rather than choosing one. In Jungian terms, equilibrium is what the {Self} achieves when no single complex or function tyrannises the others.',
+  },
+  'Lightning Flash': {
+    term: 'Lightning Flash',
+    shortDef: 'The path of emanation traced by divine creative force as it descends from {Kether} through the Sephiroth to {Malkuth} in zigzag form (1→2→3→4→5→6→7→8→9→10). So called because the energy cuts between the pillars like a lightning bolt, animating each Sephirah in turn. The reverse ascent through the 22 Major Arcana is the Path of the Serpent.',
+  },
 };

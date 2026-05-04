@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { Home as HomeIcon, Book, Search } from 'lucide-react';
-import ThemePicker from './ThemePicker';
+import React, { useEffect, useRef, useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { Home as HomeIcon, Book, Search, Settings, X } from 'lucide-react';
+import SettingsPanelContent from './SettingsPanelContent';
 import { TarotIcon, TreeIcon, AstroIcon } from './navIcons';
 import { useNavigationStack } from '../contexts/NavigationStackContext';
+import { runSearch, iconForType, colorForType } from './SearchOverlay';
 
 interface SidebarProps {
   onOpenSearch: () => void;
@@ -46,7 +47,10 @@ const KIND_LABEL: Record<string, string> = {
   node: 'Detail',
 };
 
-const Sidebar: React.FC<SidebarProps> = ({ onOpenSearch }) => {
+// onOpenSearch is kept in the props in case the parent wants to trigger
+// the modal (e.g. from a global Ctrl+K), but the sidebar itself uses an
+// inline input + results dropdown.
+const Sidebar: React.FC<SidebarProps> = () => {
   const [collapsed, setCollapsed] = useState<boolean>(() => {
     try { return localStorage.getItem('thoth-sidebar-collapsed') === '1'; }
     catch { return false; }
@@ -57,6 +61,57 @@ const Sidebar: React.FC<SidebarProps> = ({ onOpenSearch }) => {
   }, [collapsed]);
 
   const { recent, goBackTo } = useNavigationStack();
+
+  // Inline search
+  const [searchQuery, setSearchQuery] = useState('');
+  const inputRef = useRef<HTMLInputElement>(null);
+  const searchWrapRef = useRef<HTMLDivElement>(null);
+  const trimmed = searchQuery.trim();
+  const searchResults = trimmed.length > 0 ? runSearch(trimmed).slice(0, 30) : [];
+  const navigate = useNavigate();
+
+  const selectResult = (path: string) => {
+    setSearchQuery('');
+    navigate(path);
+  };
+
+  // Close results when clicking outside the search wrap
+  useEffect(() => {
+    if (trimmed.length === 0) return;
+    const handler = (e: Event) => {
+      if (searchWrapRef.current && !searchWrapRef.current.contains(e.target as Node)) {
+        // Don't clear the query, just stop showing — but easiest is to clear
+        setSearchQuery('');
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    document.addEventListener('touchstart', handler);
+    return () => {
+      document.removeEventListener('mousedown', handler);
+      document.removeEventListener('touchstart', handler);
+    };
+  }, [trimmed]);
+
+  // When sidebar is collapsed and the user clicks the search row, expand
+  // it. Cannot focus immediately because the input is display:none until
+  // the transition advances, so we focus after the width transition.
+  const handleSearchRowClick = () => {
+    if (collapsed) {
+      setCollapsed(false);
+      setTimeout(() => inputRef.current?.focus(), 320);
+    }
+  };
+
+  // Inline settings
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  const handleSettingsClick = () => {
+    if (collapsed) {
+      setCollapsed(false);
+      setSettingsOpen(true);
+    } else {
+      setSettingsOpen(o => !o);
+    }
+  };
 
   return (
     <aside className={`sidebar ${collapsed ? 'collapsed' : ''}`} aria-label="Primary">
@@ -81,20 +136,60 @@ const Sidebar: React.FC<SidebarProps> = ({ onOpenSearch }) => {
         )}
       </div>
 
-      <button
-        className="sidebar-search"
-        onClick={onOpenSearch}
-        data-tooltip="Search"
-        aria-label="Search"
-      >
-        <span className="sidebar-search-icon"><Search size={18} /></span>
-        {!collapsed && (
-          <>
-            <span className="sidebar-search-label">Search</span>
-            <span className="sidebar-search-kbd">Ctrl+K</span>
-          </>
+      <div ref={searchWrapRef} className="sidebar-search-wrap">
+        <div
+          className="sidebar-search-input-row"
+          onClick={collapsed ? handleSearchRowClick : undefined}
+          data-tooltip="Search"
+        >
+          <span className="sidebar-search-icon"><Search size={18} /></span>
+          <input
+            ref={inputRef}
+            type="text"
+            className="sidebar-search-input"
+            placeholder="Search..."
+            value={searchQuery}
+            onChange={e => setSearchQuery(e.target.value)}
+            aria-label="Search"
+          />
+          {searchQuery && (
+            <button
+              className="sidebar-search-clear"
+              onClick={(e) => { e.stopPropagation(); setSearchQuery(''); inputRef.current?.focus(); }}
+              aria-label="Clear search"
+              type="button"
+            >
+              <X size={14} />
+            </button>
+          )}
+        </div>
+
+        {!collapsed && trimmed.length > 0 && (
+          <div className="sidebar-search-results">
+            {searchResults.length === 0 ? (
+              <div className="sidebar-search-empty">
+                No results for &ldquo;{trimmed}&rdquo;
+              </div>
+            ) : (
+              searchResults.map((r, i) => (
+                <button
+                  key={`${r.type}-${r.path}-${i}`}
+                  className="sidebar-search-result"
+                  onClick={() => selectResult(r.path)}
+                >
+                  <span className="sidebar-search-result-icon" style={{ color: colorForType(r.type) }}>
+                    {iconForType(r.type)}
+                  </span>
+                  <span className="sidebar-search-result-text">
+                    <span className="sidebar-search-result-title">{r.title}</span>
+                    <span className="sidebar-search-result-subtitle">{r.subtitle}</span>
+                  </span>
+                </button>
+              ))
+            )}
+          </div>
         )}
-      </button>
+      </div>
 
       <div className="sidebar-section-label">{!collapsed && 'Sections'}</div>
 
@@ -150,7 +245,22 @@ const Sidebar: React.FC<SidebarProps> = ({ onOpenSearch }) => {
       </div>
 
       <div className="sidebar-footer">
-        <ThemePicker direction="up" />
+        {settingsOpen && !collapsed && (
+          <div className="sidebar-settings-panel">
+            <SettingsPanelContent />
+          </div>
+        )}
+        <button
+          className={`sidebar-link sidebar-settings-button ${settingsOpen ? 'active' : ''}`}
+          onClick={handleSettingsClick}
+          data-tooltip="Settings"
+          aria-expanded={settingsOpen}
+          aria-label="Settings"
+          type="button"
+        >
+          <span className="sidebar-link-icon"><Settings size={20} /></span>
+          {!collapsed && <span className="sidebar-link-label">Settings</span>}
+        </button>
       </div>
     </aside>
   );

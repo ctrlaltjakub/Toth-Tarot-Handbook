@@ -147,6 +147,20 @@
 }
 .sidebar-search-clear:hover { color: var(--text-main); background: var(--bg-card); }
 
+.sidebar-search-kbd {
+  flex: 0 0 auto;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  padding: 0.12rem 0.4rem;
+  border-radius: 4px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  white-space: nowrap;
+}
+.sidebar.collapsed .sidebar-search-kbd { display: none; }
+
 /* When collapsed, hide the input/clear; the icon stays visible and the
    row acts as a clickable target that expands the sidebar. */
 .sidebar.collapsed .sidebar-search-input-row {

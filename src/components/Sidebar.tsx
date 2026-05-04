@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { Home as HomeIcon, Book, Search, Settings, X } from 'lucide-react';
 import SettingsPanelContent from './SettingsPanelContent';
@@ -6,8 +6,8 @@ import { TarotIcon, TreeIcon, AstroIcon } from './navIcons';
 import { useNavigationStack } from '../contexts/NavigationStackContext';
 import { runSearch, iconForType, colorForType } from './SearchOverlay';
 
-interface SidebarProps {
-  onOpenSearch: () => void;
+export interface SidebarHandle {
+  focusSearch: () => void;
 }
 
 const SunGlyph: React.FC<{ size?: number }> = ({ size = 28 }) => (
@@ -47,10 +47,10 @@ const KIND_LABEL: Record<string, string> = {
   node: 'Detail',
 };
 
-// onOpenSearch is kept in the props in case the parent wants to trigger
-// the modal (e.g. from a global Ctrl+K), but the sidebar itself uses an
-// inline input + results dropdown.
-const Sidebar: React.FC<SidebarProps> = () => {
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+interface SidebarProps {}
+
+const Sidebar = forwardRef<SidebarHandle, SidebarProps>((_props, ref) => {
   const [collapsed, setCollapsed] = useState<boolean>(() => {
     try { return localStorage.getItem('thoth-sidebar-collapsed') === '1'; }
     catch { return false; }
@@ -80,7 +80,6 @@ const Sidebar: React.FC<SidebarProps> = () => {
     if (trimmed.length === 0) return;
     const handler = (e: Event) => {
       if (searchWrapRef.current && !searchWrapRef.current.contains(e.target as Node)) {
-        // Don't clear the query, just stop showing — but easiest is to clear
         setSearchQuery('');
       }
     };
@@ -92,9 +91,22 @@ const Sidebar: React.FC<SidebarProps> = () => {
     };
   }, [trimmed]);
 
-  // When sidebar is collapsed and the user clicks the search row, expand
-  // it. Cannot focus immediately because the input is display:none until
-  // the transition advances, so we focus after the width transition.
+  // Expose focusSearch to parent (used by Ctrl+K on desktop)
+  useImperativeHandle(ref, () => ({
+    focusSearch: () => {
+      if (collapsed) {
+        setCollapsed(false);
+        // Wait for the width transition to advance enough that the input
+        // is rendered and focus-able.
+        setTimeout(() => inputRef.current?.focus(), 320);
+      } else {
+        inputRef.current?.focus();
+      }
+    },
+  }), [collapsed]);
+
+  // Clicking the search row when collapsed expands the sidebar and
+  // focuses the input.
   const handleSearchRowClick = () => {
     if (collapsed) {
       setCollapsed(false);
@@ -152,7 +164,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
             onChange={e => setSearchQuery(e.target.value)}
             aria-label="Search"
           />
-          {searchQuery && (
+          {searchQuery ? (
             <button
               className="sidebar-search-clear"
               onClick={(e) => { e.stopPropagation(); setSearchQuery(''); inputRef.current?.focus(); }}
@@ -161,6 +173,8 @@ const Sidebar: React.FC<SidebarProps> = () => {
             >
               <X size={14} />
             </button>
+          ) : (
+            <span className="sidebar-search-kbd" aria-hidden="true">Ctrl+K</span>
           )}
         </div>
 
@@ -264,6 +278,8 @@ const Sidebar: React.FC<SidebarProps> = () => {
       </div>
     </aside>
   );
-};
+});
+
+Sidebar.displayName = 'Sidebar';
 
 export default Sidebar;

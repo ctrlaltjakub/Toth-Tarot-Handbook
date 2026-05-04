@@ -205,16 +205,25 @@ a {
 .main-content {
   flex: 1;
   padding: 1.1rem;
-  padding-top: 48px; /* space for fixed top navbar */
+  padding-top: 0;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
 }
 
+/* On desktop, push <main> right of the fixed sidebar so .main-content
+   centers within the remaining space. Doing this on <main> instead of
+   .main-content keeps the centering math out of every page-level rule. */
 @media (min-width: 768px) {
+  main {
+    padding-left: var(--sidebar-w);
+    transition: padding-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  body:has(.sidebar.collapsed) main {
+    padding-left: var(--sidebar-w-collapsed);
+  }
   .main-content {
-    padding: 1.1rem;
-    padding-top: 48px;
+    padding-top: 1rem;
   }
 }
 
@@ -263,6 +272,13 @@ a {
   .navbar .nav-link svg {
     width: 28px;
     height: 28px;
+  }
+}
+
+/* Hide top navbar on desktop — sidebar takes over */
+@media (min-width: 768px) {
+  .navbar {
+    display: none !important;
   }
 }
 
@@ -839,6 +855,9 @@ a {
 @media (min-width: 768px) {
   .diagram-focused .navbar {
     display: none !important;
+  }
+  .diagram-focused main {
+    padding-left: 0 !important;
   }
   .diagram-focused .main-content {
     padding-top: 0 !important;

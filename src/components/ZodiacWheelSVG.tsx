@@ -341,8 +341,18 @@ const ZodiacWheelSVG: React.FC<ZodiacWheelSVGProps> = ({
         return (<React.Fragment key={`dec-${sign.name}`}>
           {[1, 2].map(d => { const deg = s + d * 10; const inn = polarToXY(CX, CY, DECAN_INNER, deg); const out = polarToXY(CX, CY, DECAN_OUTER, deg);
             return <line key={`dl-${sign.name}-${d}`} x1={inn.x} y1={inn.y} x2={out.x} y2={out.y} stroke="var(--ctp-overlay0)" strokeWidth="0.3" opacity="0.3" strokeDasharray="2,2" />; })}
-          {sign.decans.map((dc, d) => { const m = s + d * 10 + 5; const p = polarToXY(CX, CY, (DECAN_OUTER + DECAN_INNER) / 2, m);
-            return <text key={`dg-${sign.name}-${d}`} x={p.x} y={p.y} textAnchor="middle" dominantBaseline="central" fill="var(--ctp-subtext0)" fontSize={M.decanFont} fontWeight={M.fw} className="astro-symbols" opacity="0.65">{dc.subRulerGlyph}</text>; })}
+          {sign.decans.map((dc, d) => {
+            const m = s + d * 10 + 5;
+            const p = polarToXY(CX, CY, (DECAN_OUTER + DECAN_INNER) / 2, m);
+            const gSize = M.decanFont;
+            return (
+              <svg key={`dg-${sign.name}-${d}`} x={p.x - gSize / 2} y={p.y - gSize / 2}
+                   width={gSize} height={gSize} overflow="visible" opacity="0.65">
+                <PlanetGlyph name={dc.subRuler} size={gSize}
+                  color="var(--ctp-subtext0)" strokeWidth={mobileMode ? 0.9 : 0.7} />
+              </svg>
+            );
+          })}
         </React.Fragment>);
       })}
 

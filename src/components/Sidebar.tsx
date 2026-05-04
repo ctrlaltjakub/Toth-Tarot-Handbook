@@ -1,31 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Home as HomeIcon, Book, Search, Github } from 'lucide-react';
+import { Home as HomeIcon, Book, Search } from 'lucide-react';
 import ThemePicker from './ThemePicker';
 import { TarotIcon, TreeIcon, AstroIcon } from './navIcons';
 import { useNavigationStack } from '../contexts/NavigationStackContext';
 
 interface SidebarProps {
   onOpenSearch: () => void;
-  onOpenKofi: () => void;
 }
 
 const SunGlyph: React.FC<{ size?: number }> = ({ size = 28 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" xmlns="http://www.w3.org/2000/svg">
     <circle cx="12" cy="12" r="9" />
     <circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none" />
-  </svg>
-);
-
-const KofiGlyph: React.FC<{ size?: number }> = ({ size = 18 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M4 5h13a3 3 0 0 1 3 3v1a3 3 0 0 1-3 3h-1.2A5 5 0 0 1 11 16H8a4 4 0 0 1-4-4V5z"
-      stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" fill="none"/>
-    <path d="M16 8h1a1 1 0 0 1 1 1v0a1 1 0 0 1-1 1h-1"
-      stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-    <path d="M8 8.5c.6-.8 1.7-.8 2.3 0 .3.4.3 1 0 1.4L9 11.3 7.7 9.9c-.3-.4-.3-1 0-1.4.6-.8 1.7-.8 2.3 0"
-      stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-    <path d="M5 19h14" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round"/>
   </svg>
 );
 
@@ -59,7 +46,7 @@ const KIND_LABEL: Record<string, string> = {
   node: 'Detail',
 };
 
-const Sidebar: React.FC<SidebarProps> = ({ onOpenSearch, onOpenKofi }) => {
+const Sidebar: React.FC<SidebarProps> = ({ onOpenSearch }) => {
   const [collapsed, setCollapsed] = useState<boolean>(() => {
     try { return localStorage.getItem('thoth-sidebar-collapsed') === '1'; }
     catch { return false; }
@@ -164,24 +151,6 @@ const Sidebar: React.FC<SidebarProps> = ({ onOpenSearch, onOpenKofi }) => {
 
       <div className="sidebar-footer">
         <ThemePicker direction="up" />
-        <a
-          className="sidebar-link sidebar-link-quiet"
-          href="https://github.com/ctrlaltjakub/Toth-Tarot-Handbook"
-          target="_blank" rel="noopener noreferrer"
-          data-tooltip="Source"
-        >
-          <span className="sidebar-link-icon"><Github size={18} /></span>
-          {!collapsed && <span className="sidebar-link-label">Source</span>}
-        </a>
-        <button
-          className="sidebar-kofi"
-          onClick={onOpenKofi}
-          data-tooltip="Support on Ko-fi"
-          aria-label="Support on Ko-fi"
-        >
-          <span className="sidebar-kofi-icon" aria-hidden="true"><KofiGlyph /></span>
-          {!collapsed && <span className="sidebar-kofi-label">Support on Ko-fi</span>}
-        </button>
       </div>
     </aside>
   );

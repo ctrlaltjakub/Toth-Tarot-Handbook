@@ -45,7 +45,7 @@ const AppShell: React.FC = () => {
 
   return (
     <div className="app-container">
-      <Sidebar onOpenSearch={() => setSearchOpen(true)} onOpenKofi={() => setKofiOpen(true)} />
+      <Sidebar onOpenSearch={() => setSearchOpen(true)} />
       <Navbar onOpenSearch={() => setSearchOpen(true)} onOpenKofi={() => setKofiOpen(true)} />
       <main>
         <Routes>

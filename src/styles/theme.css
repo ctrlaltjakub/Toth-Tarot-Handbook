@@ -211,18 +211,19 @@ a {
   width: 100%;
 }
 
+/* On desktop, push <main> right of the fixed sidebar so .main-content
+   centers within the remaining space. Doing this on <main> instead of
+   .main-content keeps the centering math out of every page-level rule. */
 @media (min-width: 768px) {
-  .main-content {
-    padding: 1.1rem 1.5rem;
-    padding-top: 1rem;
-    margin-left: var(--sidebar-w);
-    margin-right: 0;
-    max-width: calc(1200px + var(--sidebar-w));
-    transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  main {
+    padding-left: var(--sidebar-w);
+    transition: padding-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  body:has(.sidebar.collapsed) .main-content {
-    margin-left: var(--sidebar-w-collapsed);
-    max-width: calc(1200px + var(--sidebar-w-collapsed));
+  body:has(.sidebar.collapsed) main {
+    padding-left: var(--sidebar-w-collapsed);
+  }
+  .main-content {
+    padding-top: 1rem;
   }
 }
 
@@ -855,10 +856,11 @@ a {
   .diagram-focused .navbar {
     display: none !important;
   }
+  .diagram-focused main {
+    padding-left: 0 !important;
+  }
   .diagram-focused .main-content {
     padding-top: 0 !important;
-    margin-left: 0 !important;
-    max-width: 100% !important;
   }
   .tree-focus, .astro-focus {
     height: 100vh !important;

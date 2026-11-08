@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { X } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 import { sephiroth, paths, daath, worlds, abyss, pillars, type Sephirah, type TreePath } from '../data/treeOfLifeData';
 import { AstroText } from '../utils/formatSymbols';
-import { autoLinkGlossary } from '../utils/autoGlossary';
+import { autoLinkChildren } from '../utils/autoGlossary';
 import PlanetGlyph from './PlanetGlyph';
 
 /** Render description paragraphs, turning **Bold:** lines into styled section headers */
@@ -20,11 +21,17 @@ const renderDescription = (text: string) =>
           <h4 style={{ color: headingColor, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', margin: '0 0 0.3rem', fontFamily: 'var(--font-serif)' }}>
             {heading}
           </h4>
-          <p style={{ margin: 0 }}>{autoLinkGlossary(body)}</p>
+          <ReactMarkdown components={{ p: ({ children }) => <p style={{ margin: 0 }}>{autoLinkChildren(children)}</p> }}>
+            {body}
+          </ReactMarkdown>
         </div>
       );
     }
-    return <p key={i}>{autoLinkGlossary(p)}</p>;
+    return (
+      <ReactMarkdown key={i} components={{ p: ({ children }) => <p>{autoLinkChildren(children)}</p> }}>
+        {p}
+      </ReactMarkdown>
+    );
   });
 
 interface TreeDetailPanelProps {

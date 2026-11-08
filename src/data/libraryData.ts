@@ -21,7 +21,7 @@ This handbook combines Crowley’s Thoth symbolism, the Golden Dawn’s inherite
 #### The Tree and the Four Worlds
 The main Tree uses ten numbered Sephiroth and 22 lettered paths. Path numbers 11–32 follow the Hebrew letters, rather than the printed trump numbers. The Emperor is IV / Tzaddi / Aries / Path 28 (Netzach–Yesod), and the Star is XVII / Heh / Aquarius / Path 15 (Chokmah–Tiphareth). Crowley’s printed tables and his discussion are not always consistent; this handbook states its convention explicitly.
 
-Each of the Four Worlds contains a complete Tree. Wands express the ten Sephiroth in Atziluth, Cups in Briah, Swords in Yetzirah, and Disks in Assiah. The coloured bands on the main Tree are schematic analogies that emphasize levels of a single Tree. They are not exclusive boundaries for the worlds. Crowley also uses a single-Tree projection alongside the complete-Tree model.
+The world bands follow Dion Fortune’s grouping in The Mystical Qabalah, VIII.18: Kether / Chokmah–Binah / Chesed–Yesod / Malkuth. Her IX.2 also describes a complete Tree in each world. The four suits express this latter model: Wands in Atziluth, Cups in Briah, Swords in Yetzirah, and Disks in Assiah. Each world’s article explains its placement on the diagram.
 
 #### The Zodiac Wheel
 The 36 decans use the Golden Dawn/Thoth sequence of seven planetary rulers, beginning with Mars in the first decan of Aries. The Aces have no decans. Knights, Queens, and Princes each span 30° across two adjacent signs; Princesses rule polar quadrants. A boundary written 20°00′ is the start of the twenty-first degree, explaining why Crowley’s ordinal wording can look different.
@@ -37,6 +37,7 @@ The Jungian sections are this handbook’s interpretive lens, not quotations or 
 - [Aleister Crowley, The Book of Thoth (1944): primary text for the Thoth system](https://otohungary.org/documents/publication/english/Book_of_Thoth.html)
 - [Crowley, Liber 777: correspondence tables inherited from the Golden Dawn](https://www.bibliotecapleyades.net/crowley/liber/libers/liber777.pdf) — these tables predate the Emperor–Star exchange.
 - [Frater Achad, Q.B.L., chapter V (1922): complete Trees in the Four Worlds](https://hermetic.com/achad/qbl/qbl-chapter-5)
+- [Dion Fortune, The Mystical Qabalah, VIII.18 and IX.2: the world bands and the complete-Tree model](https://studylib.net/doc/25668547/the-mystical-qabalah)
 - [Ptolemy, Tetrabiblos, Book I, sections 17–19: traditional houses of the planets and exaltations](https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Ptolemy/Tetrabiblos/1B*.html)
 - [A. E. Waite, The Pictorial Key to the Tarot: the published Celtic Cross method](https://sacred-texts.com/tarot/pkt/pkt0307.htm) — the spread here is a labeled modern variant.
 - [The Metropolitan Museum of Art: early Tarot history](https://www.metmuseum.org/perspectives/tarot-2)

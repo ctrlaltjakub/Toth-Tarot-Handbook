@@ -269,7 +269,9 @@ export const worlds: QabalisticWorld[] = [
     elementSymbol: '🜂',
     colorVar: '--color-fire',
     sephiroth: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    description: `Atziluth is the World of Emanation — the highest, most abstract, most divine of the four worlds. It corresponds to the element of Fire and to the suit of Wands. It contains a complete Tree of ten Sephiroth: the Ace through Ten of Wands express their ranks in Fire. Atziluth is associated with Kether in one simplified projection onto a single Tree, but it is not restricted to Kether.
+    description: `Atziluth is the World of Emanation — the highest, most abstract, most divine of the four worlds. It corresponds to the element of Fire and to the suit of Wands. In the complete-Tree model, the Ace through Ten of Wands express the ten Sephiroth in Fire.
+
+**On this diagram:** Atziluth surrounds Kether, the undifferentiated source, following [Dion Fortune, The Mystical Qabalah, VIII.18](https://studylib.net/doc/25668547/the-mystical-qabalah). Her alternative model (IX.2) gives each world all ten Sephiroth, as reflected in the four Tarot suits.
 
 In Atziluth, the divine names are expressed in their purest form. The energy here is so exalted that it cannot be perceived by any human faculty — it can only be inferred from its effects on the worlds below, the way a cause is known only through its consequences. Atziluth is the realm of the Yod of Tetragrammaton — the initial creative spark, the Father's seed — because Yod is the smallest letter, the dimensionless point from which all extension proceeds.
 
@@ -284,9 +286,11 @@ In Atziluth, the divine names are expressed in their purest form. The energy her
     elementSymbol: '🜄',
     colorVar: '--color-water',
     sephiroth: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    description: `Briah is the World of Creation — the realm where the pure archetypes of Atziluth first take on distinct form. It corresponds to the element of Water and to the suit of Cups. It contains a complete Tree of ten Sephiroth, expressed by the Ace through Ten of Cups. A simplified single-Tree projection emphasizes the supernal creative powers, especially Binah, but Briah is not limited to two spheres.
+    description: `Briah is the World of Creation — the realm where the pure archetypes of Atziluth first take on distinct form. It corresponds to the element of Water and to the suit of Cups. In the complete-Tree model, the Ace through Ten of Cups express the ten Sephiroth in Water.
 
-In Briah, the Archangels operate — the great creative intelligences that give shape to the divine will. The Father–Mother polarity is one image for the passage from undifferentiated impulse into creation. It should not be treated as a rule that the whole world occupies only the part of the diagram above the Abyss. Water is assigned here because water is the first element capable of holding a reflection — and Briah is where the formless first sees its own image.
+**On this diagram:** Briah surrounds Chokmah and Binah, the creative Father–Mother pair, following [Dion Fortune, The Mystical Qabalah, VIII.18](https://studylib.net/doc/25668547/the-mystical-qabalah). Her alternative model (IX.2) gives each world all ten Sephiroth, as reflected in the four Tarot suits.
+
+In Briah, the Archangels operate — the great creative intelligences that give shape to the divine will. The Father–Mother polarity is one image for the passage from undifferentiated impulse into creation. Water is assigned here because water is the first element capable of holding a reflection — and Briah is where the formless first sees its own image.
 
 **Jungian Meaning:** Briah corresponds to the level of the Collective Unconscious where archetypes first begin to take on recognizable form — the Great Mother, the Wise Old Man, the Divine Child. These are not yet personal memories or individual complexes; they are the universal moulds into which all human experience is poured. Briah is why a child who has never heard a myth can still dream of dragons — the forms exist before the individual encounters them.`
   },
@@ -299,7 +303,9 @@ In Briah, the Archangels operate — the great creative intelligences that give 
     elementSymbol: '🜁',
     colorVar: '--color-air',
     sephiroth: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    description: `Yetzirah is the World of Formation — the realm where the archetypal forms of Briah are elaborated into the complex, detailed structures that will eventually manifest in the physical world. It corresponds to the element of Air and to the suit of Swords. It contains a complete Tree of ten Sephiroth, expressed by the Ace through Ten of Swords. In the simplified projection onto one Tree, Chesed through Yesod emphasize formative activity; this grouping is not an exhaustive list of the spheres of Yetzirah.
+    description: `Yetzirah is the World of Formation — the realm where the archetypal forms of Briah are elaborated into the complex, detailed structures that will eventually manifest in the physical world. It corresponds to the element of Air and to the suit of Swords. In the complete-Tree model, the Ace through Ten of Swords express the ten Sephiroth in Air.
+
+**On this diagram:** Yetzirah surrounds the six formative spheres, Chesed through Yesod, following [Dion Fortune, The Mystical Qabalah, VIII.18](https://studylib.net/doc/25668547/the-mystical-qabalah). Her alternative model (IX.2) gives each world all ten Sephiroth, as reflected in the four Tarot suits.
 
 This is the world of the Angels — the specific intelligences that carry out the detailed work of creation. It is also the world of the Ruach — the intellect, the personality in its psychological sense. The formative work includes the interplay of mercy and severity, expansion and contraction, desire and analysis. Air is assigned because thought mediates between impulse and act, shaping raw energy into workable plans.
 
@@ -314,7 +320,9 @@ This is the world of the Angels — the specific intelligences that carry out th
     elementSymbol: '🜃',
     colorVar: '--color-earth',
     sephiroth: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    description: `Assiah is the World of Action — the physical, material world of incarnated existence. It corresponds to the element of Earth and to the suit of Disks. It contains a complete Tree of ten Sephiroth, expressed by the Ace through Ten of Disks. Malkuth represents Assiah in a simplified projection onto one Tree; it is not the only sphere within the world of Assiah.
+    description: `Assiah is the World of Action — the physical, material world of incarnated existence. It corresponds to the element of Earth and to the suit of Disks. In the complete-Tree model, the Ace through Ten of Disks express the ten Sephiroth in Earth.
+
+**On this diagram:** Assiah surrounds Malkuth, the realm of material manifestation, following [Dion Fortune, The Mystical Qabalah, VIII.18](https://studylib.net/doc/25668547/the-mystical-qabalah). Her alternative model (IX.2) gives each world all ten Sephiroth, as reflected in the four Tarot suits.
 
 In Assiah, the shells (Qliphoth) are most active — the broken, unbalanced forces that represent the shadow-side of creation — because materiality, being furthest from the source, is most vulnerable to distortion. But Assiah is also the world where the Great Work is ultimately accomplished. The New Aeon doctrine insists that Assiah is not a prison but a garden — that matter is sacred, the body a temple, and the physical world the proper arena for spiritual achievement, precisely because only here can an abstraction be tested against reality.
 

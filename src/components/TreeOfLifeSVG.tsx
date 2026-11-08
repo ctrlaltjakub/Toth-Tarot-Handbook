@@ -63,7 +63,7 @@ const TreeOfLifeSVG: React.FC<TreeOfLifeSVGProps> = ({
   return (
     <svg
       viewBox={VIEWBOX}
-      role="group" aria-label="Thoth Tree of Life with schematic Four Worlds bands"
+      role="group" aria-label="Thoth Tree of Life with Four Worlds bands"
       style={{ display: 'block' }}
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -115,7 +115,7 @@ const TreeOfLifeSVG: React.FC<TreeOfLifeSVGProps> = ({
 
       {showWorlds && <>
         {/* Atziluth — Fire (y:18, h:78, center: 57) */}
-        <g role="button" tabIndex={0} aria-label="Explore Atziluth, schematic world band"
+        <g role="button" tabIndex={0} aria-label="Explore Atziluth"
           onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') {
               e.preventDefault();
@@ -124,18 +124,18 @@ const TreeOfLifeSVG: React.FC<TreeOfLifeSVGProps> = ({
             }
           }}
           onClick={(e) => { e.stopPropagation(); onWorldClick('Atziluth'); }} style={{ cursor: 'pointer' }}>
-          <title>Atziluth — schematic world analogy; each world contains a complete Tree</title>
+          <title>Atziluth — World of Emanation</title>
           <rect x="55" y="18" width="390" height="78" rx="8"
             fill="none" stroke="var(--color-fire)" strokeWidth="0.8" strokeDasharray="6,4" opacity="0.4"
             mask="url(#worldBorderMask)" />
           <text x="462" y={57} fill="var(--color-fire)" fontFamily="var(--font-serif)"
             letterSpacing="0.15em" opacity="0.5" writingMode="vertical-rl" textAnchor="middle" fontSize={M.worldFont} fontWeight={M.fw}>
-            ATZILUTH*
+            ATZILUTH
           </text>
         </g>
 
         {/* Briah — Water (y:100, h:108, center: 154) */}
-        <g role="button" tabIndex={0} aria-label="Explore Briah, schematic world band"
+        <g role="button" tabIndex={0} aria-label="Explore Briah"
           onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') {
               e.preventDefault();
@@ -144,18 +144,18 @@ const TreeOfLifeSVG: React.FC<TreeOfLifeSVGProps> = ({
             }
           }}
           onClick={(e) => { e.stopPropagation(); onWorldClick('Briah'); }} style={{ cursor: 'pointer' }}>
-          <title>Briah — schematic world analogy; each world contains a complete Tree</title>
+          <title>Briah — World of Creation</title>
           <rect x="55" y="100" width="390" height="108" rx="8"
             fill="none" stroke="var(--color-water)" strokeWidth="0.8" strokeDasharray="6,4" opacity="0.4"
             mask="url(#worldBorderMask)" />
           <text x="462" y={154} fill="var(--color-water)" fontFamily="var(--font-serif)"
             letterSpacing="0.15em" opacity="0.5" writingMode="vertical-rl" textAnchor="middle" fontSize={M.worldFont} fontWeight={M.fw}>
-            BRIAH*
+            BRIAH
           </text>
         </g>
 
         {/* Yetzirah — Air (y:262, h:320, center: 422) */}
-        <g role="button" tabIndex={0} aria-label="Explore Yetzirah, schematic world band"
+        <g role="button" tabIndex={0} aria-label="Explore Yetzirah"
           onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') {
               e.preventDefault();
@@ -164,18 +164,18 @@ const TreeOfLifeSVG: React.FC<TreeOfLifeSVGProps> = ({
             }
           }}
           onClick={(e) => { e.stopPropagation(); onWorldClick('Yetzirah'); }} style={{ cursor: 'pointer' }}>
-          <title>Yetzirah — schematic world analogy; each world contains a complete Tree</title>
+          <title>Yetzirah — World of Formation</title>
           <rect x="55" y="262" width="390" height="320" rx="8"
             fill="none" stroke="var(--color-air)" strokeWidth="0.8" strokeDasharray="6,4" opacity="0.4"
             mask="url(#worldBorderMask)" />
           <text x="462" y={422} fill="var(--color-air)" fontFamily="var(--font-serif)"
             letterSpacing="0.15em" opacity="0.5" writingMode="vertical-rl" textAnchor="middle" fontSize={M.worldFont} fontWeight={M.fw}>
-            YETZIRAH*
+            YETZIRAH
           </text>
         </g>
 
         {/* Assiah — Earth (y:622, h:78, center: 661) */}
-        <g role="button" tabIndex={0} aria-label="Explore Assiah, schematic world band"
+        <g role="button" tabIndex={0} aria-label="Explore Assiah"
           onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') {
               e.preventDefault();
@@ -184,13 +184,13 @@ const TreeOfLifeSVG: React.FC<TreeOfLifeSVGProps> = ({
             }
           }}
           onClick={(e) => { e.stopPropagation(); onWorldClick('Assiah'); }} style={{ cursor: 'pointer' }}>
-          <title>Assiah — schematic world analogy; each world contains a complete Tree</title>
+          <title>Assiah — World of Action</title>
           <rect x="55" y="622" width="390" height="78" rx="8"
             fill="none" stroke="var(--color-earth)" strokeWidth="0.8" strokeDasharray="6,4" opacity="0.4"
             mask="url(#worldBorderMask)" />
           <text x="462" y={661} fill="var(--color-earth)" fontFamily="var(--font-serif)"
             letterSpacing="0.15em" opacity="0.5" writingMode="vertical-rl" textAnchor="middle" fontSize={M.worldFont} fontWeight={M.fw}>
-            ASSIAH*
+            ASSIAH
           </text>
         </g>
       </>}
@@ -435,13 +435,6 @@ const TreeOfLifeSVG: React.FC<TreeOfLifeSVGProps> = ({
         <path d="M 35,710 L 55,710 M 35,710 L 35,690" />
         <path d="M 465,710 L 445,710 M 465,710 L 465,690" />
       </g>
-      {showWorlds && (
-        <text x="250" y="713" textAnchor="middle" fill="var(--text-muted)"
-          fontSize={M.worldFont} fontFamily="var(--font-serif)">
-          <tspan x="250">* World bands are schematic analogies;</tspan>
-          <tspan x="250" dy="12">each world contains all ten Sephiroth.</tspan>
-        </text>
-      )}
     </svg>
   );
 };

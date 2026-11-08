@@ -71,7 +71,7 @@ This handbook describes the cards’ visual symbolism, esoteric attributions, an
 The in-app [Sources and Correspondence Conventions](https://tarot.jakub.computer/library/sources-and-conventions) article records primary references and interpretive choices. The main reference is [Crowley’s *The Book of Thoth* (1944)](https://otohungary.org/documents/publication/english/Book_of_Thoth.html), checked alongside *Liber 777*, Waite’s *Pictorial Key*, and museum and archival histories.
 
 - Path numbers follow Hebrew letters: Emperor / Tzaddi / Aries is Path 28; Star / Heh / Aquarius is Path 15.
-- Each of the Four Worlds contains all ten Sephiroth; the four suits express the numerical ranks in their respective worlds.
+- The world bands follow Dion Fortune’s single-Tree grouping in *The Mystical Qabalah*, VIII.18. Her complete-Tree model (IX.2) underlies the four suits, with all ten Sephiroth in each world; the world articles explain both arrangements.
 - Classical attributions are distinguished from later outer-planet associations. Jungian card readings are interpretations by this handbook, rather than assignments published by Jung.
 - Run `npm run validate:content` to check all 78 cards, the 22 paths, 36 decans, court ranges, planetary dignities, and internal data links.
 

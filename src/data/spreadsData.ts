@@ -77,17 +77,17 @@ Excellent for situations where the past–present–future axis alone feels insu
     name: 'Horseshoe Spread',
     cardCount: 7,
     difficulty: 'Intermediate',
-    description: `Seven cards in a U-shape, providing a comprehensive narrative arc. The shape is significant — the open end faces upward, suggesting receptivity to what is coming. The seven positions can be compared symbolically with the seven lower Sephiroth (Chesed through Malkuth); this is an optional interpretation of the layout.
+    description: `Seven cards in an arch, with the open end facing downward in the version shown here, providing a comprehensive narrative arc. Other Horseshoe variants reverse the orientation or use different position meanings. The seven positions can be compared symbolically with the seven lower Sephiroth (Chesed through Malkuth); this is an optional interpretation of the layout.
 
 One of the most balanced general-purpose spreads, suitable for any question that requires more depth than three cards but less complexity than the Celtic Cross.`,
     positions: [
-      { number: 1, name: 'Past', meaning: 'The distant past — the deep background, the original cause or the first seed from which the current situation grew.', x: 55, y: 70 },
+      { number: 1, name: 'Past', meaning: 'The distant past — the deep background, the original cause or the first seed from which the current situation grew.', x: 55, y: 320 },
       { number: 2, name: 'Recent Past', meaning: 'The recent past — events and influences from the near past that are still actively shaping the present.', x: 55, y: 195 },
-      { number: 3, name: 'Present', meaning: 'The current state of affairs — what is happening right now, the energy that dominates this moment.', x: 55, y: 320 },
-      { number: 4, name: 'Hidden', meaning: 'The hidden factor — unconscious forces, secret influences, or aspects of the situation not yet visible. The shadow card of the reading.', x: 195, y: 320 },
-      { number: 5, name: 'External', meaning: 'The external environment — other people, institutions, and forces beyond the querent\'s control affecting the outcome.', x: 335, y: 320 },
+      { number: 3, name: 'Present', meaning: 'The current state of affairs — what is happening right now, the energy that dominates this moment.', x: 55, y: 70 },
+      { number: 4, name: 'Hidden', meaning: 'The hidden factor — unconscious forces, secret influences, or aspects of the situation not yet visible. The shadow card of the reading.', x: 195, y: 70 },
+      { number: 5, name: 'External', meaning: 'The external environment — other people, institutions, and forces beyond the querent\'s control affecting the outcome.', x: 335, y: 70 },
       { number: 6, name: 'Advice', meaning: 'The recommended action — what the querent should do, focus on, or change to navigate the situation most effectively.', x: 335, y: 195 },
-      { number: 7, name: 'Outcome', meaning: 'The probable outcome — where all forces converge if the current trajectory continues and the advice is (or is not) followed.', x: 335, y: 70 },
+      { number: 7, name: 'Outcome', meaning: 'The probable outcome — where all forces converge if the current trajectory continues and the advice is (or is not) followed.', x: 335, y: 320 },
     ],
     svgWidth: 390,
     svgHeight: 390,

@@ -56,7 +56,7 @@ Created by **Aleister Crowley and Lady Frieda Harris (1938–1943)**, the Thoth 
 
 - **Tarot** — All 78 cards (Major Arcana, Court Cards, pip cards) with visual, esoteric, and Jungian descriptions
 - **Tree of Life** — Interactive SVG diagram of the 10 Sephiroth and 22 paths with click-to-explore panels
-- **Astrology** — Zodiac wheel with 36 decans, traditional rulerships and exaltations, and separately labeled modern planets; animation is decorative
+- **Astrology** — Zodiac wheel with 36 decans, rulerships and exaltations; asterisks distinguish modern planetary associations, and animation is decorative
 - **Library** — Reference articles on history, methods, and foundational knowledge
 - **Glossary** — 285+ cross-linked terms with stack-based navigation and auto-linking across all descriptions
 - **Search** — `Ctrl+K` instant search across cards, signs, planets, sephiroth, and glossary terms

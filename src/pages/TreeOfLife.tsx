@@ -82,7 +82,7 @@ export const TreeOfLife: React.FC = () => {
                     style={{ overflow: 'hidden' }}
                   >
                     <p style={{ color: 'var(--text-muted)', maxWidth: '700px', margin: '0.75rem auto 0.5rem', lineHeight: 1.7, fontSize: '0.9rem' }}>
-                      The Hermetic Qabalistic Tree of Life is the map used for the Thoth Tarot’s correspondences. Its 10 spheres (Sephiroth) hold the pip cards — each numbered card sits on the Sephirah matching its number. Its 22 connecting paths carry the 22 Major Arcana, each linked to a Hebrew letter and an astrological attribution. The four miniatures show a complete Tree in each world, corresponding to Wands, Cups, Swords, and Disks. This diagram uses the Thoth Emperor–Star exchange: Emperor on Path 28, Star on Path 15. Click any element to explore.
+                      The Hermetic Qabalistic Tree of Life is the map used for the Thoth Tarot’s correspondences. Its 10 spheres (Sephiroth) hold the pip cards — each numbered card sits on the Sephirah matching its number. Its 22 connecting paths carry the 22 Major Arcana, each linked to a Hebrew letter and an astrological attribution. The coloured bands are schematic analogies for the Four Worlds, rather than exclusive boundaries: each world contains a complete Tree, expressed through Wands, Cups, Swords, or Disks. This diagram uses the Thoth Emperor–Star exchange: Emperor on Path 28, Star on Path 15. Click any element to explore.
                     </p>
                   </motion.div>
                 )}

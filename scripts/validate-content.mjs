@@ -141,8 +141,6 @@ for (const spread of spreads) {
     assert.ok(pos.y - 52.5 >= 0 && pos.y + 52.5 <= spread.svgHeight, `${spread.id} vertical bounds`);
   }
 }
-const horseshoe = spreads.find(spread => spread.id === 'horseshoe').positions;
-assert.ok(horseshoe[0].y < horseshoe[3].y && horseshoe[6].y < horseshoe[3].y, 'Horseshoe must open upwards');
 unique(articles.map(article => article.id), 'article IDs');
 // Validate every explicit internal content link, including the special Daath route.
 for (const match of JSON.stringify({cards,sephiroth,paths,worlds,signs,planets,elements,spreads,articles,glossary}).matchAll(/(?:"|\]\()(\/(?:tarot|library|tree-of-life|astrology)[^\s"'<>\\]*)/g)) {

@@ -21,7 +21,7 @@ export const glossary: Record<string, GlossaryEntry> = {
   },
   'Chokmah': {
     term: 'Chokmah',
-    shortDef: 'Wisdom — the 2nd {Sephirah}, the supernal Father. The first flash of creative energy, attributed to {Uranus} and the Zodiac. Holds the four Twos.',
+    shortDef: 'Wisdom — the 2nd {Sephirah}, the supernal Father. The first flash of creative energy, classically attributed to the Zodiac; {Uranus} is a later association. Holds the four Twos.',
     link: '/tree-of-life?view=sephirah&id=2',
   },
   'Binah': {
@@ -102,7 +102,7 @@ export const glossary: Record<string, GlossaryEntry> = {
   },
   'Pillar of Mercy': {
     term: 'Pillar of Mercy',
-    shortDef: 'The right column of the {Tree of Life} — the masculine, expansive, force-projecting principle. Contains {Chokmah} ({Uranus}), {Chesed} ({Jupiter}), and {Netzach} ({Venus}).',
+    shortDef: 'The right column of the {Tree of Life} — the masculine, expansive, force-projecting principle. Contains {Chokmah} (the Zodiac), {Chesed} ({Jupiter}), and {Netzach} ({Venus}).',
     link: '/tree-of-life?view=pillar&name=Mercy',
   },
   'Pillar of Mildness': {
@@ -114,27 +114,27 @@ export const glossary: Record<string, GlossaryEntry> = {
   // === Four Worlds ===
   'Atziluth': {
     term: 'Atziluth',
-    shortDef: 'The Archetypal World — the highest of the {Four Worlds}, corresponding to Fire and the suit of Wands. Only {Kether} belongs here. The realm of pure divine emanation.',
+    shortDef: 'The Archetypal World — the highest of the {Four Worlds}, corresponding to Fire and the suit of Wands. Contains a complete {Tree of Life}; the ten Wands express its Sephiroth. The realm of pure divine emanation.',
     link: '/tree-of-life?view=world&name=Atziluth',
   },
   'Briah': {
     term: 'Briah',
-    shortDef: 'The Creative World — the second of the {Four Worlds}, corresponding to Water and the suit of Cups. {Chokmah} and {Binah} belong here. The realm where archetypes first take form.',
+    shortDef: 'The Creative World — the second of the {Four Worlds}, corresponding to Water and the suit of Cups. Contains a complete {Tree of Life}; the ten Cups express its Sephiroth. The realm where archetypes first take form.',
     link: '/tree-of-life?view=world&name=Briah',
   },
   'Yetzirah': {
     term: 'Yetzirah',
-    shortDef: 'The Formative World — the third of the {Four Worlds}, corresponding to Air and the suit of Swords. Contains {Chesed} through {Yesod}. The realm where forms are elaborated into detailed structures.',
+    shortDef: 'The Formative World — the third of the {Four Worlds}, corresponding to Air and the suit of Swords. Contains a complete {Tree of Life}; the ten Swords express its Sephiroth. The realm where forms are elaborated into detailed structures.',
     link: '/tree-of-life?view=world&name=Yetzirah',
   },
   'Assiah': {
     term: 'Assiah',
-    shortDef: 'The Material World — the lowest of the {Four Worlds}, corresponding to {Earth} and the suit of Disks. Only {Malkuth} belongs here. The physical world of incarnated existence.',
+    shortDef: 'The Material World — the lowest of the {Four Worlds}, corresponding to {Earth} and the suit of Disks. Contains a complete {Tree of Life}; the ten Disks express its Sephiroth. The physical world of incarnated existence.',
     link: '/tree-of-life?view=world&name=Assiah',
   },
   'Four Worlds': {
     term: 'Four Worlds',
-    shortDef: 'The four levels of reality in Kabbalah: {Atziluth} (Fire/Emanation), {Briah} (Water/Creation), {Yetzirah} (Air/Formation), and {Assiah} (Earth/Action). Each corresponds to an element and a suit of the Tarot.',
+    shortDef: 'The four levels of reality in Kabbalah: {Atziluth} (Fire/Emanation), {Briah} (Water/Creation), {Yetzirah} (Air/Formation), and {Assiah} (Earth/Action). Each contains ten {Sephiroth} and corresponds to an element and a suit of the Tarot.',
   },
 
   // === Planets ===
@@ -175,7 +175,7 @@ export const glossary: Record<string, GlossaryEntry> = {
   },
   'Uranus': {
     term: 'Uranus',
-    shortDef: '♅ Uranus — associated with {Chokmah}. The planet of sudden revolution, breakthrough, and the shattering of outdated structures. The eruption of the new.',
+    shortDef: '♅ Uranus — associated with {Chokmah} and the Fool in some later systems; Chokmah’s classical attribution is the Zodiac. The planet of sudden revolution, breakthrough, and the shattering of outdated structures. The eruption of the new.',
     link: '/astrology?view=planet&name=Uranus',
   },
 
@@ -185,13 +185,13 @@ export const glossary: Record<string, GlossaryEntry> = {
   'Gemini': { term: 'Gemini', shortDef: '♊ Gemini — the Twins. Mutable Air sign, ruled by {Mercury}. Duality, communication, intellectual versatility, the restless mind.', link: '/astrology?view=sign&name=Gemini' },
   'Cancer': { term: 'Cancer', shortDef: '♋ Cancer — the Crab. Cardinal Water sign, ruled by the {Moon}, {Jupiter} exalted. The home, the womb, emotional protection, nurture.', link: '/astrology?view=sign&name=Cancer' },
   'Leo': { term: 'Leo', shortDef: '♌ Leo — the Lion. Fixed Fire sign, ruled by the {Sun}. Creative self-expression, sovereignty, radiance, the heart.', link: '/astrology?view=sign&name=Leo' },
-  'Virgo': { term: 'Virgo', shortDef: '♍ Virgo — the Virgin. Mutable Earth sign, ruled by {Mercury}. Analysis, service, the harvest, meticulous inner work.', link: '/astrology?view=sign&name=Virgo' },
+  'Virgo': { term: 'Virgo', shortDef: '♍ Virgo — the Virgin. Mutable Earth sign, ruled by {Mercury}, which is also exalted here. Analysis, service, the harvest, meticulous inner work.', link: '/astrology?view=sign&name=Virgo' },
   'Libra': { term: 'Libra', shortDef: '♎ Libra — the Scales. Cardinal Air sign, ruled by {Venus}, {Saturn} exalted. Balance, justice, harmony, beauty, relationship.', link: '/astrology?view=sign&name=Libra' },
   'Scorpio': { term: 'Scorpio', shortDef: '♏ Scorpio — the Scorpion/Eagle. Fixed Water sign, ruled by {Mars}. Death, transformation, hidden depths, the three stages of evolution (scorpion → serpent → eagle).', link: '/astrology?view=sign&name=Scorpio' },
   'Sagittarius': { term: 'Sagittarius', shortDef: '♐ Sagittarius — the Archer. Mutable Fire sign, ruled by {Jupiter}. Aspiration, philosophy, the far-reaching arrow of thought and will.', link: '/astrology?view=sign&name=Sagittarius' },
   'Capricorn': { term: 'Capricorn', shortDef: '♑ Capricorn — the Goat. Cardinal Earth sign, ruled by {Saturn}, {Mars} exalted. Ambition, structure, material mastery, the mountain summit.', link: '/astrology?view=sign&name=Capricorn' },
-  'Aquarius': { term: 'Aquarius', shortDef: '♒ Aquarius — the Water-Bearer. Fixed Air sign, ruled by {Saturn} and {Uranus}. Universal vision, humanitarian idealism, revolution.', link: '/astrology?view=sign&name=Aquarius' },
-  'Pisces': { term: 'Pisces', shortDef: '♓ Pisces — the Fishes. Mutable Water sign, ruled by {Jupiter}. Dissolution, compassion, the oceanic unconscious, the end and return to the beginning.', link: '/astrology?view=sign&name=Pisces' },
+  'Aquarius': { term: 'Aquarius', shortDef: '♒ Aquarius — the Water-Bearer. Fixed Air sign, traditionally ruled by {Saturn}, with {Uranus} as its modern co-ruler. Universal vision, humanitarian idealism, revolution.', link: '/astrology?view=sign&name=Aquarius' },
+  'Pisces': { term: 'Pisces', shortDef: '♓ Pisces — the Fishes. Mutable Water sign, traditionally ruled by {Jupiter}, with {Venus} exalted. Dissolution, compassion, the oceanic unconscious, the end and return to the beginning.', link: '/astrology?view=sign&name=Pisces' },
 
   // === Elements ===
   'Fire': { term: 'Fire', shortDef: '🜂 Fire — the active, creative, initiating element. Corresponds to the suit of Wands, the world of {Atziluth}, and the letter Yod of {Tetragrammaton}. Will, creativity, spiritual energy.', link: '/astrology?view=element&name=Fire' },
@@ -347,7 +347,7 @@ export const glossary: Record<string, GlossaryEntry> = {
   },
   'Philosopher\'s Stone': {
     term: 'Philosopher\'s Stone',
-    shortDef: 'The ultimate goal of alchemy — not a physical substance but a state of being: the perfect balance of {Sulphur}, {Mercury}, and {Salt}. The vehicle of the {True Will}. In Jungian terms, the fully individuated {Self}.',
+    shortDef: 'The goal of alchemy, historically sought as an agent of transmutation and an elixir of life. Spiritual readings interpret it as the perfected balance of {Sulphur}, {Mercury}, and {Salt}; in Jungian interpretation, an image of the integrated {Self}.',
   },
   'Hermetic Marriage': {
     term: 'Hermetic Marriage',
@@ -497,7 +497,7 @@ export const glossary: Record<string, GlossaryEntry> = {
   // === Egyptian & Mythological ===
   'Khephra': {
     term: 'Khephra',
-    shortDef: 'The Egyptian scarab beetle god who carries the Sun through the underworld during the midnight hours. Represents the Sun in its hidden, gestating form — life persisting through the darkest passage. Appears at the bottom of The Moon (XVIII), bearing the solar disk through the poisoned waters.',
+    shortDef: 'Khepri, the Egyptian scarab god associated with the rising Sun and renewal. In Crowley’s Moon imagery, the beetle carries the Sun through the darkness before dawn. Represents the Sun in its hidden, gestating form — life persisting through the darkest passage. Appears at the bottom of The Moon (XVIII), bearing the solar disk through the poisoned waters.',
   },
   'Maat': {
     term: 'Maat',
@@ -685,7 +685,7 @@ export const glossary: Record<string, GlossaryEntry> = {
   },
   'Qoph': {
     term: 'Qoph',
-    shortDef: 'ק — the 19th Hebrew letter, meaning "Back of the Head." Attributed to The Moon (XVIII) and {Pisces}. The cerebellum — the primitive brain governing instinct, reflex, and the autonomic functions. The darkest, most unconscious path on the {Tree of Life}.',
+    shortDef: 'ק — the 19th Hebrew letter, meaning "Back of the Head." Attributed to The Moon (XVIII) and {Pisces}. Its association with the hindbrain in occult writing is symbolic, rather than a complete anatomical description. The darkest, most unconscious path on the {Tree of Life}.',
   },
   'Resh': {
     term: 'Resh',
@@ -894,7 +894,7 @@ export const glossary: Record<string, GlossaryEntry> = {
   },
   'Pluto': {
     term: 'Pluto',
-    shortDef: 'The planet of total, irreversible transformation — modern ruler of {Scorpio}. In myth, Pluto/Hades is the Roman god of the underworld who demands that everything hidden be brought to the surface. Astrologically represents death, rebirth, depth psychology, and the destruction of what is false.',
+    shortDef: 'The planet of total, irreversible transformation — modern ruler of {Scorpio}. In myth, Pluto is a Roman name for the underworld god identified with Greek Hades who demands that everything hidden be brought to the surface. Astrologically represents death, rebirth, depth psychology, and the destruction of what is false.',
     link: '/astrology?view=planet&name=Pluto',
   },
 

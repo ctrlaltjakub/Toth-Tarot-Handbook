@@ -18,8 +18,8 @@ export const tarotData: TarotCard[] = [
     name: 'The Fool',
     number: '0',
     arcana: 'Major',
-    hebrewLetter: 'Aleph (א) - Meaning: "Ox" or "Ploughshare"',
-    astrology: '🜁 Air (and the planet ♅ Uranus)',
+    hebrewLetter: 'Aleph (א) - Traditional letter-name meaning: "Ox"',
+    astrology: '🜁 Air (♅ Uranus is a later association)',
     path: 'Path 11 (Connecting Kether to Chokmah)',
     visualDescription: `
 The design of this card resumes the principal ideas of the traditions explored in Crowley's essay on the Fool. The Fool is of the gold of air. He has the horns of Dionysus Zagreus, and between them is the phallic cone of white light. He is shown against the background of air dawning from space, and his attitude is that of one bursting unexpectedly upon the world. Every element points to his unformulated, creative potential:
@@ -52,9 +52,9 @@ The Fool is the archetype of the **Divine Child** and the **Uroboros** (the serp
 
 He is the necessary irrational impulse that breaks the individual out of stagnation. Psychologically, encountering The Fool means you must abandon the safety of your current "known" identity, silence the analytical mind, and take a blind leap of faith. The intellect cannot guide you here; only instinct, intuition (Fire/Air), and the raw, vital urge to grow can initiate the journey toward wholeness.
 
-The Hebrew letter **Aleph**, meaning "Ox" or "Ploughshare," deepens this reading. The ox is the primal beast of burden — enormous, vital energy that is not yet domesticated or directed. In the psyche, this is libido in its rawest form, the life-force before the Ego has harnessed it into purpose. The ploughshare adds another layer: this energy, though wild, carries within it the capacity to break open the earth and prepare it for new growth. The Fool's chaos is not purposeless — it is the necessary tearing-open that precedes all cultivation.
+The Hebrew letter **Aleph**, traditionally glossed as "Ox," deepens this reading. The ox is the primal beast of burden — enormous, vital energy that is not yet domesticated or directed. In the psyche, this is libido in its rawest form, the life-force before the Ego has harnessed it into purpose. The ox’s association with ploughing adds another layer: this energy, though wild, carries within it the capacity to break open the earth and prepare it for new growth. The Fool's chaos is not purposeless — it is the necessary tearing-open that precedes all cultivation.
 
-The attribution to **Air** (and the planet **Uranus**) places the Fool in the realm of the mind at its most unbounded — thought before it has solidified into belief, perception before it has been filtered into judgment. Uranus, the planet of sudden revolution and breakthrough, reinforces the Fool's function as the psychic earthquake that shatters outdated structures. In Jungian terms, Uranus corresponds to the eruption of unconscious contents that cannot be predicted, controlled, or understood in advance — they can only be experienced.
+The attribution to **Air** (with **Uranus** as a later interpretive association) places the Fool in the realm of the mind at its most unbounded — thought before it has solidified into belief, perception before it has been filtered into judgment. Uranus, the planet of sudden revolution and breakthrough, reinforces the Fool's function as the psychic earthquake that shatters outdated structures. In Jungian terms, Uranus corresponds to the eruption of unconscious contents that cannot be predicted, controlled, or understood in advance — they can only be experienced.
 
 **Path 11**, connecting **Kether** (the Crown, the unknowable source) to **Chokmah** (Wisdom, the first flash of manifestation), reveals the Fool's precise position in the architecture of the psyche. He is the bridge between the Self in its absolute, unmanifest form and the first stirring of conscious awareness. This is why he is numbered Zero — he precedes all structure, all identity, all differentiation. He is not the beginning of the journey; he is the pre-condition that makes the journey possible.
     `
@@ -178,7 +178,7 @@ The Hebrew letter **Daleth**, meaning "Door," identifies the Empress as the gate
     name: 'The Emperor',
     number: 'IV',
     arcana: 'Major',
-    hebrewLetter: 'Tzaddi (צ) - Meaning: "Fish-hook" (Caesar, Tsar)',
+    hebrewLetter: 'Tzaddi (צ) - Traditional occult gloss: "Fish-hook"',
     astrology: '♈ Aries (Ruled by ♂ Mars, ☉ Sun exalted)',
     path: 'Path 28 (Connecting Netzach to Yesod)',
     visualDescription: `
@@ -191,7 +191,7 @@ The Emperor is depicted as a crowned male figure adorned in imperial vestments a
 *   **The Shield of the Two-Headed Eagle:** Resting beside him, the shield features a two-headed eagle crowned with a crimson disk. This represents the "red tincture" of the alchemist and the nature of gold (corresponding directly to the White Eagle of silver/lunar energy belonging to his consort, The Empress).
 *   **The Lamb and Flag:** Lying couchant at his feet. This juxtaposes the wild, courageous, and lonely nature of the mountain ram with the tamed, docile nature of the domestic lamb—a visual representation of the "theory of government" and the taming of the wild individual into a societal subject.
 *   **The Bee and Fleur-de-lys:** Woven into the imagery, both are traditional, historical symbols of generalized paternal power and royal lineage.
-*   **The Beam of White Light:** Descending upon him from above. This indicates his position on the Tree of Life: his authority is derived directly from the Crown of Chokmah (creative Wisdom/The Word) and is exerted downwards upon Tiphareth (the organized man).
+*   **The Beam of White Light:** Descending upon him from above, symbolizing authority received from a higher source. This image should not be confused with the Tree’s connecting paths: in this handbook’s Thoth arrangement, the Emperor occupies Tzaddi, Path 28, between Netzach and Yesod.
     `,
     esotericMeaning: `
 The Emperor is the combination of energy in its most material form with the idea of authority. Along with The Magus (Mercury) and The Empress (Salt), he completes the alchemical triad as **Sulphur**—the male, fiery energy of the Universe. He corresponds to the *Rajas* of Hindu philosophy: the swift, creative energy and the initiative of all Being. 
@@ -207,11 +207,11 @@ The visual juxtaposition of the wild Himalayan ram and the tamed Lamb with the F
 
 Psychologically, The Emperor warns against the shadow of rigid authoritarianism. Because his energy is forceful but impermanent, an Ego that relies entirely on dominance, control, and aggression will eventually "burn and destroy" its own psychic landscape. True internal authority is only achieved when the Ego's structural power is guided by higher, intuitive Wisdom (the white light from Chokmah) and applied to the harmonious integration of the Self (Tiphareth).
 
-The Hebrew letter **Tzaddi**, associated with authority and rulership (the word evokes "Caesar," "Tsar"), places the Emperor squarely in the domain of worldly power that derives from a cosmic mandate. In Jungian terms, this is the Father archetype at its most potent: the internal lawgiver whose authority feels absolute because it channels something transpersonal. The healthy Father establishes order that serves growth; the shadow Father imposes order that serves only its own perpetuation.
+The Hebrew letter **Tzaddi**, traditionally glossed as "Fish-hook" in occult tables, suggests drawing something out of hidden depths. Crowley also linked its sound with titles such as Caesar and Tsar; this is his symbolic wordplay, rather than a demonstrated Hebrew etymology. In Jungian terms, this is the Father archetype at its most potent: the internal lawgiver whose authority feels absolute because it channels something transpersonal. The healthy Father establishes order that serves growth; the shadow Father imposes order that serves only its own perpetuation.
 
 **Aries**, ruled by **Mars** with the **Sun** exalted, gives the Emperor the most intensely active and initiating astrological signature in the deck. Mars provides the aggressive, boundary-setting energy; the exalted Sun provides the sense of divine right and centrality. Psychologically, this combination describes the Ego at its most confident and assertive — the "I am" that carves out a territory in the world and defends it. But Aries is also the sign of impulsiveness and short-lived intensity, which is why Crowley warns that this energy, if it persists too long, "burns and destroys." The Emperor's power must be exercised in decisive bursts, not as a permanent state of siege.
 
-**Path 15**, connecting **Chokmah** (Wisdom, the creative Father above the Abyss) to **Tiphareth** (Beauty, the integrated Self below it), reveals the Emperor's deepest psychological function: he is the channel through which the abstract wisdom of the higher Self descends into the organized, functioning personality. The beam of white light from above in the card is this transmission made visible. Without the Emperor, the Self's wisdom remains theoretical; with him, it becomes law — but law that must be periodically renewed and challenged, lest it harden into tyranny.
+**Path 28**, connecting **Netzach** (Victory, desire and feeling) to **Yesod** (Foundation, imagination and habitual patterns), places the Emperor’s authority within the lower Tree. Psychologically, it can be read as the work of giving desires a stable, usable form: an inner law that turns emotional energy into consistent action. The danger is allowing this structure to become automatic or tyrannical. Chokmah–Tiphareth is Path 15, occupied by the Star in the Thoth arrangement used here.
     `
   },
   {
@@ -595,7 +595,7 @@ The Art card represents the Consummation of the Royal Marriage which took place 
     esotericMeaning: `
 Crowley changed the name of this card from "Temperance" to "Art" to reflect the "Royal Art" of Alchemy. This card is the complement and fulfillment of Gemini (The Lovers). It pertains to Sagittarius, the archer, represented by the arrow piercing the rainbow (the path of Sagittarius leads from the Moon of Yesod to the Sun of Tiphareth, the rainbow path of *Qesheth*).
 
-The card depicts the ultimate alchemical operation: *Solve et Coagula*. The contradictory elements have been broken down in the cauldron and are now being synthesized. The central key to this process is the inscription **V.I.T.R.I.O.L.** In modern usage, vitriol is a harsh acid (sulphate), but alchemically, the word represents a perfectly balanced combination of the three fundamental principles: Sulphur, Mercury, and Salt. 
+The card depicts the ultimate alchemical operation: *Solve et Coagula*. The contradictory elements have been broken down in the cauldron and are now being synthesized. The central key to this process is the inscription **V.I.T.R.I.O.L.** Historically, vitriols were sulphate salts, while “oil of vitriol” refers to sulphuric acid; but alchemically, the word represents a perfectly balanced combination of the three fundamental principles: Sulphur, Mercury, and Salt.
 
 The counsel to "visit the interior of the earth" is the formula for finding the True Will. The critical word is *Rectificando* (rectification)—the process of continuously refining the "new living substance" (the soul) until it becomes the Universal Medicine or the "Philosopher's Stone." This Stone is the ultimate, indestructible vehicle of the True Will. The arrow shooting upward is the purest glyph of Mercury, showing that once this internal rectification is achieved, the energy issues forth with absolute, rectilinear certainty.
     `,
@@ -635,7 +635,7 @@ The Thoth Devil is not the fiendish, medieval Christian caricature. It is a repr
     esotericMeaning: `
 The Devil card represents the impulse to create, which takes no account of reason, custom, or foresight. Because Capricorn is ruled by Saturn (the Lord of Time and structure) and exalts Mars (fiery energy), this card shows the fiery, material energy of creation in its best form. It is divinely unscrupulous and sublimely careless of result, embodying the Thelemic law: *"thou hast no right but to do thy will... For pure will, unassuaged of purpose, delivered from the lust of result, is every way perfect."*
 
-Crowley links this card to the formula of the male creative energy (Yod) and the finding of ecstasy in every phenomenon, however naturally repugnant. He points out that the word "Devil" comes from the same root as the gods of light, but was degraded by "the Black Lodge" (orthodox religion) into a senile and fiendish symbol to suppress the natural, vital urges of humanity. The formula of this card is the complete appreciation of all existing things; he rejoices in the rugged and the barren no less than in the smooth and the fertile.
+Crowley links this card to the formula of the male creative energy (Yod) and the finding of ecstasy in every phenomenon, however naturally repugnant. Crowley polemically associates the Devil with gods of light and attacks restrictive religion. This is his esoteric argument; the English word “devil” derives through Latin from Greek diabolos, meaning a slanderer or accuser. The formula of this card is the complete appreciation of all existing things; he rejoices in the rugged and the barren no less than in the smooth and the fertile.
     `,
     jungianMeaning: `
 The Devil is the archetype of the **Chthonic (Earthly) Life Force**, the **Pan** figure, and the unbridled **Libido**. The goat leaping on the mountain peaks represents the raw, physical drive for achievement and sensory experience.
@@ -695,7 +695,7 @@ The Hebrew letter **Peh**, meaning "Mouth," is the organ of speech — but also 
     number: 'XVII',
     arcana: 'Major',
     hebrewLetter: 'Heh (ה) - Meaning: "Window"',
-    astrology: '♒ Aquarius (Ruled by ♄ Saturn and ♅ Uranus)',
+    astrology: '♒ Aquarius (♄ Saturn traditionally; ♅ Uranus in modern astrology)',
     path: 'Path 15 (Connecting Chokmah to Tiphareth)',
     visualDescription: `
 The Star card represents Nuith, our Lady of the Stars. Unlike Atu XX (The Aeon), where she is represented as the surrounding, omniform space of heaven, here she is shown in definite manifestation as a human-seeming figure.
@@ -713,7 +713,7 @@ The Star card represents Nuith, our Lady of the Stars. Unlike Atu XX (The Aeon),
     esotericMeaning: `
 Attributed to the zodiacal sign of Aquarius (the water-bearer), this card is deeply tied to the first chapter of *The Book of the Law*. The central formula of the card is the attainment of truth and unimaginable joy through Love ("But to love me is better than all things...").
 
-Crowley emphasizes that the "illusion of straightness" is responsible for humanity's blindness to the beauty of the Universe. The Euclidian geometry of straight lines has no true correspondence with reality (as posited by Einstein, Riemann, and Lobatchewsky). Therefore, the energy of the Goddess manifests in spirals. The Star represents the ultimate dissolution of the ego into the infinite possibilities of Nuith, where the individual gathers the riches of the earth but gives all back in the love of the Goddess.
+Crowley contrasts rectilinear and spiral motion as images of limitation and inexhaustible renewal. His references to non-Euclidean geometry belong to this symbolic argument; non-Euclidean geometry and relativity do not establish that straight lines are unreal or that all physical energy moves in spirals. The Star represents the ultimate dissolution of the ego into the infinite possibilities of Nuith, where the individual gathers the riches of the earth but gives all back in the love of the Goddess.
 
 *(Note: In the Thoth system, based on the verse "Tzaddi is not the Star," Crowley swapped the Hebrew letters and paths for The Emperor and The Star. The Star is therefore attributed to Heh (Window) and the path from Chokmah to Tiphareth).*
     `,
@@ -726,7 +726,7 @@ Psychologically, encountering The Star indicates a moment of profound clarity an
 
 The Hebrew letter **Heh**, meaning "Window," is the opening through which light enters a dark room. In Jungian terms, the Window is the aperture in the Ego's wall through which the numinous can be glimpsed. After the Tower has destroyed the Ego's fortifications, the Star is the first light that streams through the breach. The Window does not create the light — it merely allows it to pass. The Star teaches that inspiration is not something the Ego manufactures but something it *receives* by creating an opening in its own defences. Heh is also the letter of breath — the exhalation of relief after catastrophe, the first sigh of the soul that has survived its own destruction.
 
-**Aquarius**, ruled by **Saturn** and **Uranus**, is the sign of the Water-Bearer — the paradoxical figure who pours out water (emotion, life, nourishment) while being an Air sign (intellect, detachment, universal vision). In Jungian terms, Aquarius represents the *transpersonal* dimension of the psyche — the capacity to experience oneself not as an isolated individual but as a node in the vast web of existence. Saturn provides the structure and discipline that prevents this cosmic vision from becoming mere dissociation; Uranus provides the revolutionary, boundary-dissolving insight that prevents structure from becoming confinement. Together they create the psychological state of *serene impersonality* — not coldness, but the warm, flowing generosity of one who pours from an inexhaustible source because they know they *are* that source.
+**Aquarius**, traditionally ruled by **Saturn** and associated with **Uranus** in modern astrology, is the sign of the Water-Bearer — the paradoxical figure who pours out water (emotion, life, nourishment) while being an Air sign (intellect, detachment, universal vision). In Jungian terms, Aquarius represents the *transpersonal* dimension of the psyche — the capacity to experience oneself not as an isolated individual but as a node in the vast web of existence. Saturn provides the structure and discipline that prevents this cosmic vision from becoming mere dissociation; Uranus provides the revolutionary, boundary-dissolving insight that prevents structure from becoming confinement. Together they create the psychological state of *serene impersonality* — not coldness, but the warm, flowing generosity of one who pours from an inexhaustible source because they know they *are* that source.
 
 **Path 15**, connecting **Chokmah** (Wisdom, the first flash of creative energy) to **Tiphareth** (Beauty, the integrated Self), places the Star on the same path the Emperor once occupied (before Crowley's swap). This path descends from the Supernal realm directly to the heart of the Tree. In Jungian terms, it represents the most direct channel of inspiration from the Self's highest, most abstract wisdom into the lived centre of the personality. The Star on this path means that after the Tower has cleared the rubble, the personality receives a direct infusion of creative, visionary energy from the deepest source — not mediated by tradition (the Hierophant) or reason (the Magus), but flowing freely, like water from an inexhaustible cup.
     `
@@ -790,7 +790,7 @@ The Sun is one of the simplest and most direct cards in the deck. In heraldic la
 *   **The Old Rosy Cross:** At the feet of the children lies the traditional sign of the old Aeon (the combined Rose and Cross). They have arisen from it, and it now serves merely as their foundation or support.
     `,
     esotericMeaning: `
-Attributed to the letter *Resh* (Head) and the Sun, this card represents the complete emancipation of the human race. The old restrictions of sin and death have been abolished. The card represents Heru-ra-ha (the active, solar aspect of Horus) in his manifestation to humanity as the Sun spiritual, moral, and physical. He is the Lord of Light, Life, Liberty, and Love.
+Attributed to the letter *Resh* (Head) and the Sun, this card represents the complete emancipation of the human race. The old restrictions of sin and death have been abolished. The card represents Heru-ra-ha, Crowley’s composite Horus with active (Ra-Hoor-Khuit) and passive (Hoor-pa-kraat) aspects, in a solar manifestation. He is the Lord of Light, Life, Liberty, and Love.
 
 The card fundamentally symbolizes the broadening of the old formula of the Rose and Cross. In the old Aeon (Osiris), the Cross had four rigid arms, representing limitation, sacrifice, and the heavy restriction of mundane law. In the Sun card, the Cross has expanded into the Sun itself. The four arms are gone; the creative energy expands freely without the burden of guilt. Crowley states that mankind has landed itself in a dreadful mire of psychopathology because it clings to the "tiresome and tough prejudices" of the past. The Sun represents the pioneers of the New Aeon putting this right through unabashed, innocent joy.
     `,
@@ -814,7 +814,7 @@ The Hebrew letter **Resh**, meaning "Head," is the counterpart of Qoph (Back of 
     number: 'XX',
     arcana: 'Major',
     hebrewLetter: 'Shin (ש) - Meaning: "Tooth"',
-    astrology: '🜂 Fire (and the planet ♇ Pluto)',
+    astrology: '🜂 Fire / Spirit (♇ Pluto is a later association)',
     path: 'Path 31 (Connecting Hod to Malkuth)',
     visualDescription: `
 In this card, Crowley found it necessary to completely depart from the tradition of the "Last Judgment" card (which depicted an angel blowing a trumpet over opening graves) to carry on the true esoteric tradition into the modern age. The card is a direct adaptation of the ancient Egyptian Stele of Revealing.
@@ -825,10 +825,10 @@ In this card, Crowley found it necessary to completely depart from the tradition
 *   **The Twin Forms of Horus:** Horus is a double god. His extroverted, active form is **Ra-hoor-khuit** (the seated, hawk-headed figure of martial, solar force). His passive, introverted form is **Hoor-pa-kraat** (the Babe in the Egg of Blue, or the God of Silence), which is implied in the synthesis of the imagery.
 *   **The Hebrew Letter Shin:** At the very bottom of the card, the letter *Shin* itself is drawn in a form suggestive of a flower. 
 *   **The Three Human Figures:** Within the three Yods (points) that make up the letter Shin, three human figures are shown arising to partake in the Essence of the new Aeon.
-*   **The Sign of Libra:** Behind the letter Shin is a symbolic representation of the Sign of Libra. This is the foreshadowing of the *next* Aeon (the Aeon of Maat, goddess of Justice/Balance), which will follow the present Aeon of Horus in approximately 2,000 years.
+*   **The Sign of Libra:** Behind the letter Shin is a symbolic representation of the Sign of Libra. Crowley reads this as a suggestion of a subsequent aeon associated with Maat. This is a Thelemic symbolic chronology, rather than a dated astronomical prediction.
     `,
     esotericMeaning: `
-Attributed to the letter *Shin* (Fire) and the planet Pluto, this card represents the catastrophic transition from the Aeon of Osiris to the Aeon of Horus. The old card represented the destruction of the world by Fire. Crowley asserts this destruction already took place in the year 1904, when the fiery god Horus took the place of the airy god Osiris in the East as Hierophant.
+Attributed to the letter *Shin* (Tooth) and the element of Fire, with Spirit as a further attribution, this card represents the catastrophic transition from the Aeon of Osiris to the Aeon of Horus. The old card represented the destruction of the world by Fire. Crowley asserts this destruction already took place in the year 1904, when the fiery god Horus took the place of the airy god Osiris in the East as Hierophant.
 
 Therefore, the new card exhibits the message of the new Aeon to earth. It is not a card of finality or apocalyptic death, but a card of continuous evolution. It demands a complete re-evaluation of all spiritual, moral, and material events. The time for the birth of an Aeon is indicated by great concentration of political power with the accompanying improvements in the means of travel and communication (the winged globe of Hadit), alongside a general advance in philosophy and science. It is a highly optimistic card, indicating that the "Dark Ages" are behind us and we have "brighter torches and more torch-bearers" to light the way forward.
     `,
@@ -841,7 +841,7 @@ The marriage of Nuith (infinite possibility/the Unconscious) and Hadit (focused 
 
 The Hebrew letter **Shin**, meaning "Tooth," is the instrument of *biting*, *chewing*, and *breaking down* — the oral stage of digestion that precedes all assimilation. In Jungian terms, Shin represents the psyche's capacity to break down the raw material of experience into forms that can be metabolized and integrated. The three prongs of the letter Shin correspond to the three Mother letters (Aleph/Air, Mem/Water, Shin/Fire) and thus to the three primary elements of psychic functioning. When all three are activated simultaneously — when thought, feeling, and will converge in a single transformative act — the result is the Aeon: not a gradual evolution but a sudden, total reorganization of consciousness. The Tooth is also the oldest weapon — the first instrument of aggression. The Aeon requires the Ego to *bite through* its own outdated assumptions with predatory decisiveness.
 
-**Fire** as the elemental attribution (and **Pluto** as the associated planet) gives the Aeon its quality of total, irreversible transformation. In Jungian terms, Fire is the element of *transmutation* — not the slow erosion of Water or the analytical dissection of Air, but the instantaneous conversion of one substance into another. Pluto adds the dimension of depth-psychology at its most radical: the god of the underworld who demands that everything hidden be brought to the surface, every buried treasure and every buried corpse alike. The Aeon is the moment when Pluto's excavation is complete and the fire of Shin ignites all that has been unearthed. Nothing survives unchanged. The "New Aeon" that Crowley proclaims is, psychologically, the moment when an individual's entire framework of understanding — not just a belief or a habit, but the *operating system* through which all experience is processed — is replaced by something fundamentally new.
+**Fire** as the elemental attribution (and **Pluto** as a later psychological association) gives the Aeon its quality of total, irreversible transformation. In Jungian terms, Fire is the element of *transmutation* — not the slow erosion of Water or the analytical dissection of Air, but the instantaneous conversion of one substance into another. Pluto adds the dimension of depth-psychology at its most radical: the god of the underworld who demands that everything hidden be brought to the surface, every buried treasure and every buried corpse alike. The Aeon is the moment when Pluto's excavation is complete and the fire of Shin ignites all that has been unearthed. Nothing survives unchanged. The "New Aeon" that Crowley proclaims is, psychologically, the moment when an individual's entire framework of understanding — not just a belief or a habit, but the *operating system* through which all experience is processed — is replaced by something fundamentally new.
 
 **Path 31**, connecting **Hod** (Splendour, the rational mind) to **Malkuth** (the Kingdom, physical reality), is the path through which the intellect's understanding finally reaches the ground of material existence. In Jungian terms, this is the moment when insight becomes *reality* — when the new paradigm is not merely understood but *lived*. The Aeon stands on this path because paradigm shifts are not purely intellectual events; they must descend all the way into the body, into daily life, into the way one walks and eats and speaks. The figures rising in the shape of Shin are the old mental structures being reorganized as they pass through this fire — not destroyed but transformed into forms capable of functioning in the new reality.
     `
@@ -862,13 +862,13 @@ The Universe is the final card of the Major Arcana, representing the completion 
 *   **The Eye of Shiva:** The entire scene is encompassed by the Eye of Shiva, indicating that the Universe is both constantly created and annihilated in the blink of this cosmic eye.
 *   **The Zodiacal Ellipse:** About her is an ellipse composed of seventy-two circles, representing the quinaries (five-degree segments) of the Zodiac, the *Shemhamphorasch*.
 *   **The Four Kerubim:** In the four corners of the card are the four Kerubim (the Bull, the Lion, the Eagle, and the Man), representing the established Universe in all four directions.
-*   **The Skeleton Plan of Matter:** In the center of the lower part of the card is represented the skeleton plan of the building of the house of Matter. It shows the ninety-two known chemical elements, arranged according to their rank in the hierarchy (a design based on J.W.N. Sullivan's *The Bases of Modern Science*).
+*   **The Skeleton Plan of Matter:** In the center of the lower part of the card is represented the skeleton plan of the building of the house of Matter. It presents the ninety-two-element scheme described in Crowley’s book, arranged according to their rank in the hierarchy; this is a historical scientific reference, rather than a current periodic table (a design based on J.W.N. Sullivan's *The Bases of Modern Science*).
 *   **The Radiant Colors:** The general color of the traditional card is *subfusc* (dark and gloomy), representing the confusion and darkness of the material world. However, the New Aeon has brought the fullness of Light. Earth is no longer black; it is pure, bright green. The indigo of Saturn is derived from the blue velvet of the midnight sky.
     `,
     esotericMeaning: `
 Attributed to the letter *Tau* (The Cross of extension) and the planet Saturn (the outermost and slowest of the ancient planets), this card represents the material world (Assiah) and the element of Earth. 
 
-It is the complement of The Fool (0). The Fool is the negative issuing into manifestation; the Universe is that manifestation, its purpose accomplished, ready to return. Together, they spell the word *Ath* (Essence). The card is a glyph of the completion of the Great Work in its highest sense. The maiden has reached the end of the descent down the Tree of Life (Malkuth). The heavy, cold, and dry qualities of Saturn and Earth have been completely transfigured. It illustrates the doctrine that the heaviest elements (like radium), unable to support the strain of their internal structure, eventually radiate particles of the highest activity, proving that the end of the descent into matter immediately sparks the ascent back to Spirit.
+It is the complement of The Fool (0). The Fool is the negative issuing into manifestation; the Universe is that manifestation, its purpose accomplished, ready to return. Together, they spell the word *Ath* (Essence). The card is a glyph of the completion of the Great Work in its highest sense. The maiden has reached the end of the descent down the Tree of Life (Malkuth). The heavy, cold, and dry qualities of Saturn and Earth have been completely transfigured. Crowley uses radioactivity as an analogy for the return from matter to spirit. The analogy expresses his esoteric doctrine; radioactive decay does not establish a spiritual ascent.
     `,
     jungianMeaning: `
 The Universe represents the archetype of **Wholeness**, the **Self**, and the absolute completion of the **Individuation Process**.
@@ -901,7 +901,7 @@ The Knight of Wands is a warrior in complete armour, mounted upon a leaping blac
 *   **The Leaping Posture:** Both horse and rider are captured mid-leap, emphasizing the swift, explosive, and transient nature of this figure's energy. He does not march — he charges.
     `,
     esotericMeaning: `
-The Knight of Wands represents the fiery part of Fire. He rules from the 20th degree of Scorpio to the 20th degree of Sagittarius. In the system of the Tetragrammaton, the Knights correspond to the letter *Yod* — the most sublime, original, active part of the Energy of the Element. For this reason they are represented on horseback and clad in complete armour. Their action is swift and violent, but transient.
+The Knight of Wands represents the fiery part of Fire. He rules from 20° Scorpio to 20° Sagittarius. In the system of the Tetragrammaton, the Knights correspond to the letter *Yod* — the most sublime, original, active part of the Energy of the Element. For this reason they are represented on horseback and clad in complete armour. Their action is swift and violent, but transient.
 
 In the element of Fire, the Knight corresponds to the lightning flash — a sudden, brilliant, and devastating release of energy that illuminates everything in an instant but cannot be sustained. He is the initial creative impulse at its most intense and concentrated.
 
@@ -940,7 +940,7 @@ The Queen of Wands represents the watery part of Fire — its fluidity and colou
 *   **Her Expression:** Her face expresses the ecstasy of one whose mind is well in-drawn to the mystery borne beneath her bosom — she is inwardly absorbed, connected to the deep source of her power.
     `,
     esotericMeaning: `
-The Queen of Wands represents the watery part of Fire — its fluidity and colour. She rules in the Zodiac from the 20th degree of Pisces to the 20th degree of Aries. In the Tetragrammaton, the Queens correspond to the letter *Heh* — they are the complements of the Knights. They receive, ferment, and transmit the original Energy of their Knight. Quick to receive that Energy, they are also fitted to endure for the period of their function, but they are not the final product. They represent the second stage in the process of creation, whose fourth and last state is material realization. They are represented as seated upon thrones, emphasizing that they are appointed to exercise definite functions.
+The Queen of Wands represents the watery part of Fire — its fluidity and colour. She rules in the Zodiac from 20° Pisces to 20° Aries. In the Tetragrammaton, the Queens correspond to the letter *Heh* — they are the complements of the Knights. They receive, ferment, and transmit the original Energy of their Knight. Quick to receive that Energy, they are also fitted to endure for the period of their function, but they are not the final product. They represent the second stage in the process of creation, whose fourth and last state is material realization. They are represented as seated upon thrones, emphasizing that they are appointed to exercise definite functions.
 
 The characteristics of the Queen are adaptability, persistent energy, and calm authority, which she knows how to use to enhance her attractiveness. She is kindly and generous, but impatient of opposition. She has immense capacity for friendship and for love, but always on her own initiative.
 
@@ -979,7 +979,7 @@ The Prince of Wands represents the airy part of Fire, with its faculty of expand
 *   **The Bare Arms:** His arms are uncovered despite his full armour, emphasizing raw physical vigour and the need for direct, unmediated contact with the forces he commands.
     `,
     esotericMeaning: `
-The Prince of Wands represents the airy part of Fire. He rules from the 20th degree of Cancer to the 20th degree of Leo. In the Tetragrammaton, the Princes correspond to the letter *Vau* — the Son of the Queen (the old King's daughter) by the Knight who has won her. He is the active issue of their union and its manifestation. He is the intellectual image of their union. His action is consequently more enduring than that of his forbears. In one respect he acquires a relative permanence, because he is the published record of what has been done in secret. Also, he is the Dying God, redeeming his Bride in the hour and by the virtue of his murder.
+The Prince of Wands represents the airy part of Fire. He rules from 20° Cancer to 20° Leo. In the Tetragrammaton, the Princes correspond to the letter *Vau* — the Son of the Queen (the old King's daughter) by the Knight who has won her. He is the active issue of their union and its manifestation. He is the intellectual image of their union. His action is consequently more enduring than that of his forbears. In one respect he acquires a relative permanence, because he is the published record of what has been done in secret. Also, he is the Dying God, redeeming his Bride in the hour and by the virtue of his murder.
 
 The moral qualities appropriate to this figure are swiftness and strength. But he is sometimes inclined to act on impulse, sometimes easily led by external influences, sometimes — especially in trifles — a prey to indecision. He is often violent, especially in the expression of an opinion, but he does not necessarily hold the opinion about which he is so emphatic. He states a vigorous proposition for the sake of stating it. He is in fact very slow to make up his mind thoroughly on any subject, but always sees both sides of every question. He is essentially just, but always feels that justice is not to be attained in the intellectual world.
 
@@ -1389,7 +1389,7 @@ The Knight of Cups represents the fiery part of Water — the swift, passionate 
 *   **The White Horse Leaping:** The white horse in mid-leap shows the purity of the emotional impulse at the moment of its expression — before it has been complicated by thought or calculation.
     `,
     esotericMeaning: `
-The Knight of Cups represents the fiery part of Water. He rules the Heavens from the 20th degree of Aquarius to the 20th degree of Pisces. As the Yod of the Tetragrammaton in the suit of Water, he is the initial, explosive aspect of the emotional element — the sudden surge of feeling that initiates all emotional experience.
+The Knight of Cups represents the fiery part of Water. He rules the Heavens from 20° Aquarius to 20° Pisces. As the Yod of the Tetragrammaton in the suit of Water, he is the initial, explosive aspect of the emotional element — the sudden surge of feeling that initiates all emotional experience.
 
 The characteristics of the person signified by this card are nevertheless mostly passive, in accordance with the Zodiacal attribution. He is graceful, dilettante, with the qualities of Venus or a weak Jupiter. He is amiable in a passive way. He is quick to respond to attraction and easily becomes enthusiastic under such stimulus, but he is not very enduring. He is exceedingly sensitive to external influences, but with no material depth in his character.
 
@@ -1427,7 +1427,7 @@ The Queen of Cups represents the watery part of Water — its power of reception
 *   **The Endless Curves of Light:** She is robed in and veiled by endless curves of light — not direct, linear illumination but refracted, reflected, endlessly mirrored radiance. She is clothed in the quality she embodies.
     `,
     esotericMeaning: `
-The Queen of Cups represents the watery part of Water. In the Zodiac it rules from the 20th degree of Gemini to the 20th degree of Cancer. As the first Heh of the Tetragrammaton in the suit of Water, she is the receptive, containing, and sustaining function of the emotional element.
+The Queen of Cups represents the watery part of Water. In the Zodiac it rules from 20° Gemini to 20° Cancer. As the first Heh of the Tetragrammaton in the suit of Water, she is the receptive, containing, and sustaining function of the emotional element.
 
 The characteristics associated with this card are principally dreaminess, illusion, and tranquillity. She is the perfect agent and patient, able to receive and transmit everything without herself being affected thereby. If ill-dignified, all these qualities are degraded — everything that passes through her is refracted and distorted. But speaking generally, her characteristics depend mostly upon the influences which affect her.
 
@@ -1463,7 +1463,7 @@ The Prince of Cups represents the airy part of Water — on the one hand, elasti
 *   **The Stagnant Lake with Heavy Rain:** Beneath his chariot is the calm and stagnant water of a lake upon which rain falls heavily — the external appearance of passivity concealing enormous internal pressure and activity.
     `,
     esotericMeaning: `
-The Prince of Cups represents the airy part of Water. He rules from the 20th degree of Libra to the 20th degree of Scorpio. As the Vau of the Tetragrammaton in the suit of Water, he is the intellectual projection of the emotional element — feeling that has been processed by the mind and directed by will.
+The Prince of Cups represents the airy part of Water. He rules from 20° Libra to 20° Scorpio. As the Vau of the Tetragrammaton in the suit of Water, he is the intellectual projection of the emotional element — feeling that has been processed by the mind and directed by will.
 
 The moral characteristics of the person pictured in this card are subtlety, secret violence, and craft. He is intensely secret, an artist in all his ways. On the surface he appears calm and imperturbable, but this is a mask of the most intense passion. He is on the surface susceptible to external influences, but he accepts them only to transmute them to the advantage of his secret designs. He is thus completely without conscience in the ordinary sense of the word, and is therefore usually distrusted by his neighbours. They feel they do not, and can never, understand him. Thus he inspires unreasonable fear.
 
@@ -1642,7 +1642,7 @@ This card refers to Chesed in the sphere of Water. Here, below the Abyss, the en
     esotericMeaning: `
 The Four of Cups is called Luxury. The card refers to the Moon in Cancer, which is her own house; but Cancer itself is so placed that this implies a certain weakness, an abandonment to desire. This tends to introduce the seeds of decay into the fruit of pleasure.
 
-Four is an awkward number: alone among the natural numbers, it is impossible to construct a Magic Square of four cells. Even in the Naples Arrangement, Four is a dead stop, a blind alley. An idea of a totally different Order is necessary to carry on the series. Four is the number of the Curse of Limitation, of Restriction — it is the blind and barren Cross of equal arms, Tetragrammaton in his fatal aspect of finality.
+Crowley associates Four with restriction and illustrates this with the impossibility of a normal 2 × 2 magic square using the distinct integers 1–4. Even in the Naples Arrangement, Four is a dead stop, a blind alley. An idea of a totally different Order is necessary to carry on the series. Four is the number of the Curse of Limitation, of Restriction — it is the blind and barren Cross of equal arms, Tetragrammaton in his fatal aspect of finality.
 
 The weakness in the element of Water threatens its purity; it is not quite strong enough to control itself properly, so the Lord of Pleasure is a little unstable. Purity has somehow been lost in the process of satisfaction.
     `,
@@ -1880,7 +1880,7 @@ The Knight of Swords represents the fiery part of Air — he is the wind, the st
 *   **The Sword and Poniard:** In one hand is a sword, in the other a poniard (dagger). He represents the idea of attack — not defence, not strategy, but pure, aggressive intellectual assault.
     `,
     esotericMeaning: `
-The Knight of Swords represents the fiery part of Air. He rules from the 20th degree of Taurus to the 20th degree of Gemini. As the Yod of the Tetragrammaton in the suit of Air, he is the initial, explosive aspect of the intellectual element — the sudden surge of thought that initiates all mental activity.
+The Knight of Swords represents the fiery part of Air. He rules from 20° Taurus to 20° Gemini. As the Yod of the Tetragrammaton in the suit of Air, he is the initial, explosive aspect of the intellectual element — the sudden surge of thought that initiates all mental activity.
 
 The moral qualities of a person thus indicated are activity and skill, subtlety and cleverness. He is fierce, delicate, and courageous, but altogether the prey of his idea, which comes to him as an inspiration without reflection.
 
@@ -1917,7 +1917,7 @@ The Queen of Swords represents the watery part of Air — the elasticity of that
 *   **The Naked Upper Body:** Her partial nudity indicates transparency — the watery quality of Air expressed as the willingness to be seen clearly, to hide nothing from intellectual scrutiny.
     `,
     esotericMeaning: `
-The Queen of Swords represents the watery part of Air. She rules from the 20th degree of Virgo to the 20th degree of Libra. As the first Heh of the Tetragrammaton in the suit of Air, she is the receptive, containing, and sustaining function of the intellectual element.
+The Queen of Swords represents the watery part of Air. She rules from 20° Virgo to 20° Libra. As the first Heh of the Tetragrammaton in the suit of Air, she is the receptive, containing, and sustaining function of the intellectual element.
 
 The person symbolized by this card should be intensely perceptive, a keen observer, a subtle interpreter, an intense individualist, swift and accurate at recording ideas in action, confident in spirit, gracious and just. Her movements will be graceful and her ability in dancing and balancing exceptional.
 
@@ -1955,7 +1955,7 @@ This card represents the airy part of Air. With its particular interpretation it
 *   **The Geometric Patterns:** His logical mental processes have reduced the Air (his element) to many diverse geometrical patterns, but in these there is no real plan — they are demonstrations of the powers of the Mind without definite purpose.
     `,
     esotericMeaning: `
-The Prince of Swords represents the airy part of Air. He rules from the 20th degree of Capricorn to the 20th degree of Aquarius. As the Vau of the Tetragrammaton in the suit of Air, he is the intellectual projection of the intellectual element — thought thinking about thought.
+The Prince of Swords represents the airy part of Air. He rules from 20° Capricorn to 20° Aquarius. As the Vau of the Tetragrammaton in the suit of Air, he is the intellectual projection of the intellectual element — thought thinking about thought.
 
 A person thus symbolized is purely intellectual. He is full of ideas and designs which tumble over each other. He is a mass of fine ideals unrelated to practical effort. He has all the apparatus of Thought in the highest degree, intensely clever, admirably rational, but unstable of purpose and in reality indifferent even to his own ideas, as knowing that any one of them is just as good as any other. He reduces everything to unreality by removing its substance and transmuting it to an ideal world of ratiocination which is purely formal and out of relation to any facts, even those upon which it is based.
 
@@ -2355,7 +2355,7 @@ The Knight of Disks represents the fiery part of Earth, and refers in particular
 *   **The Shire Horse on All Fours:** His steed is a shire horse, solidly planted on all four feet — as was not the case with the other Knights. He rides through fertile land; even the distant hills are cultivated fields.
     `,
     esotericMeaning: `
-The Knight of Disks represents the fiery part of Earth. He rules from the 20th degree of Leo to the 20th degree of Virgo and is thus concerned greatly with agriculture. As the Yod of the Tetragrammaton in the suit of Disks, he is the initial, activating spark within the most material element.
+The Knight of Disks represents the fiery part of Earth. He rules from 20° Leo to 20° Virgo and is thus concerned greatly with agriculture. As the Yod of the Tetragrammaton in the suit of Disks, he is the initial, activating spark within the most material element.
 
 Those whom he symbolizes tend to be dull, heavy, and preoccupied with material things. They are laborious and patient, but would have little intellectual grasp even of matters which concern them most closely. Their success is due to instinct, to imitation of Nature. They lack initiative; their fire is the smouldering fire of the process of growth.
 
@@ -2393,7 +2393,7 @@ The Queen of Disks represents the watery part of Earth — the function of that 
 *   **The Disk of Interlaced Loops:** In her left arm is curved her proper disk, a sphere of loops and circles interlaced — representing the ambition of matter to take part in the great work of Creation.
     `,
     esotericMeaning: `
-The Queen of Disks represents the watery part of Earth. She rules from the 20th degree of Sagittarius to the 20th degree of Capricorn. As the first Heh of the Tetragrammaton in the suit of Disks, she is the receptive, nurturing, sustaining function within the material element.
+The Queen of Disks represents the watery part of Earth. She rules from 20° Sagittarius to 20° Capricorn. As the first Heh of the Tetragrammaton in the suit of Disks, she is the receptive, nurturing, sustaining function within the material element.
 
 Persons signified by this card possess the finest of the quieter qualities. They are ambitious but only in useful directions. They possess immense funds of affection, kindness, and greatness of heart. They are not intellectual and not particularly intelligent, but instinct and intuition are more than adequate for their needs. These people are quiet, hard-working, practical, sensible, domesticated, often — in a reticent and unassuming fashion — lustful and even debauched. They are inclined to the abuse of alcohol and of drugs. It is as if they could only realize their essential happiness by getting outside themselves.
 
@@ -2429,7 +2429,7 @@ The Prince of Disks represents the airy part of Earth, indicating the florescenc
 *   **The Light Armour and Meditative Posture:** Clothed in light armour, his bearing is contemplative rather than aggressive — he is the thinker of the Earth suit, not its warrior.
     `,
     esotericMeaning: `
-The Prince of Disks represents the airy part of Earth. He rules from the 20th degree of Aries to the 20th degree of Taurus. As the Vau of the Tetragrammaton in the suit of Disks, he is the intellectual projection of the material element — Earth that has become conscious of itself.
+The Prince of Disks represents the airy part of Earth. He rules from 20° Aries to 20° Taurus. As the Vau of the Tetragrammaton in the suit of Disks, he is the intellectual projection of the material element — Earth that has become conscious of itself.
 
 The character denoted by this card is that of great energy brought to bear upon the most solid of practical matters. He is energetic and enduring, a capable manager, a steadfast and persevering worker. He is competent, ingenious, thoughtful, cautious, trustworthy, imperturbable; he constantly seeks new uses for common things and adapts his circumstances to his purposes in a slow, steady, well-thought-out plan.
 
@@ -2562,14 +2562,14 @@ The Two of Disks in psychological work signals a period of necessary change in m
     visualDescription: `
 The influence of Binah in the sphere of Earth shows the material establishment of the idea of the Universe — the determination of its basic form.
 
-*   **The Pyramid Viewed from Above:** The card represents a pyramid viewed from above the apex. This is the most stable of all geometric solids — the first three-dimensional structure, the materialization of understanding.
+*   **The Pyramid Viewed from Above:** The card represents a pyramid viewed from above the apex. The triangular base and apex suggest a tetrahedral form, a symbolic image of understanding becoming a three-dimensional structure.
 *   **The Three Wheels at the Base:** The base is formed by three wheels: Mercury, Sulphur, and Salt (Sattvas, Rajas, and Tamas; Aleph, Shin, and Mem; Air, Fire, and Water — the three Mother letters). These are the three fundamental forces whose interaction generates all material reality.
 *   **The Solidified Sea of Binah:** The pyramid is situated in the great Sea of Binah, in the Night of Time — but the sea is solidified, shown in cold, thin, dark grey with a pattern of indigo and green. The reddish tint of the sides shows the influence of Mars.
     `,
     esotericMeaning: `
 The Three of Disks is called Work. It is ruled by Mars in Capricorn — he is exalted in that Sign, and therefore at his best. His energy is constructive, like that of the builder or engineer.
 
-Something has definitely been done. The crystallization of forces that Binah represents has here produced its material result: the pyramid — the first and most enduring of all human constructions, the establishment of primal energy in solid, geometric form.
+Something has definitely been done. The crystallization of forces that Binah represents has here produced its material result: the pyramid — an image of endurance and the establishment of primal energy in solid, geometric form.
     `,
     jungianMeaning: `
 The Three of Disks represents the archetype of **Constructive Labour** — the moment when the dynamic change of the Two is channelled into the first definitive material structure. Something has been *built*. The pyramid — viewed from above its apex — is the most stable solid in nature, and its appearance in this card signals that the creative energy of Earth has found its form.
@@ -2790,7 +2790,7 @@ The number Ten (Malkuth) as always represents the final issue of the Energy. Her
     esotericMeaning: `
 The Ten of Disks is called Wealth. The force is completely expended and results in death. Mercury rules this card in Virgo, and this may imply that the acquired wealth, being inert, will be dissipated unless put to further use by devoting its power to objects other than mere accumulation.
 
-As the very last of all the pip cards, the Ten of Disks represents the absolute completion of the entire cycle of manifestation that began with the Ace of Wands. The energy has descended through all four elements, through all ten Sephiroth, and has finally come to rest in the most material form possible. The only movement from here is the return to the beginning — the Fool stepping off the cliff into a new cycle.
+As the very last of all the pip cards, the Ten of Disks represents the absolute completion of the entire cycle of manifestation that began with the Ace of Wands. The energy has descended through all four elements, through all ten Sephiroth, and has finally come to rest in the most material form possible. The only movement from here is the return to the beginning — the Fool’s unformulated potential opening a new cycle. (A literal cliff-edge scene belongs to other decks, including Rider–Waite–Smith.)
     `,
     jungianMeaning: `
 The Ten of Disks represents the archetype of **Completed Manifestation** — the absolute end-point of the material cycle, where all creative energy has been fully expressed, fully materialized, and fully *spent*. It is Wealth in the most literal sense: accumulated material substance that has been organized into the complete pattern of the Tree of Life — every Sephirah accounted for, every position filled.

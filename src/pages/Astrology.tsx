@@ -63,7 +63,7 @@ export const Astrology: React.FC = () => {
                     style={{ overflow: 'hidden' }}
                   >
                     <p style={{ color: 'var(--text-muted)', maxWidth: '700px', margin: '0.75rem auto 0.5rem', lineHeight: 1.7, fontSize: '0.9rem' }}>
-                      The zodiac wheel maps the Thoth Tarot's astrological framework. The outer ring shows 12 signs with their decans — each decan assigned a pip card and a planetary sub-ruler. Inside, four triangles mark the elemental triplicities (Fire, Water, Air, Earth) and three squares mark the qualities (Cardinal, Fixed, Mutable). Orbiting planets connect to the signs they rule. Click any element to explore.
+                      The zodiac wheel maps the Thoth Tarot's astrological framework. The outer ring shows 12 signs with their decans — each decan assigned a pip card and a planetary sub-ruler. Inside, four triangles mark the elemental triplicities (Fire, Water, Air, Earth) and three squares mark the qualities (Cardinal, Fixed, Mutable). The seven classical planets connect to traditional rulerships (diamond endpoints) and exaltations (hollow circles). Uranus, Neptune, and Pluto are shown separately as modern additions. Animated positions are decorative, not the current sky. Sun-sign dates are approximate; seasons refer to the Northern Hemisphere. Click any element to explore.
                     </p>
                   </motion.div>
                 )}

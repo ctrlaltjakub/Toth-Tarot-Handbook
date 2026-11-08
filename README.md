@@ -11,7 +11,7 @@
 
 <p><em>An interactive, open-source encyclopedia of the Thoth Tarot system.</em></p>
 
-<h3><a href="https://toth.jakub.computer">toth.jakub.computer</a></h3>
+<h3><a href="https://tarot.jakub.computer">tarot.jakub.computer</a> · <a href="https://toth.jakub.computer">toth.jakub.computer</a></h3>
 
 <p>
   <img src="https://img.shields.io/badge/license-MIT-cba6f7?style=flat-square&labelColor=1e1e2e" alt="License"/>
@@ -29,7 +29,7 @@
 <tr>
 <td>
 
-**The Thoth Tarot is not a standalone system** — it is the meeting point of three ancient traditions. The **78 cards** are mapped onto the **Kabbalistic Tree of Life**, where the 22 Major Arcana correspond to the 22 paths and the 40 pip cards sit on the 10 Sephiroth. Each card also carries an **astrological** attribution — zodiac signs, planets, and elements — creating a web of correspondences where every symbol illuminates every other. This handbook maps all three systems together, with **Jungian psychological interpretation** as a fourth lens.
+Created by **Aleister Crowley and Lady Frieda Harris (1938–1943)**, the Thoth Tarot combines Tarot, Hermetic Qabalah, astrology, and alchemical symbolism. The **78 cards** are mapped onto the **Hermetic Qabalistic Tree of Life**, where the 22 Major Arcana correspond to the 22 paths and the 40 pip cards sit on the 10 Sephiroth. Each card also carries an **astrological** attribution — zodiac signs, planets, and elements — creating a web of correspondences where every symbol illuminates every other. This handbook connects these systems with **original Jungian psychological interpretations** as an additional lens.
 
 </td>
 </tr>
@@ -56,7 +56,7 @@
 
 - **Tarot** — All 78 cards (Major Arcana, Court Cards, pip cards) with visual, esoteric, and Jungian descriptions
 - **Tree of Life** — Interactive SVG diagram of the 10 Sephiroth and 22 paths with click-to-explore panels
-- **Astrology** — Zodiac wheel with decans, elements, qualities, planetary rulerships, and SVG-rendered planet glyphs
+- **Astrology** — Zodiac wheel with 36 decans, traditional rulerships and exaltations, and separately labeled modern planets; animation is decorative
 - **Library** — Reference articles on history, methods, and foundational knowledge
 - **Glossary** — 285+ cross-linked terms with stack-based navigation and auto-linking across all descriptions
 - **Search** — `Ctrl+K` instant search across cards, signs, planets, sephiroth, and glossary terms
@@ -64,7 +64,16 @@
 
 ## <img src="https://img.shields.io/badge/-1e1e2e?style=flat-square" height="1" width="0"/> A Note on Card Imagery
 
-The original Thoth Tarot deck paintings by Lady Frieda Harris remain under copyright (held by Ordo Templi Orientis), so this handbook does **not** reproduce the card images. Instead, each card is described through its visual symbolism, esoteric attributions, and Jungian interpretation — encouraging you to study the deck itself alongside the text.
+This handbook describes the cards’ visual symbolism, esoteric attributions, and Jungian interpretations without reproducing the card paintings. Study the deck itself alongside the text.
+
+## Sources and conventions
+
+The in-app [Sources and Correspondence Conventions](https://tarot.jakub.computer/library/sources-and-conventions) article records primary references and interpretive choices. The main reference is [Crowley’s *The Book of Thoth* (1944)](https://otohungary.org/documents/publication/english/Book_of_Thoth.html), checked alongside *Liber 777*, Waite’s *Pictorial Key*, and museum and archival histories.
+
+- Path numbers follow Hebrew letters: Emperor / Tzaddi / Aries is Path 28; Star / Heh / Aquarius is Path 15.
+- Each of the Four Worlds contains all ten Sephiroth; the four suits express the numerical ranks in their respective worlds.
+- Classical attributions are distinguished from later outer-planet associations. Jungian card readings are interpretations by this handbook, rather than assignments published by Jung.
+- Run `npm run validate:content` to check all 78 cards, the 22 paths, 36 decans, court ranges, planetary dignities, and internal data links.
 
 ## <img src="https://img.shields.io/badge/-1e1e2e?style=flat-square" height="1" width="0"/> Themes
 

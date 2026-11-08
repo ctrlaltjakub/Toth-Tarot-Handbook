@@ -77,17 +77,17 @@ Excellent for situations where the past–present–future axis alone feels insu
     name: 'Horseshoe Spread',
     cardCount: 7,
     difficulty: 'Intermediate',
-    description: `Seven cards in a U-shape, providing a comprehensive narrative arc. The shape is significant — the open end faces upward, suggesting receptivity to what is coming. The seven positions mirror the seven lower Sephiroth (Chesed through Malkuth), grounding the reading in practical, manifested experience.
+    description: `Seven cards in a U-shape, providing a comprehensive narrative arc. The shape is significant — the open end faces upward, suggesting receptivity to what is coming. The seven positions can be compared symbolically with the seven lower Sephiroth (Chesed through Malkuth); this is an optional interpretation of the layout.
 
 One of the most balanced general-purpose spreads, suitable for any question that requires more depth than three cards but less complexity than the Celtic Cross.`,
     positions: [
-      { number: 1, name: 'Past', meaning: 'The distant past — the deep background, the original cause or the first seed from which the current situation grew.', x: 55, y: 320 },
+      { number: 1, name: 'Past', meaning: 'The distant past — the deep background, the original cause or the first seed from which the current situation grew.', x: 55, y: 70 },
       { number: 2, name: 'Recent Past', meaning: 'The recent past — events and influences from the near past that are still actively shaping the present.', x: 55, y: 195 },
-      { number: 3, name: 'Present', meaning: 'The current state of affairs — what is happening right now, the energy that dominates this moment.', x: 55, y: 70 },
-      { number: 4, name: 'Hidden', meaning: 'The hidden factor — unconscious forces, secret influences, or aspects of the situation not yet visible. The shadow card of the reading.', x: 195, y: 70 },
-      { number: 5, name: 'External', meaning: 'The external environment — other people, institutions, and forces beyond the querent\'s control affecting the outcome.', x: 335, y: 70 },
+      { number: 3, name: 'Present', meaning: 'The current state of affairs — what is happening right now, the energy that dominates this moment.', x: 55, y: 320 },
+      { number: 4, name: 'Hidden', meaning: 'The hidden factor — unconscious forces, secret influences, or aspects of the situation not yet visible. The shadow card of the reading.', x: 195, y: 320 },
+      { number: 5, name: 'External', meaning: 'The external environment — other people, institutions, and forces beyond the querent\'s control affecting the outcome.', x: 335, y: 320 },
       { number: 6, name: 'Advice', meaning: 'The recommended action — what the querent should do, focus on, or change to navigate the situation most effectively.', x: 335, y: 195 },
-      { number: 7, name: 'Outcome', meaning: 'The probable outcome — where all forces converge if the current trajectory continues and the advice is (or is not) followed.', x: 335, y: 320 },
+      { number: 7, name: 'Outcome', meaning: 'The probable outcome — where all forces converge if the current trajectory continues and the advice is (or is not) followed.', x: 335, y: 70 },
     ],
     svgWidth: 390,
     svgHeight: 390,
@@ -97,11 +97,11 @@ One of the most balanced general-purpose spreads, suitable for any question that
     name: 'Celtic Cross',
     cardCount: 10,
     difficulty: 'Advanced',
-    description: `The most famous Tarot spread — ten cards providing a complete map of the querent's situation, inner state, influences, hopes, fears, and probable outcome. Attributed to the Golden Dawn tradition, it combines a central cross of six cards (the situation) with a vertical staff of four cards (the path forward).
+    description: `The most famous Tarot spread — ten cards providing a complete map of the querent's situation, inner state, influences, hopes, fears, and probable outcome. Popularized by A. E. Waite in The Pictorial Key to the Tarot (1911 edition), it combines a central cross of six cards (the situation) with a vertical staff of four cards (the path forward).
 
-Its ten positions mirror the ten Sephiroth of the Tree of Life, making it a complete circuit of the manifest universe applied to a single question. Rewards experienced readers who can synthesize multiple cards into a coherent narrative.`,
+The version shown here is a common modern variant: position 3 is the foundation and position 5 the crown. Waite’s published version numbers the crown 3 and the foundation 4. Ten cards can invite comparison with the ten Sephiroth, but that is not a fixed position-by-position attribution of the Celtic Cross. Rewards experienced readers who can synthesize multiple cards into a coherent narrative.`,
     positions: [
-      { number: 1, name: 'Present', meaning: 'The significator — the central issue, the heart of the matter. This card represents the querent\'s current state or the essence of the question.', x: 165, y: 265 },
+      { number: 1, name: 'Present', meaning: 'The covering card — the central issue or current situation. Waite’s method places a separately chosen significator beneath it; that extra card is omitted in this ten-card variant.', x: 165, y: 265 },
       { number: 2, name: 'Challenge', meaning: 'The crossing card — laid horizontally across the first. The immediate obstacle, opposition, or challenge, whether external or internal.', x: 165, y: 265 },
       { number: 3, name: 'Foundation', meaning: 'The root of the matter — the deep, unconscious basis of the situation. What lies beneath, often something the querent has forgotten or repressed.', x: 165, y: 405 },
       { number: 4, name: 'Past', meaning: 'What is passing away — the energy, situation, or influence that is fading. What the querent is leaving behind.', x: 45, y: 265 },

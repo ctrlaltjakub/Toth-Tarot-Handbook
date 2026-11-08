@@ -44,7 +44,6 @@ const suitColors = ['var(--color-fire)', 'var(--color-water)', 'var(--color-air)
 // Panel: Sephirah
 // ============================================
 const SephirahDetail: React.FC<{ seph: Sephirah; onClose: () => void }> = ({ seph, onClose }) => {
-  const world = worlds.find(w => w.sephiroth.includes(seph.number));
   const connectedPaths = paths.filter(p => p.from === seph.number || p.to === seph.number);
 
   return (
@@ -52,7 +51,7 @@ const SephirahDetail: React.FC<{ seph: Sephirah; onClose: () => void }> = ({ sep
       <div className="tree-panel-header">
         <div>
           <span className="tree-panel-badge" style={{ color: `var(${seph.colorVar})` }}>
-            {seph.pillar} Pillar — {world?.name}
+            {seph.pillar} Pillar — present in all Four Worlds
           </span>
           <h2 style={{ color: `var(${seph.colorVar})`, margin: '0.25rem 0' }}>
             {seph.number}. {seph.name}
@@ -66,19 +65,9 @@ const SephirahDetail: React.FC<{ seph: Sephirah; onClose: () => void }> = ({ sep
 
       <div className="tree-panel-meta">
         <div className="tree-panel-meta-item">
-          <span className="tree-panel-meta-label">Planet</span>
+          <span className="tree-panel-meta-label">Classical attribution</span>
           <span className="astro-symbols">
-            {seph.planet.includes('Neptune') ? (
-              <>
-                <AstroText text={seph.planet.split('/')[0].trim()} />
-                {' / '}
-                <Link to="/astrology?view=planet&name=Neptune" style={{ color: 'var(--accent-lavender)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
-                  <PlanetGlyph name="Neptune" size={16} color="var(--accent-lavender)" strokeWidth={0.7} /> Neptune
-                </Link>
-              </>
-            ) : (
-              <AstroText text={seph.planet} />
-            )}
+            <AstroText text={seph.planet} />
           </span>
         </div>
       </div>
@@ -180,7 +169,7 @@ const DaathDetail: React.FC<{ onClose: () => void }> = ({ onClose }) => (
 
     <div className="tree-panel-meta">
       <div className="tree-panel-meta-item">
-        <span className="tree-panel-meta-label">Planet</span>
+        <span className="tree-panel-meta-label">Later association</span>
         <Link to="/astrology?view=planet&name=Pluto" style={{ color: 'var(--accent-lavender)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
           <PlanetGlyph name="Pluto" size={16} color="var(--accent-lavender)" strokeWidth={0.7} /> Pluto (modern)
         </Link>
@@ -225,7 +214,7 @@ const WorldDetail: React.FC<{ worldName: string; onClose: () => void }> = ({ wor
       <div className="tree-panel-header">
         <div>
           <span className="tree-panel-badge" style={{ color: `var(${world.colorVar})` }}>
-            {world.element} {world.elementSymbol} — Suit of {world.element === 'Fire' ? 'Wands' : world.element === 'Water' ? 'Cups' : world.element === 'Air' ? 'Swords' : 'Disks'}
+            {world.element} {world.elementSymbol} — Suit of {world.suit}
           </span>
           <h2 style={{ color: `var(${world.colorVar})`, margin: '0.25rem 0' }}>
             {world.name}
@@ -242,7 +231,7 @@ const WorldDetail: React.FC<{ worldName: string; onClose: () => void }> = ({ wor
       </div>
 
       <div className="tree-panel-section">
-        <h3>Sephiroth in {world.name}</h3>
+        <h3>All ten Sephiroth in {world.name}</h3>
         <div className="tree-panel-links">
           {worldSephiroth.map(s => (
             <div key={s.number} className="tree-panel-link" style={{ cursor: 'default' }}>

@@ -9,7 +9,6 @@ export interface Sephirah {
   meaning: string;
   planet: string;
   pillar: 'Severity' | 'Mildness' | 'Mercy';
-  world: 'Atziluth' | 'Briah' | 'Yetzirah' | 'Assiah';
   colorVar: string;     // CSS variable for the Sephirah's color
   x: number;            // SVG x position (in viewBox units)
   y: number;            // SVG y position
@@ -34,6 +33,7 @@ export interface QabalisticWorld {
   hebrew: string;
   meaning: string;
   element: string;
+  suit: 'Wands' | 'Cups' | 'Swords' | 'Disks';
   elementSymbol: string;
   colorVar: string;
   sephiroth: number[];
@@ -54,15 +54,14 @@ export const sephiroth: Sephirah[] = [
     name: 'Kether',
     hebrew: 'כתר',
     meaning: 'Crown',
-    planet: 'Primum Mobile (First Swirlings) / ♆ Neptune',
+    planet: 'Primum Mobile (First Swirlings)',
     pillar: 'Mildness',
-    world: 'Atziluth',
     colorVar: '--seph-kether',
     x: 250, y: 55,
     pipCards: ['ace-of-wands', 'ace-of-cups', 'ace-of-swords', 'ace-of-disks'],
     description: `Kether is the Crown, the first and highest Sephirah — the dimensionless point from which all existence emanates. It is pure Being, undifferentiated consciousness, the root of all roots. It cannot be comprehended by the mind because it precedes the mind; it can only be approached through the annihilation of thought itself.
 
-Kether is attributed to the Primum Mobile — the First Swirlings — the initial movement that precedes even the first distinction between subject and object. Some post-Crowley Kabbalists also place Neptune here, as the planet of boundless, pre-differentiated unity — the oceanic consciousness that precedes all form, mirroring Kether's nature as the state before boundaries exist.
+Kether’s classical attribution is the Primum Mobile, or First Swirlings. Later outer-planet correspondences vary: Neptune is used here by some authors, while Crowley’s discussion of the Universe represents the Primum Mobile by Pluto. These are additional schemes, rather than interchangeable classical attributions.
 
 **Jungian Meaning:** Kether corresponds to the Self in its most abstract and unknowable form — the origin point of the psyche that can never be directly observed, only inferred from its effects. It is unknowable for the same reason the eye cannot see itself: Kether is the subject behind every act of consciousness, the "observer" that precedes observation. The four Aces reside here as the seeds of the four elements — not yet fire, water, air, or earth, but the sheer capacity to become them, the way an infant carries the whole trajectory of a life before a single choice has been made. Developmentally, Kether is the psychic ground zero before the first "I" has formed — prior even to the distinction between self and world. The danger is mistaking any experience of Kether for Kether itself: every image the mind produces to represent the Absolute is, by definition, not the Absolute. It is the ultimate source and the ultimate mystery.`
   },
@@ -71,17 +70,16 @@ Kether is attributed to the Primum Mobile — the First Swirlings — the initia
     name: 'Chokmah',
     hebrew: 'חכמה',
     meaning: 'Wisdom',
-    planet: '♅ Uranus / The Zodiac',
+    planet: 'The Zodiac / Sphere of the Fixed Stars',
     pillar: 'Mercy',
-    world: 'Briah',
     colorVar: '--ctp-overlay2',
     x: 380, y: 140,
     pipCards: ['two-of-wands', 'two-of-cups', 'two-of-swords', 'two-of-disks'],
     description: `Chokmah is Wisdom — the 2nd Sephirah, the first flash of creative energy emerging from the unknowable unity of Kether. It is the supernal Father, the great stimulating force of the Universe, the Logos — the Word that initiates all creation. It is pure dynamic force without form.
 
-Chokmah is attributed to the Zodiac as a whole (the sphere of the fixed stars) and to the planet Uranus. As the first Sephirah on the Pillar of Mercy, it represents the active, masculine, projecting principle in its highest form. The four Twos reside here — the first real manifestation of each element in its original, uncontaminated purity.
+Chokmah’s classical attribution is the Zodiac as a whole, or sphere of the fixed stars. A later scheme associates it with Uranus, while Crowley’s Universe discussion uses Neptune for the fixed-star sphere. As the first Sephirah on the Pillar of Mercy, it represents the active, masculine, projecting principle in its highest form. The four Twos reside here — the first real manifestation of each element in its original, uncontaminated purity.
 
-**Jungian Meaning:** Chokmah is the first stirring of conscious awareness — the initial "I AM" that precedes all differentiation into specific thoughts, feelings, or perceptions. Where Kether is the psyche before it knows it exists, Chokmah is the moment of knowing — pure will surging outward with no object yet to land on. It corresponds to the Zodiac because the zodiacal wheel contains every possible archetype in potentia, the way Chokmah contains every possible thought before any single thought has crystallised. It is attributed to Uranus because Uranus shatters existing structures to release raw creative force — the same lightning-flash energy that breaks Kether's silence into the first cosmic impulse. The shadow of Chokmah is force that never consents to limitation: endless creative drive that refuses the discipline of form, the visionary who generates but never completes.`
+**Jungian Meaning:** Chokmah is the first stirring of conscious awareness — the initial "I AM" that precedes all differentiation into specific thoughts, feelings, or perceptions. Where Kether is the psyche before it knows it exists, Chokmah is the moment of knowing — pure will surging outward with no object yet to land on. It corresponds to the Zodiac because the zodiacal wheel contains every possible archetype in potentia, the way Chokmah contains every possible thought before any single thought has crystallised. In the later Uranus association, the planet shatters existing structures to release raw creative force — the same lightning-flash energy that breaks Kether's silence into the first cosmic impulse. The shadow of Chokmah is force that never consents to limitation: endless creative drive that refuses the discipline of form, the visionary who generates but never completes.`
   },
   {
     number: 3,
@@ -90,7 +88,6 @@ Chokmah is attributed to the Zodiac as a whole (the sphere of the fixed stars) a
     meaning: 'Understanding',
     planet: '♄ Saturn',
     pillar: 'Severity',
-    world: 'Briah',
     colorVar: '--seph-binah',
     x: 120, y: 140,
     pipCards: ['three-of-wands', 'three-of-cups', 'three-of-swords', 'three-of-disks'],
@@ -107,7 +104,6 @@ As the first Sephirah on the Pillar of Severity, Binah represents the receptive,
     meaning: 'Mercy',
     planet: '♃ Jupiter',
     pillar: 'Mercy',
-    world: 'Yetzirah',
     colorVar: '--ctp-blue',
     x: 380, y: 300,
     pipCards: ['four-of-wands', 'four-of-cups', 'four-of-swords', 'four-of-disks'],
@@ -124,7 +120,6 @@ As this threshold between the incomprehensible and the structured, Chesed repres
     meaning: 'Severity',
     planet: '♂ Mars',
     pillar: 'Severity',
-    world: 'Yetzirah',
     colorVar: '--ctp-red',
     x: 120, y: 300,
     pipCards: ['five-of-wands', 'five-of-cups', 'five-of-swords', 'five-of-disks'],
@@ -141,13 +136,12 @@ Geburah is not evil — it is the necessary counterbalance to Chesed's boundless
     meaning: 'Beauty',
     planet: '☉ Sun',
     pillar: 'Mildness',
-    world: 'Yetzirah',
     colorVar: '--ctp-yellow',
     x: 250, y: 385,
     pipCards: ['six-of-wands', 'six-of-cups', 'six-of-swords', 'six-of-disks'],
-    description: `Tiphareth is Beauty — the Sun at the centre of the Tree, the harmonizing point where all forces meet and are reconciled. It is the Son, the Christ-centre, the heart of the system. More paths converge here than at any other Sephirah because it functions as the great mediator: everything above must pass through it to reach below, and everything below must pass through it to reach above. It is not merely central by convention — it is structurally the place where the whole Tree communicates with itself.
+    description: `Tiphareth is Beauty — the Sun at the centre of the Tree, the harmonizing point where all forces meet and are reconciled. It is the Son, the Christ-centre, the heart of the system. More paths converge here than at any other Sephirah in this diagram, making it an apt symbol of mediation. Some routes bypass Tiphareth, so this centrality is a symbolic and structural emphasis rather than a claim that every route passes through it.
 
-Tiphareth is the sphere of the Holy Guardian Angel — the personal experience of the divine that stands at the centre of the individuation process. Where Kether is the source of unity and Malkuth its final expression, Tiphareth is the living experience of that unity within a human life. The four Sixes reside here — victory, pleasure, science, success — the fullest balanced expression of each element, because six is the midpoint of the decimal Sephiroth and represents each force in its most harmonious, least distorted state.
+Tiphareth is the sphere of the Holy Guardian Angel — the personal experience of the divine that stands at the centre of the individuation process. Where Kether is the source of unity and Malkuth its final expression, Tiphareth is the living experience of that unity within a human life. The four Sixes reside here — victory, pleasure, science, success — the fullest balanced expression of each element, because Tiphareth occupies the diagram’s central position and represents each force in its most harmonious, least distorted state.
 
 **Jungian Meaning:** Tiphareth is the Self as experienced by the Ego — not the abstract, unknowable totality of Kether, but the lived centre of the personality, the sense of being whole and in genuine harmony with one's own nature. It is what Jung meant by individuation as a practical achievement: not perfection, but the conscious integration of opposing forces into something that holds together and feels real. Developmentally, this is the moment when a person stops living from a single fragment of themselves — persona, ambition, wound — and begins to live from the centre, where all of those fragments are acknowledged and balanced. The shadow of Tiphareth is spiritual inflation: mistaking the experience of the Self for identity with it, the mystic who believes they have become the Sun rather than recognizing they are illuminated by it.`
   },
@@ -158,7 +152,6 @@ Tiphareth is the sphere of the Holy Guardian Angel — the personal experience o
     meaning: 'Victory',
     planet: '♀ Venus',
     pillar: 'Mercy',
-    world: 'Yetzirah',
     colorVar: '--ctp-green',
     x: 380, y: 465,
     pipCards: ['seven-of-wands', 'seven-of-cups', 'seven-of-swords', 'seven-of-disks'],
@@ -175,7 +168,6 @@ As the lowest Sephirah on the Pillar of Mercy, Netzach represents the expansive,
     meaning: 'Splendour',
     planet: '☿ Mercury',
     pillar: 'Severity',
-    world: 'Yetzirah',
     colorVar: '--ctp-peach',
     x: 120, y: 465,
     pipCards: ['eight-of-wands', 'eight-of-cups', 'eight-of-swords', 'eight-of-disks'],
@@ -192,7 +184,6 @@ As the lowest Sephirah on the Pillar of Severity, Hod represents the discriminat
     meaning: 'Foundation',
     planet: '☽ Moon',
     pillar: 'Mildness',
-    world: 'Yetzirah',
     colorVar: '--ctp-mauve',
     x: 250, y: 545,
     pipCards: ['nine-of-wands', 'nine-of-cups', 'nine-of-swords', 'nine-of-disks'],
@@ -209,7 +200,6 @@ Yesod is the realm of the "astral light" — the plastic, ever-changing medium t
     meaning: 'Kingdom',
     planet: '🜃 Earth / ♁ Terra',
     pillar: 'Mildness',
-    world: 'Assiah',
     colorVar: '--ctp-flamingo',
     x: 250, y: 660,
     pipCards: ['ten-of-wands', 'ten-of-cups', 'ten-of-swords', 'ten-of-disks'],
@@ -275,10 +265,11 @@ export const worlds: QabalisticWorld[] = [
     hebrew: 'אצילות',
     meaning: 'The Archetypal World — Emanation',
     element: 'Fire',
+    suit: 'Wands',
     elementSymbol: '🜂',
     colorVar: '--color-fire',
-    sephiroth: [1],
-    description: `Atziluth is the World of Emanation — the highest, most abstract, most divine of the four worlds. It corresponds to the element of Fire and to the suit of Wands. Only Kether truly belongs to Atziluth, because emanation by definition precedes differentiation: this is the world of pure archetypes that exist before and beyond all manifestation.
+    sephiroth: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    description: `Atziluth is the World of Emanation — the highest, most abstract, most divine of the four worlds. It corresponds to the element of Fire and to the suit of Wands. It contains a complete Tree of ten Sephiroth: the Ace through Ten of Wands express their ranks in Fire. Atziluth is associated with Kether in one simplified projection onto a single Tree, but it is not restricted to Kether.
 
 In Atziluth, the divine names are expressed in their purest form. The energy here is so exalted that it cannot be perceived by any human faculty — it can only be inferred from its effects on the worlds below, the way a cause is known only through its consequences. Atziluth is the realm of the Yod of Tetragrammaton — the initial creative spark, the Father's seed — because Yod is the smallest letter, the dimensionless point from which all extension proceeds.
 
@@ -289,12 +280,13 @@ In Atziluth, the divine names are expressed in their purest form. The energy her
     hebrew: 'בריאה',
     meaning: 'The Creative World — Creation',
     element: 'Water',
+    suit: 'Cups',
     elementSymbol: '🜄',
     colorVar: '--color-water',
-    sephiroth: [2, 3],
-    description: `Briah is the World of Creation — the realm where the pure archetypes of Atziluth first take on distinct form. It corresponds to the element of Water and to the suit of Cups. Chokmah and Binah belong to Briah — the supernal Father and Mother — because creation requires polarity: a force and something to receive it.
+    sephiroth: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    description: `Briah is the World of Creation — the realm where the pure archetypes of Atziluth first take on distinct form. It corresponds to the element of Water and to the suit of Cups. It contains a complete Tree of ten Sephiroth, expressed by the Ace through Ten of Cups. A simplified single-Tree projection emphasizes the supernal creative powers, especially Binah, but Briah is not limited to two spheres.
 
-In Briah, the Archangels operate — the great creative intelligences that give shape to the divine will. The energy here is still supernal, still above the Abyss, but it has differentiated into two fundamental principles: the active and projecting (Chokmah) and the receptive and form-giving (Binah). Water is assigned here because water is the first element capable of holding a reflection — and Briah is where the formless first sees its own image.
+In Briah, the Archangels operate — the great creative intelligences that give shape to the divine will. The Father–Mother polarity is one image for the passage from undifferentiated impulse into creation. It should not be treated as a rule that the whole world occupies only the part of the diagram above the Abyss. Water is assigned here because water is the first element capable of holding a reflection — and Briah is where the formless first sees its own image.
 
 **Jungian Meaning:** Briah corresponds to the level of the Collective Unconscious where archetypes first begin to take on recognizable form — the Great Mother, the Wise Old Man, the Divine Child. These are not yet personal memories or individual complexes; they are the universal moulds into which all human experience is poured. Briah is why a child who has never heard a myth can still dream of dragons — the forms exist before the individual encounters them.`
   },
@@ -303,12 +295,13 @@ In Briah, the Archangels operate — the great creative intelligences that give 
     hebrew: 'יצירה',
     meaning: 'The Formative World — Formation',
     element: 'Air',
+    suit: 'Swords',
     elementSymbol: '🜁',
     colorVar: '--color-air',
-    sephiroth: [4, 5, 6, 7, 8, 9],
-    description: `Yetzirah is the World of Formation — the realm where the archetypal forms of Briah are elaborated into the complex, detailed structures that will eventually manifest in the physical world. It corresponds to the element of Air and to the suit of Swords. The six Sephiroth from Chesed to Yesod belong to Yetzirah, because formation is not a single act but an extended process of refinement, negotiation, and balance.
+    sephiroth: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    description: `Yetzirah is the World of Formation — the realm where the archetypal forms of Briah are elaborated into the complex, detailed structures that will eventually manifest in the physical world. It corresponds to the element of Air and to the suit of Swords. It contains a complete Tree of ten Sephiroth, expressed by the Ace through Ten of Swords. In the simplified projection onto one Tree, Chesed through Yesod emphasize formative activity; this grouping is not an exhaustive list of the spheres of Yetzirah.
 
-This is the world of the Angels — the specific intelligences that carry out the detailed work of creation. It is also the world of the Ruach — the intellect, the personality in its psychological sense. Most of the Tree's complexity resides here: the interplay of mercy and severity, expansion and contraction, desire and analysis. Air is assigned because thought mediates between impulse and act, shaping raw energy into workable plans.
+This is the world of the Angels — the specific intelligences that carry out the detailed work of creation. It is also the world of the Ruach — the intellect, the personality in its psychological sense. The formative work includes the interplay of mercy and severity, expansion and contraction, desire and analysis. Air is assigned because thought mediates between impulse and act, shaping raw energy into workable plans.
 
 **Jungian Meaning:** Yetzirah corresponds to the personal unconscious and the Ego — the level of the psyche where universal archetypes are translated into specific complexes, habits, relationships, and beliefs. A person does not encounter "the Mother" in the abstract; they encounter their mother, and from that encounter a complex forms. This is where individuation actually takes place, because individuation is precisely the work of making the unconscious pattern conscious — pulling the Angel, so to speak, into the light of Air.`
   },
@@ -317,10 +310,11 @@ This is the world of the Angels — the specific intelligences that carry out th
     hebrew: 'עשיה',
     meaning: 'The Material World — Action',
     element: 'Earth',
+    suit: 'Disks',
     elementSymbol: '🜃',
     colorVar: '--color-earth',
-    sephiroth: [10],
-    description: `Assiah is the World of Action — the physical, material world of incarnated existence. It corresponds to the element of Earth and to the suit of Disks. Only Malkuth belongs to Assiah — the Kingdom, the body, the here-and-now of sensory experience — because matter is where the entire chain of emanation finally comes to rest and becomes real.
+    sephiroth: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    description: `Assiah is the World of Action — the physical, material world of incarnated existence. It corresponds to the element of Earth and to the suit of Disks. It contains a complete Tree of ten Sephiroth, expressed by the Ace through Ten of Disks. Malkuth represents Assiah in a simplified projection onto one Tree; it is not the only sphere within the world of Assiah.
 
 In Assiah, the shells (Qliphoth) are most active — the broken, unbalanced forces that represent the shadow-side of creation — because materiality, being furthest from the source, is most vulnerable to distortion. But Assiah is also the world where the Great Work is ultimately accomplished. The New Aeon doctrine insists that Assiah is not a prison but a garden — that matter is sacred, the body a temple, and the physical world the proper arena for spiritual achievement, precisely because only here can an abstraction be tested against reality.
 
@@ -359,7 +353,7 @@ Four Sephiroth — Kether, Tiphareth (Sun), Yesod (Moon), and Malkuth (Earth) �
     sephiroth: [2, 4, 7],
     description: `The Pillar of Mercy is the great expansive column of the Tree — the principle that says yes, that gives by overflowing, that creates by reaching outward. It is the right-hand pillar (עמוד החסד, literally "Pillar of Loving-kindness"), masculine and projecting in Polarity, and its work is force: the unbounded outpouring of energy that must occur before any form can be imposed upon it.
 
-Three Sephiroth stand on this column — Chokmah (Uranus and the Zodiac), Chesed (Jupiter), and Netzach (Venus) — and they form a coherent descent of the force-giving principle through three Octaves. Chokmah is force at its most cosmic: the supernal Father's Lightning Flash of pure dynamic will. Chesed is force as benevolent rulership: Jupiter's expansive generosity, the king who gives because he has more than enough. Netzach is force as desire and attraction: Venus reaching outward toward what she loves. Each is a more concrete expression of the same gesture — expansion in service of becoming. Without the opposing Pillar of Severity to constrain it, this column would dissipate; without it, Severity would have nothing to limit.
+Three Sephiroth stand on this column — Chokmah (the Zodiac), Chesed (Jupiter), and Netzach (Venus) — and they form a coherent descent of the force-giving principle through three Octaves. Chokmah is force at its most cosmic: the supernal Father's Lightning Flash of pure dynamic will. Chesed is force as benevolent rulership: Jupiter's expansive generosity, the king who gives because he has more than enough. Netzach is force as desire and attraction: Venus reaching outward toward what she loves. Each is a more concrete expression of the same gesture — expansion in service of becoming. Without the opposing Pillar of Severity to constrain it, this column would dissipate; without it, Severity would have nothing to limit.
 
 **Jungian Meaning:** The Pillar of Mercy corresponds to the Libidinal, outward-flowing function of the psyche — the part that desires, that loves, that opens toward the world and reaches for connection. It is Eros in the broadest Jungian sense: the principle of relatedness, the urge that draws the self out of isolation and into participation with what is other. Every act of growth begins as an act of mercy — the willingness to expand beyond what you already are.`,
   },
@@ -372,5 +366,5 @@ export const abyss = {
 
 In the Abyss dwells Choronzon — the Demon of Dispersion, the lord of chaos and dissolution. Choronzon does not attack from outside; he is the Ego's own fragmentation turned against itself, every partial identity demanding to be the whole. The Adept who attempts the crossing must surrender everything — every attachment, every identity, every certainty — or be trapped in the false Sephirah of Daath, possessing knowledge without understanding, which is to say: holding the map while refusing to enter the territory.
 
-**Jungian Meaning:** The Abyss represents the boundary between the personal and the transpersonal — the point where the Ego's structures of meaning collapse entirely. Jung encountered this boundary during his own confrontation with the unconscious in 1913–14 and recognized that the outcome is not guaranteed: the individual either achieves genuine transformation or fragments into psychosis. The difference is not courage but surrender — the Ego that tries to cross the Abyss while remaining intact becomes Choronzon, endlessly dispersing. The one that consents to die is reconstituted on the other side as something larger than a self.`
+**Jungian Meaning:** The Abyss represents the boundary between the personal and the transpersonal — the point where the Ego's structures of meaning collapse entirely. As an interpretive analogy, this can be compared with Jung’s confrontation with the unconscious beginning in 1913. In a Jungian reading, the task is to develop a relationship with unconscious material while retaining an everyday capacity to reflect and act. Symbolic ego-death should not be confused with a requirement to destroy that capacity.`
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { sephiroth, paths, daath, abyss } from '../data/treeOfLifeData';
+import { sephiroth, paths, daath, abyss, worlds } from '../data/treeOfLifeData';
 
 interface TreeOfLifeSVGProps {
   onSephirahClick: (sephirahNumber: number) => void;
@@ -18,6 +18,7 @@ interface TreeOfLifeSVGProps {
 
 // Tighter viewBox to reduce margins and make the tree bigger
 const VIEWBOX = '30 -8 440 738';
+const WORLDS_VIEWBOX = '30 -8 440 910';
 const SEPHIRAH_R = 30;
 
 // Paths whose Roman numeral label should be placed below the midpoint instead of above
@@ -62,7 +63,8 @@ const TreeOfLifeSVG: React.FC<TreeOfLifeSVGProps> = ({
 
   return (
     <svg
-      viewBox={VIEWBOX}
+      viewBox={showWorlds ? WORLDS_VIEWBOX : VIEWBOX}
+      role="group" aria-label="Thoth Tree of Life with ten Sephiroth and twenty-two paths"
       style={{ display: 'block' }}
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -83,80 +85,7 @@ const TreeOfLifeSVG: React.FC<TreeOfLifeSVGProps> = ({
             <feMergeNode in="SourceGraphic" />
           </feMerge>
         </filter>
-
-        {/* Masks to make dotted borders disappear near Tree elements */}
-        {/* Gradient for soft fade-out near elements */}
-        <radialGradient id="fadeDot">
-          <stop offset="0%" stopColor="black" stopOpacity="1" />
-          <stop offset="70%" stopColor="black" stopOpacity="0.5" />
-          <stop offset="100%" stopColor="white" stopOpacity="1" />
-        </radialGradient>
-        <mask id="worldBorderMask">
-          {/* White = visible, black/gradient = hidden with fade */}
-          <rect x="0" y="0" width="500" height="720" fill="white" />
-          {/* Fade near Daath */}
-          <circle cx={daath.x} cy={daath.y} r={36} fill="url(#fadeDot)" />
-          {/* Fade where path lines cross — layered soft-edged strokes */}
-          {paths.map(p => {
-            const f = getSephirah(p.from);
-            const t = getSephirah(p.to);
-            return (
-              <React.Fragment key={`mask-p-${p.number}`}>
-                <line x1={f.x} y1={f.y} x2={t.x} y2={t.y} stroke="black" strokeWidth="14" />
-                <line x1={f.x} y1={f.y} x2={t.x} y2={t.y} stroke="rgba(0,0,0,0.6)" strokeWidth="24" />
-                <line x1={f.x} y1={f.y} x2={t.x} y2={t.y} stroke="rgba(0,0,0,0.3)" strokeWidth="34" />
-                <line x1={f.x} y1={f.y} x2={t.x} y2={t.y} stroke="rgba(0,0,0,0.1)" strokeWidth="44" />
-              </React.Fragment>
-            );
-          })}
-        </mask>
       </defs>
-
-      {showWorlds && <>
-        {/* Atziluth — Fire (y:18, h:78, center: 57) */}
-        <g onClick={(e) => { e.stopPropagation(); onWorldClick('Atziluth'); }} style={{ cursor: 'pointer' }}>
-          <rect x="55" y="18" width="390" height="78" rx="8"
-            fill="none" stroke="var(--color-fire)" strokeWidth="0.8" strokeDasharray="6,4" opacity="0.4"
-            mask="url(#worldBorderMask)" />
-          <text x="462" y={57} fill="var(--color-fire)" fontFamily="var(--font-serif)"
-            letterSpacing="0.15em" opacity="0.5" writingMode="vertical-rl" textAnchor="middle" fontSize={M.worldFont} fontWeight={M.fw}>
-            ATZILUTH
-          </text>
-        </g>
-
-        {/* Briah — Water (y:100, h:108, center: 154) */}
-        <g onClick={(e) => { e.stopPropagation(); onWorldClick('Briah'); }} style={{ cursor: 'pointer' }}>
-          <rect x="55" y="100" width="390" height="108" rx="8"
-            fill="none" stroke="var(--color-water)" strokeWidth="0.8" strokeDasharray="6,4" opacity="0.4"
-            mask="url(#worldBorderMask)" />
-          <text x="462" y={154} fill="var(--color-water)" fontFamily="var(--font-serif)"
-            letterSpacing="0.15em" opacity="0.5" writingMode="vertical-rl" textAnchor="middle" fontSize={M.worldFont} fontWeight={M.fw}>
-            BRIAH
-          </text>
-        </g>
-
-        {/* Yetzirah — Air (y:262, h:320, center: 422) */}
-        <g onClick={(e) => { e.stopPropagation(); onWorldClick('Yetzirah'); }} style={{ cursor: 'pointer' }}>
-          <rect x="55" y="262" width="390" height="320" rx="8"
-            fill="none" stroke="var(--color-air)" strokeWidth="0.8" strokeDasharray="6,4" opacity="0.4"
-            mask="url(#worldBorderMask)" />
-          <text x="462" y={422} fill="var(--color-air)" fontFamily="var(--font-serif)"
-            letterSpacing="0.15em" opacity="0.5" writingMode="vertical-rl" textAnchor="middle" fontSize={M.worldFont} fontWeight={M.fw}>
-            YETZIRAH
-          </text>
-        </g>
-
-        {/* Assiah — Earth (y:622, h:78, center: 661) */}
-        <g onClick={(e) => { e.stopPropagation(); onWorldClick('Assiah'); }} style={{ cursor: 'pointer' }}>
-          <rect x="55" y="622" width="390" height="78" rx="8"
-            fill="none" stroke="var(--color-earth)" strokeWidth="0.8" strokeDasharray="6,4" opacity="0.4"
-            mask="url(#worldBorderMask)" />
-          <text x="462" y={661} fill="var(--color-earth)" fontFamily="var(--font-serif)"
-            letterSpacing="0.15em" opacity="0.5" writingMode="vertical-rl" textAnchor="middle" fontSize={M.worldFont} fontWeight={M.fw}>
-            ASSIAH
-          </text>
-        </g>
-      </>}
 
       {/* Abyss placeholder — actual rendering moved after paths */}
 
@@ -398,6 +327,54 @@ const TreeOfLifeSVG: React.FC<TreeOfLifeSVGProps> = ({
         <path d="M 35,710 L 55,710 M 35,710 L 35,690" />
         <path d="M 465,710 L 445,710 M 465,710 L 465,690" />
       </g>
+      {showWorlds && (
+        <g aria-label="Each of the Four Worlds contains a complete Tree of Life">
+          <text x="250" y="722" textAnchor="middle" fill="var(--text-muted)"
+            fontSize={mobileMode ? 11 : 9.5} fontFamily="var(--font-serif)">
+            Four Worlds · ten Sephiroth in each
+          </text>
+          {worlds.map((world, i) => {
+            const x = 52 + i * 104;
+            const color = `var(${world.colorVar})`;
+            return (
+              <g key={world.name} role="button" tabIndex={0}
+                aria-label={`Explore ${world.name}, ${world.element}, suit of ${world.suit}`}
+                onClick={(e) => { e.stopPropagation(); onWorldClick(world.name); }}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    onWorldClick(world.name);
+                  }
+                }}
+                style={{ cursor: 'pointer' }}>
+                <rect x={x} y="736" width="84" height="156" rx="8"
+                  fill="var(--bg-card)" stroke={color} strokeWidth="0.8" />
+                <text x={x + 42} y="754" textAnchor="middle" fill={color}
+                  fontSize={mobileMode ? 10 : 9} fontFamily="var(--font-serif)">
+                  {world.name}
+                </text>
+                <text x={x + 42} y="770" textAnchor="middle" fill="var(--text-muted)"
+                  fontSize={mobileMode ? 9 : 8}>
+                  {world.elementSymbol} {world.suit}
+                </text>
+                <g transform={`translate(${x + 2}, 777) scale(0.16)`} aria-hidden="true">
+                  {paths.map(path => {
+                    const from = getSephirah(path.from);
+                    const to = getSephirah(path.to);
+                    return <line key={path.number} x1={from.x} y1={from.y} x2={to.x} y2={to.y}
+                      stroke={color} strokeWidth="4" opacity="0.5" />;
+                  })}
+                  {sephiroth.map(seph => (
+                    <circle key={seph.number} cx={seph.x} cy={seph.y} r="23"
+                      fill="var(--bg-card)" stroke={color} strokeWidth="5" />
+                  ))}
+                </g>
+              </g>
+            );
+          })}
+        </g>
+      )}
     </svg>
   );
 };

@@ -31,6 +31,7 @@ export interface Planet {
   glyph: string;
   sephirah: string;
   sephirahNumber: number;
+  modern?: boolean;       // Later associations, distinct from the classical Thoth table
   rules: string[];
   exaltedIn?: string;
   majorArcana: { cardId: string; cardName: string; romanNumeral: string };
@@ -236,7 +237,7 @@ Leo is the archetype of the Creative Individual — the moment when the ego, ful
   },
   {
     name: 'Virgo', glyph: '♍︎', element: 'Earth', quality: 'Mutable',
-    ruler: 'Mercury', rulerGlyph: '☿',
+    ruler: 'Mercury', rulerGlyph: '☿', exaltation: 'Mercury', exaltationGlyph: '☿',
     colorVar: '--color-earth',
     majorArcana: { cardId: '9-the-hermit', cardName: 'The Hermit', romanNumeral: 'IX' },
     decans: [
@@ -419,7 +420,7 @@ The psyche is not merely reactive but purposive -- it moves toward something. Ju
 - **20°–30° ☉ Four of Disks (Power)** — the achieved position consolidated into enduring material security, solar authority made concrete
 
 **Thoth Tarot:**
-Capricorn is attributed to The Devil (XV) — Pan Pangenetor, the All-Begetter, the goat leaping with lust upon the summits of the earth. Crowley's Devil is not evil but primal: the generative force of matter itself, the creative power embedded in the physical world. The card's loose chains encode the Capricornian mystery: what appears to be bondage is chosen discipline, and the apparent demon is the raw creative power of Earth.
+Capricorn is attributed to The Devil (XV) — Pan Pangenetor, the All-Begetter, the goat leaping with lust upon the summits of the earth. Crowley's Devil is not evil but primal: the generative force of matter itself, the creative power embedded in the physical world. The goat, the eye in its forehead, and the Tree imagery express creative energy within matter. The loosely chained human pair is an image from Rider–Waite–Smith, rather than the Thoth Devil.
 
 **Jungian Meaning:** Capricorn is the archetype of worldly mastery through discipline — the capacity to work within reality's constraints and find the sacred within the material. The outer world is not an obstacle to inner development but a necessary arena in which the psyche actualizes its potential. The Devil attribution maps directly onto Jung's Shadow principle made productive: ambition, status-hunger, and material drive, when consciously directed, build the structures within which human life becomes possible. The danger is the pathological superego — the internalized Saturn that turns discipline into self-punishment and reaches the summit only to find it empty. The unlived Capricorn sacrifices every present moment to a future that never arrives, confusing accumulated external authority with actual inner authority. Integration means understanding that the mountain is not conquered but inhabited — mastery is not a destination but a manner of moving through difficulty.`
   },
@@ -441,7 +442,7 @@ Capricorn is attributed to The Devil (XV) — Pan Pangenetor, the All-Begetter, 
 
 - **Body:** the ankles and circulatory system — the ankles that keep us upright and mobile, the circulation that distributes vital force throughout the body equally, a fitting correspondence for the sign of universal distribution
 - **Symbol:** the Water-Bearer — the paradox is the key: deep commitment to humanity in the abstract, personal detachment from the difficult reality of individual persons
-- **Glyph:** two parallel wavy lines, often mistaken for water but representing electromagnetic energy — the invisible force that connects and animates, the Uranian signature embedded in the ancient symbol, suggesting that what Aquarius pours is not water but information, current, revelation
+- **Glyph:** two parallel wavy lines, conventionally associated with water and the Water-Bearer. Reading these waves as electricity or information is a modern symbolic interpretation, rather than an ancient Uranian encoding
 - **Character:** intellectual originality, humanitarian idealism, fierce independence, social awkwardness, resistance to authority — the revolutionary, the scientist, the eccentric who sees twenty years ahead and cannot understand why no one else does yet
 - **Shadow:** cold detachment masquerading as objectivity, the simultaneous longing for community and inability to fully belong to any, loving humanity while failing the human in the room
 
@@ -462,7 +463,7 @@ Aquarius is attributed to The Star (XVII) — Nuith, Our Lady of the Stars, pour
   },
   {
     name: 'Pisces', glyph: '♓︎', element: 'Water', quality: 'Mutable',
-    ruler: 'Jupiter', rulerGlyph: '♃',
+    ruler: 'Jupiter', rulerGlyph: '♃', exaltation: 'Venus', exaltationGlyph: '♀',
     colorVar: '--color-water',
     majorArcana: { cardId: '18-the-moon', cardName: 'The Moon', romanNumeral: 'XVIII' },
     decans: [
@@ -500,7 +501,7 @@ Pisces is attributed to The Moon (XVIII) — the dark midnight landscape through
 ];
 
 // ============================================
-// The 7 Classical Planets + Uranus
+// The seven classical astrological planets + three modern additions
 // ============================================
 
 export const planets: Planet[] = [
@@ -530,7 +531,7 @@ export const planets: Planet[] = [
   },
   {
     name: 'Mercury', glyph: '☿', sephirah: 'Hod', sephirahNumber: 8,
-    rules: ['Gemini', 'Virgo'],
+    rules: ['Gemini', 'Virgo'], exaltedIn: 'Virgo',
     majorArcana: { cardId: '1-the-magus', cardName: 'The Magus', romanNumeral: 'I' },
     description: `Mercury is the Messenger — intellect, communication, language, and the capacity to translate between the conscious and the unconscious. Attributed to Hod (Splendour), he is the analytical mind at its most articulate. His Major Arcana card is The Magus (I).
 
@@ -588,41 +589,46 @@ export const planets: Planet[] = [
   },
   {
     name: 'Uranus', glyph: '♅', sephirah: 'Chokmah', sephirahNumber: 2,
+    modern: true,
     rules: ['Aquarius'],
     majorArcana: { cardId: '0-the-fool', cardName: 'The Fool', romanNumeral: '0' },
-    description: `Uranus is the Awakener — sudden revolution, breakthrough, the shattering of outdated structures, and the eruption of the genuinely new. Associated with Chokmah (Wisdom), he is the lightning flash of creative energy that precedes all form. His Major Arcana association is The Fool (0).
+    description: `Uranus is the Awakener — sudden revolution, breakthrough, the shattering of outdated structures, and the eruption of the genuinely new. Some later correspondence systems associate Uranus with Chokmah and the Fool (0). These associations can support the psychological reading below; the Fool’s primary Thoth attribution is Air, and Chokmah’s classical attribution is the Zodiac.
 
 **Rulership:** Uranus is the modern co-ruler of Aquarius (alongside Saturn). In Aquarius, Uranus expresses the revolutionary, boundary-dissolving, visionary dimension of the Fixed Air sign — the flash of insight that shatters convention, the genius that sees what no one else can see.
 
 **Exaltation:** Uranus has no traditional Exaltation — as a modern planet discovered in 1781, it falls outside the classical dignity system. Its nature is inherently anti-traditional, making the concept of a fixed "highest expression" somewhat alien to its character.
 
+**Crowley’s own variation:** In his discussion of the Universe, Crowley places Pluto with the Primum Mobile, Neptune with the fixed stars, and Herschel (Uranus) with the Abyss. Outer-planet Tree correspondences therefore need an explicit convention.
+
 **Jungian Meaning:** Uranus corresponds to the eruption of unconscious contents that cannot be predicted, controlled, or understood in advance — the psychic earthquake that shatters the old to make way for what has never existed before. As the planet associated with Chokmah, it represents the first lightning flash of awareness before it has been tamed by form or structure.`
   },
   {
     name: 'Neptune', glyph: '♆', sephirah: 'Kether', sephirahNumber: 1,
-    rules: [],
+    modern: true,
+    rules: ['Pisces'],
     majorArcana: { cardId: '12-the-hanged-man', cardName: 'The Hanged Man', romanNumeral: 'XII' },
-    description: `Neptune is the Dissolver — the planet of mysticism, illusion, imagination, and the dissolution of boundaries between self and other, real and imagined, waking and dreaming. Discovered in 1846, Neptune has no formal place in the classical Golden Dawn system that Crowley inherited, but its influence permeates the Thoth deck's treatment of Pisces and the oceanic unconscious.
+    description: `Neptune is the Dissolver — the planet of mysticism, illusion, imagination, and the dissolution of boundaries between self and other, real and imagined, waking and dreaming. Discovered in 1846, Neptune is outside the seven-planet system used for the Thoth decans and planetary trumps. Later readers associate it with oceanic imagery and the Hanged Man; that card’s primary attribution is Water.
 
 **Modern Rulership:** Modern astrology assigns Neptune as ruler of Pisces, where it deepens the sign's already boundless receptivity into full mystical dissolution. Neptune in Pisces is the ocean recognizing itself as ocean — the dissolution of the individual drop back into the infinite. Neptune is also considered co-ruler alongside Jupiter, which provides the theological framework while Neptune provides the direct experience.
 
-**Tree of Life:** Some post-Crowley Kabbalists place Neptune at Kether, the Crown — the dimensionless point of pure being that precedes all differentiation. This attribution reflects Neptune's nature as the state before boundaries exist: not unconsciousness but pre-consciousness, the primordial unity from which all separation emerges.
+**Tree of Life — later association:** Some later correspondence systems place Neptune at Kether, the Crown — the dimensionless point of pure being that precedes all differentiation. This attribution reflects Neptune's nature as the state before boundaries exist: not unconsciousness but pre-consciousness, the primordial unity from which all separation emerges.
 
-**Thoth Tarot:** Though not formally attributed to a Major Arcana card, Neptune's influence is strongest in The Hanged Man (XII), attributed to the Hebrew letter Mem (Water). The Hanged Man suspends himself voluntarily, surrendering the ego's orientation to receive vision from the depths — the Neptunian act par excellence. The card depicts the drowned god, the sacrifice that is simultaneously illumination.
+**Later Tarot association:** Neptune can be read alongside The Hanged Man (XII), whose primary attribution is Mem and Water. This is an interpretive extension of the Thoth table. The Hanged Man suspends himself voluntarily, surrendering the ego's orientation to receive vision from the depths — the Neptunian act par excellence. The card depicts the drowned god, the sacrifice that is simultaneously illumination.
 
 **Jungian Meaning:** Neptune corresponds to the collective unconscious itself — not its contents (those belong to individual planets and archetypes) but the medium in which they float. It is the psychic ocean, the field of participation mystique where individual boundaries dissolve and direct, unmediated experience of the numinous becomes possible. The shadow is the inability to return from dissolution: addiction, delusion, spiritual bypassing, and the confusion of ego-dissolution with enlightenment. Neptune demands the mystic's discipline — the capacity to dissolve and reconstitute, to drown and surface, repeatedly.`
   },
   {
     name: 'Pluto', glyph: '♇', sephirah: 'Daath', sephirahNumber: 0,
-    rules: [],
+    modern: true,
+    rules: ['Scorpio'],
     majorArcana: { cardId: '20-the-aeon', cardName: 'The Aeon', romanNumeral: 'XX' },
-    description: `Pluto is the Transformer — the planet of irreversible change, death-and-rebirth, the underworld, and the power that dismantles entire structures so they can be rebuilt from the foundations. Discovered in 1930 (the year Crowley was completing the Thoth deck), Pluto arrived too late for formal integration but its energy is unmistakably present in the deck's treatment of Scorpio and the Death card.
+    description: `Pluto is the Transformer — the planet of irreversible change, death-and-rebirth, the underworld, and the power that dismantles entire structures so they can be rebuilt from the foundations. Pluto was discovered in 1930, before the Crowley–Harris collaboration of 1938–1943. It is a dwarf planet in modern astronomy and is treated as a planet in astrological practice. It does not replace the primary Fire attribution of the Aeon or the Mars rulership of Scorpio in the classical Thoth table.
 
 **Modern Rulership:** Modern astrology assigns Pluto as ruler (or co-ruler with Mars) of Scorpio. Where Mars in Scorpio is the surgeon's blade — precise, intentional, cutting — Pluto is the tectonic plate shift: slow, inexorable, total. Pluto does not reform; it annihilates and regenerates. Its processes operate on timescales that dwarf individual lifetimes, which is why Plutonian transits feel like fate rather than choice.
 
-**Tree of Life:** The most common post-Crowley attribution places Pluto at Daath — the hidden, unnumbered Sephirah in the Abyss between the Supernal Triad and the lower Tree. Daath is "Knowledge" — but knowledge gained through the total dissolution of the ego's pretensions. This is precisely Pluto's domain: the abyss that swallows everything that is not authentic, the crucible that reduces complex structures to their essential elements.
+**Tree of Life — later association:** One later correspondence places Pluto at Daath — the hidden, unnumbered Sephirah in the Abyss between the Supernal Triad and the lower Tree. Daath is "Knowledge" — but knowledge gained through the total dissolution of the ego's pretensions. This is precisely Pluto's domain: the abyss that swallows everything that is not authentic, the crucible that reduces complex structures to their essential elements.
 
-**Thoth Tarot:** Pluto's energy is most visible in Death (XIII), the card of Scorpio, and in The Aeon (XX), which depicts the new aeon dawning through the destruction of the old. Crowley associated the Aeon of Horus with precisely the kind of wholesale civilizational transformation that Pluto represents — not reform but the death of one world-age and the birth of another.
+**Later Tarot associations:** Pluto’s symbolism can illuminate Death (XIII), the card of Scorpio, and The Aeon (XX), which depicts the new aeon dawning through the destruction of the old. Crowley associated the Aeon of Horus with precisely the kind of wholesale civilizational transformation that Pluto represents — not reform but the death of one world-age and the birth of another.
 
 **Jungian Meaning:** Pluto corresponds to the deepest layer of the Shadow — not the personal shadow of repressed feelings and rejected traits, but the archetypal shadow: the collective, transpersonal darkness that contains humanity's capacity for destruction, domination, and annihilation alongside its capacity for total regeneration. Jung encountered this level in his own confrontation with the unconscious (the Red Book period) and recognized that the psyche contains forces that can destroy the ego entirely — and that this destruction, when met consciously, is the precondition for the most profound transformation. Pluto's psychological demand is absolute honesty: the willingness to see what is actually there, however terrible, and to let what must die, die.`
   },
@@ -653,7 +659,7 @@ In nature, Fire is the lightning bolt, the volcanic eruption, the spark of combu
     colorVar: '--color-water',
     description: `Water is the receptive, emotional, dissolving element — feeling, intuition, and the unconscious depths. It corresponds to the first letter Heh of the Tetragrammaton and the Qabalistic world of Briah (Creation). Where Fire projects outward, Water draws inward; where Fire separates and ignites, Water merges and dissolves. Water is the medium of life — every living cell is a vessel of water, and every emotion is a tide.
 
-In nature, Water is the ocean, the rain, the underground river. It seeks the lowest point, it takes the shape of whatever contains it, and over time it erodes the hardest stone. The alchemists called the watery principle Salt: the passive, feminine, crystallizing essence that receives the fire's impulse and gives it tangible form.
+In nature, Water is the ocean, the rain, the underground river. It seeks the lowest point, it takes the shape of whatever contains it, and over time it erodes the hardest stone. In Crowley’s Three of Disks correspondences, Water/Mem is paired with Salt. This is a particular three-principle scheme; the four elements and the three alchemical principles are distinct classifications, and Salt also has an earthy, fixed character.
 
 **Thoth Tarot:** The suit of Cups carries the element of Water. The elemental Water itself is attributed to The Hanged Man (XII) through the Hebrew letter Mem — another of the three Mother Letters. Mem means "Water," and the card depicts the suspended, surrendered state that is Water's essential gesture: the willingness to be acted upon, to dissolve, to let go. The three Water signs represent the three modes of emotional experience: Cancer protects and nurtures (Cardinal), Scorpio transforms and penetrates (Fixed), and Pisces dissolves and transcends (Mutable). The Court Cards of Cups follow the Tetragrammaton through the watery element.
 
@@ -674,13 +680,14 @@ In nature, Air is the wind, the breath, the atmosphere. It is invisible yet all-
   },
   {
     name: 'Earth', symbol: '🜃', suits: 'Disks',
+    majorArcana: { cardId: '21-the-universe', cardName: 'The Universe', romanNumeral: 'XXI' },
     signs: ['Taurus', 'Virgo', 'Capricorn'],
     colorVar: '--color-earth',
     description: `Earth is the material, stable, manifesting element — the body, practical life, and the physical world. It corresponds to the final letter Heh of the Tetragrammaton and the Qabalistic world of Assiah (Action). Earth is where the creative cycle completes itself: the fiery impulse (Yod), received by the watery vessel (Heh), projected through the airy intellect (Vau), finally crystallizes into tangible, material reality (Heh final). Earth is not the lowest element but the *culmination* — the point where spirit becomes flesh.
 
 In nature, Earth is the mountain, the soil, the body itself. It is the densest and most resistant of the elements, but also the most patient and the most enduring. The New Aeon doctrine insists that Earth is not black (dead, inert, fallen) but Emerald Green — alive, sacred, the garden in which the Great Work is accomplished.
 
-**Thoth Tarot:** The suit of Disks carries the element of Earth. Earth has no elemental Major Arcana of its own — the element of Spirit (also attributed to Shin/Fire) does double duty, reflecting the esoteric doctrine that the highest and lowest are ultimately identical. The Ace of Disks affirms this: it is simultaneously a glyph of Earth and of the Sun, asserting the identity of Sol and Terra. The three Earth signs represent the three modes of material engagement: Taurus sustains and accumulates (Fixed), Virgo refines and serves (Mutable), and Capricorn builds and governs (Cardinal). The Court Cards of Disks complete the Tetragrammaton — and the Princess of Disks, the very last Court Card, stands on the brink of transfiguration: the Daughter set upon the Throne of the Mother, awakening the Eld of the All-Father.
+**Thoth Tarot:** The suit of Disks carries the element of Earth. Earth is a secondary attribution of The Universe (XXI), whose primary planetary attribution is Saturn. Crowley uses this double attribution to complete the elemental scheme alongside Aleph/Air, Mem/Water, and Shin/Fire; Shin also carries Spirit. The Ace of Disks affirms this: it is simultaneously a glyph of Earth and of the Sun, asserting the identity of Sol and Terra. The three Earth signs represent the three modes of material engagement: Taurus sustains and accumulates (Fixed), Virgo refines and serves (Mutable), and Capricorn builds and governs (Cardinal). The Court Cards of Disks complete the Tetragrammaton — and the Princess of Disks, the very last Court Card, stands on the brink of transfiguration: the Daughter set upon the Throne of the Mother, awakening the Eld of the All-Father.
 
 **Jungian Meaning:** In Jungian terms, Earth corresponds to the *sensation function* — the psychic capacity that perceives the immediate, concrete, physical reality of the present moment. Earth is the body's knowledge: the hand that knows the weight of a tool, the tongue that knows the taste of bread, the feet that know the ground. The shadow of Earth is materialism — the reduction of all reality to what can be touched, measured, and owned, and the denial of the spirit's reality. But Earth redeemed is the recognition that the body *is* the temple, that matter *is* sacred, and that the physical world — far from being a prison — is the arena in which the Great Work of individuation is ultimately accomplished.`
   },

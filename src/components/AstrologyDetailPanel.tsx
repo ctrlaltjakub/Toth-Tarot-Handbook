@@ -265,7 +265,7 @@ const PlanetDetail: React.FC<{ planetName: string; onClose: () => void }> = ({ p
       <div className="tree-panel-header">
         <div>
           <span className="tree-panel-badge" style={{ color: 'var(--accent)' }}>
-            Planet — {planet.sephirah}
+            {planet.modern ? 'Modern association' : 'Classical planet'} — {planet.sephirah}
           </span>
           <h2 style={{ color: 'var(--accent)', margin: '0.25rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <PlanetInline glyph={planet.glyph} size={22} color="var(--accent)" />
@@ -277,7 +277,7 @@ const PlanetDetail: React.FC<{ planetName: string; onClose: () => void }> = ({ p
 
       <div className="tree-panel-meta" style={{ flexWrap: 'wrap' }}>
         <div className="tree-panel-meta-item">
-          <span className="tree-panel-meta-label">Rules</span>
+          <span className="tree-panel-meta-label">{planet.modern ? 'Modern ruler of' : 'Rules'}</span>
           <span>{planet.rules.join(', ')}</span>
         </div>
         {planet.exaltedIn && (
@@ -287,8 +287,8 @@ const PlanetDetail: React.FC<{ planetName: string; onClose: () => void }> = ({ p
           </div>
         )}
         <div className="tree-panel-meta-item">
-          <span className="tree-panel-meta-label">Tree of Life</span>
-          <Link to={`/tree-of-life?view=sephirah&id=${planet.sephirahNumber}`} style={{ color: 'var(--accent-lavender)', textDecoration: 'none' }}>
+          <span className="tree-panel-meta-label">{planet.modern ? 'Later Tree association' : 'Tree of Life'}</span>
+          <Link to={planet.sephirahNumber === 0 ? '/tree-of-life?view=daath' : `/tree-of-life?view=sephirah&id=${planet.sephirahNumber}`} style={{ color: 'var(--accent-lavender)', textDecoration: 'none' }}>
             {planet.sephirah}
           </Link>
         </div>
@@ -297,7 +297,7 @@ const PlanetDetail: React.FC<{ planetName: string; onClose: () => void }> = ({ p
       <DescriptionBody text={planet.description} />
 
       <div className="tree-panel-section">
-        <h3>Major Arcana</h3>
+        <h3>{planet.modern ? 'Later Tarot association' : 'Major Arcana'}</h3>
         <div className="tree-panel-links">
           <Link to={`/tarot/${planet.majorArcana.cardId}`} className="tree-panel-link">
             <span style={{ color: 'var(--accent-warm)', fontFamily: 'var(--font-serif)', marginRight: '0.5rem' }}>{planet.majorArcana.romanNumeral}</span>

@@ -21,7 +21,7 @@ const PLANET_ORBIT = 310;
 
 const ORBIT_DURATION = 600;
 const planetStartOffset: Record<string, number> = {
-  Sun: 0, Moon: 45, Mercury: 90, Venus: 135, Mars: 180, Jupiter: 225, Saturn: 270, Uranus: 315,
+  Sun: 0, Moon: 360 / 7, Mercury: 720 / 7, Venus: 1080 / 7, Mars: 1440 / 7, Jupiter: 1800 / 7, Saturn: 2160 / 7,
 };
 
 const toRad = (deg: number) => ((deg - 90) * Math.PI) / 180;
@@ -148,7 +148,9 @@ const ZodiacWheelSVG: React.FC<ZodiacWheelSVGProps> = ({
   const getPlanetPos = (name: string) => { const o = planetStartOffset[name] || 0; return polarToXY(CX, CY, PLANET_ORBIT, (o + (time / ORBIT_DURATION) * 360) % 360); };
 
   return (
-    <svg viewBox="-20 -20 740 820" style={{ display: 'block' }} xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="-20 -20 740 820" role="group" aria-label="Thoth zodiac correspondences; animated positions are decorative" style={{ display: 'block' }} xmlns="http://www.w3.org/2000/svg">
+      <title>Thoth zodiac correspondences</title>
+      <desc>Seven classical planets connect to traditional rulers and exaltations. Three modern planets are shown separately. Positions do not represent the current sky.</desc>
       <defs>
         <filter id="signGlow" x="-30%" y="-30%" width="160%" height="160%">
           <feGaussianBlur stdDeviation="2" result="blur" /><feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
@@ -357,7 +359,7 @@ const ZodiacWheelSVG: React.FC<ZodiacWheelSVGProps> = ({
       })}
 
       {/* === Orbiting Planets (outside the wheel) === */}
-      {planets.filter(p => p.name !== 'Neptune' && p.name !== 'Pluto').map(planet => {
+      {planets.filter(p => !p.modern).map(planet => {
         const pos = getPlanetPos(planet.name);
 
         return (
@@ -432,10 +434,11 @@ const ZodiacWheelSVG: React.FC<ZodiacWheelSVGProps> = ({
         <path d="M -30,730 L -10,730 M -30,730 L -30,710" /><path d="M 730,730 L 710,730 M 730,730 L 730,710" />
       </g>
 
-      {/* Modern planets — static, aligned with Fixed square upper corners */}
+      {/* Modern additions — shown separately from the seven-planet Thoth scheme */}
       {(() => {
         const modernPlanets = [
-          { name: 'Neptune', x: 38, y: 38 },
+          { name: 'Uranus', x: 38, y: 38 },
+          { name: 'Neptune', x: 38, y: 662 },
           { name: 'Pluto', x: 662, y: 38 },
         ];
         const glyphSize = mobileMode ? 32 : 26;
